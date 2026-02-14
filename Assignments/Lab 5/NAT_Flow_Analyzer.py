@@ -64,12 +64,34 @@ class NATRouterSimulation:
         print("public Internet.")
         print("="*70)
 
+    @staticmethod
+    def display_scholarly_responses():
+        """
+        Prints the specific findings from the Lab 05 report.
+        """
+        print("\n" + "="*75)
+        print("LABORATORY RESULTS: SCHOLARLY RESPONSES")
+        print("="*75)
+        responses = {
+            "Q1: Internal Source IP": "192.168.10.11",
+            "Q5: Translated WAN IP": "10.0.1.254",
+            "Q8: Old Checksum": "0x64dc",
+            "Q8: New Checksum": "0x2d82",
+            "Q11: Forwarded Destination": "192.168.10.11"
+        }
+        for q, a in responses.items():
+            print(f"{q:<30} : {a}")
+        print("="*75)
+
 def main():
     print("="*70)
     print("SCHOLARLY ANALYSIS: NETWORK ADDRESS TRANSLATION (NAT)")
     print("="*70)
 
     nat = NATRouterSimulation()
+
+    # 0. Scholarly Responses
+    nat.display_scholarly_responses()
 
     # 1. Simulate the specific HTTP GET request flow from the report
     # Inside: 192.168.10.11:53924 to Server: 138.76.29.8:80

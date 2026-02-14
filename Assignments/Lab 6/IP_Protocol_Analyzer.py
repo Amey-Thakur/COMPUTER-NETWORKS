@@ -91,6 +91,29 @@ class IPv4PacketArchive:
         print("fragmentation; it is solely the responsibility of the source node.")
         print("="*75)
 
+    @staticmethod
+    def display_scholarly_responses():
+        """
+        Prints the specific findings from the Lab 06 report.
+        """
+        print("\n" + "="*75)
+        print("LABORATORY RESULTS: SCHOLARLY RESPONSES")
+        print("="*75)
+        responses = {
+            "Q1: IP Address": "192.168.2.95",
+            "Q2: Initial TTL": "1",
+            "Q3: Protocol": "ICMP (1)",
+            "Q4: Header Length": "20 bytes",
+            "Q5: Payload Length": "72 bytes",
+            "Q6: Path MTU Fragmentation": "3 Fragments (for 3000-byte segment)",
+            "Q14: MF Flag (Fragment 1)": "Set (1)",
+            "Q15: Offset (Fragment 1)": "0",
+            "Q19: MF Flag (Last Fragment)": "Not Set (0)"
+        }
+        for q, a in responses.items():
+            print(f"{q:<30} : {a}")
+        print("="*75)
+
 def main():
     print("="*75)
     print("SCHOLARLY ANALYSIS: INTERNET PROTOCOL (IPV4)")
@@ -98,6 +121,9 @@ def main():
     
     analyzer = IPv4PacketArchive()
     
+    # 0. Scholarly Responses
+    analyzer.display_scholarly_responses()
+
     # 1. Traceroute TTL Analysis
     analyzer.simulate_traceroute_ttl()
     

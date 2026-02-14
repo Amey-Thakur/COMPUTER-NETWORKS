@@ -1,0 +1,28 @@
+TECHNICAL ANALYSIS: LAB 05 - NETWORK ADDRESS TRANSLATION (NAT)
+=========================================================
+Author: Amey Thakur
+Session: Fall 2023
+Source Trace: nat-inside-wireshark-trace1-1.pcapng / nat-outside-wireshark-trace1-1.pcapng
+
+INSIDE NETWORK FLOW (LAN)
+-------------------------
+1. Client IP Address: 192.168.10.11
+   Source TCP Port: 53924
+   Destination IP Address: 138.76.29.8
+   Destination TCP Port: 80
+2. Time of HTTP OK Message: 0.030672101 seconds (from start of trace)
+3. HTTP OK Payload Source: 138.76.29.8 / 80
+   HTTP OK Payload Destination: 192.168.10.11 / 53924
+
+OUTSIDE NETWORK FLOW (WAN/INTERNET)
+-----------------------------------
+4. Time of Appearance (HTTP GET): 0.027356291 seconds
+5. Translated Source IP: 10.0.1.254
+   Translated Source Port: 53924
+   Destination IP/Port: 138.76.29.8 / 80
+6. Field Modification: The Source IP Address is translated from 192.168.10.11 to 10.0.1.254.
+7. Additional Modifications: Source and Destination MAC addresses are modified within the Ethernet datagram.
+8. Header Integrity: IP Version, Header Length, and Flags remain constant. The Header Checksum is recalculated (0x64dc -> 0x2d82).
+9. Time of Appearance (HTTP OK): 0.030625966 seconds
+10. Outside Destination IP/Port: 10.0.1.254 / 53924
+11. Inside Destination IP/Port: 192.168.10.11 / 53924 (Forwarded by NAT)

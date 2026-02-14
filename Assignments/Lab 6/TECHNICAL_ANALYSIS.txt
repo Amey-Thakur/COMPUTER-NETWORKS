@@ -1,0 +1,30 @@
+TECHNICAL ANALYSIS: LAB 06 - INTERNET PROTOCOL (IP)
+==================================================
+Author: Amey Thakur
+Session: Fall 2023
+Source Trace: ip-wireshark-trace1-1.pcapng / q-wireshark-trace1-1.pcapng
+
+PART 1: BASIC IPV4 ANALYSIS
+---------------------------
+1. Computer IP Address: 192.168.2.95
+2. Time-to-Live (TTL) Value: 1
+3. Upper Layer Protocol: ICMP (1)
+4. IP Header Length: 20 bytes
+5. Payload Length: 72 bytes (Total Length 92 - Header 20)
+6. Fragmentation Status: Not fragmented (Flags: 0x0)
+7. Dynamic Fields (Traceroute): Identification (increments) and TTL (increments per hop).
+8. Constant Fields: Version (4), Header Length (20), Source IP (192.168.2.95), Destination IP (128.119.245.12), DiffServ (0x00), Upper Layer Protocol (1).
+9. Identification Pattern: Increments uniformly by 1 for each request.
+10. Returned Protocol: ICMP (TTL exceeded in transit).
+11. Response Identification Pattern: No identifiable pattern (varies by router).
+12. Response TTL Values: Generally constant (e.g., 64) for responses from the same router.
+
+PART 2: IP FRAGMENTATION (3000-BYTE UDP SEGMENT)
+----------------------------------------------
+13. Fragmentation Status: Yes, fragmented into 3 datagrams.
+14. "More Fragments" Flag: Set (1) for the first and second fragments.
+15. First Fragment Indicator: Fragment Offset = 0.
+16. First Fragment Metrics: Total Length = 1500 bytes, Header = 20 bytes, Data = 1480 bytes.
+17. Second Fragment Indicator: Fragment Offset = 1480.
+18. Dynamic Header Fields: Header Checksum and Fragmentation fields (Flags/Offset) change between fragments.
+19. Last Fragment Indicator: "More Fragments" flag = 0. Identification remains constant across all fragments (e.g., 0x4890).
