@@ -1,10 +1,15 @@
-# IP and Subnet Practice Problems - Detailed Solutions
+<div align="center">
+
+| **Author** | **ORCID** |
+| :---: | :---: |
+| <img src="https://avatars.githubusercontent.com/Amey-Thakur" width="110"/> | [![ORCID](https://img.shields.io/badge/ORCID-0000--0001--5644--1575-green.svg)](https://orcid.org/0000-0001-5644-1575) |
+
+</div>
 
 > **File Name**: `IP_Subnet_Problems_Solution.md`
-> **Author**: [Amey Thakur](https://github.com/Amey-Thakur)
 > **Course Repo**: [COMPUTER-NETWORKS](https://github.com/Amey-Thakur/COMPUTER-NETWORKS)
-> **Release Date**: December 06, 2023
-> **License**: Creative Commons Attribution 4.0 International (CC BY 4.0)
+> **Rel. Date**: December 06, 2023
+> **License**: [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)
 
 ---
 
