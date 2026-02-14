@@ -93,7 +93,7 @@ Academic roadmap and administrative records for the Fall 2023 session:
 A granular record of 10 laboratory reports documenting protocol analysis and network configuration using Wireshark and other simulation tools.
 
 | # | Lab | Topic | Documentation |
-| :-: | :--- | :--- | :---: |
+| :-: | :-: | :--- | :---: |
 | 1 | **Lab 01** | Introduction to Wireshark | [View Report](Assignments/Lab%201/Lab%201_%20Introduction%20to%20Wireshark%20%5BAmey-110107589%5D-328776.pdf) |
 | 2 | **Lab 02** | Ethernet and ARP | [View Report](Assignments/Lab%202/Lab%202_%20Ethernet%20and%20ARP%20%5BAmey-110107589%5D-381246.pdf) |
 | 3 | **Lab 03** | Wi-Fi | [View Report](Assignments/Lab%203/Lab%203_%20Wi-Fi%20%5BAmey-110107589%5D-405692.pdf) |
