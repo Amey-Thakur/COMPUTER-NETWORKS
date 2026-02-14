@@ -92,18 +92,151 @@ Academic roadmap and administrative records for the Fall 2023 session:
 ### Assignments
 A granular record of 10 laboratory reports documenting protocol analysis and network configuration using Wireshark and other simulation tools.
 
-| # | Lab | Topic | Date | Manual | Source Code | Report | Archive |
-| :-: | :-: | :--- | :---: | :---: | :---: | :---: | :---: |
-| 1 | **Lab 01** | Introduction to Wireshark | September 19, 2023 | [View](Assignments/Lab%201/Lab%201_%20Introduction%20to%20Wireshark%20-%20Computer%20Networks%20-%20University%20of%20Windsor.pdf) | [View](Assignments/Lab%201/HTTP_Connectivity_Analyzer.py) | [View](Assignments/Lab%201/Lab%201_%20Introduction%20to%20Wireshark%20%5BAmey-110107589%5D-328776.pdf) | [Download](Assignments/Lab%201/Lab%201_%20Introduction%20to%20Wireshark%20%5BAmey-110107589%5D.docx?raw=true) |
-| 2 | **Lab 02** | Ethernet and Address Resolution Protocol (ARP) | October 06, 2023 | [View](Assignments/Lab%202/Lab%202_%20Ethernet%20and%20ARP%20-%20Computer%20Networks%20-%20University%20of%20Windsor.pdf) | [View](Assignments/Lab%202/Ethernet_ARP_Analyzer.py) | [View](Assignments/Lab%202/Lab%202_%20Ethernet%20and%20ARP%20%5BAmey-110107589%5D-381246.pdf) | [Download](Assignments/Lab%202/Lab%202_%20Ethernet%20and%20ARP%20%5BAmey-110107589%5D.docx?raw=true) |
-| 3 | **Lab 03** | Wireless Fidelity (Wi-Fi) | October 20, 2023 | [View](Assignments/Lab%203/Lab%203_%20Wi-Fi%20-%20Computer%20Networks%20-%20University%20of%20Windsor.pdf) | [View](Assignments/Lab%203/WiFi_Protocol_Analyzer.py) | [View](Assignments/Lab%203/Lab%203_%20Wi-Fi%20%5BAmey-110107589%5D-405692.pdf) | [Download](Assignments/Lab%203/Lab%203_%20Wi-Fi%20%5BAmey-110107589%5D.docx?raw=true) |
-| 4 | **Lab 04** | Dynamic Host Configuration Protocol (DHCP) | November 01, 2023 | [View](Assignments/Lab%204/Lab%204_%20DHCP%20-%20Computer%20Networks%20-%20University%20of%20Windsor.pdf) | [View](Assignments/Lab%204/DHCP_Protocol_Analyzer.py) | [View](Assignments/Lab%204/Lab%204_%20DHCP-110107589-440561.pdf) | [Download](Assignments/Lab%204/Lab%204_%20DHCP-110107589.docx?raw=true) |
-| 5 | **Lab 05** | Network Address Translation (NAT) | November 01, 2023 | [View](Assignments/Lab%205/Lab%205_%20NAT%20-%20Computer%20Networks%20-%20University%20of%20Windsor.pdf) | [View](Assignments/Lab%205/NAT_Flow_Analyzer.py) | [View](Assignments/Lab%205/Lab%205_%20NAT-110107589.pdf) | [Download](Assignments/Lab%205/Lab%205_%20NAT-110107589.docx?raw=true) |
-| 6 | **Lab 06** | Internet Protocol (IP) | November 07, 2023 | [View](Assignments/Lab%206/Lab%206_%20IP%20-%20Computer%20Networks%20-%20University%20of%20Windsor.pdf) | [View](Assignments/Lab%206/IP_Protocol_Analyzer.py) | [View](Assignments/Lab%206/Lab%206_%20IP%20%5BAmey-110107589%5D-454660.pdf) | [Download](Assignments/Lab%206/Lab%206_%20IP-Amey-110107589.docx?raw=true) |
-| 7 | **Lab 07** | Internet Control Message Protocol (ICMP) | November 10, 2023 | [View](Assignments/Lab%207/Lab%207_%20ICMP%20-%20Computer%20Networks%20-%20University%20of%20Windsor.pdf) | [View](Assignments/Lab%207/ICMP_Protocol_Analyzer.py) | [View](Assignments/Lab%207/Lab%207_%20ICMP-110107589.pdf) | [Download](Assignments/Lab%207/Lab%207_%20ICMP-110107589.docx?raw=true) |
-| 8 | **Lab 08** | User Datagram Protocol (UDP) | November 14, 2023 | — | [View](Assignments/Lab%208/UDP_Protocol_Analyzer.py) | [View](Assignments/Lab%208/Lab%208_%20UDP-110107589.pdf) | [Download](Assignments/Lab%208/Lab%208_%20UDP-110107589.docx?raw=true) |
-| 9 | **Lab 09** | Transmission Control Protocol (TCP) | November 21, 2023 | — | [View](Assignments/Lab%209/TCP_Protocol_Analyzer.py) | [View](Assignments/Lab%209/Lab%209_%20TCP-110107589.pdf) | [Download](Assignments/Lab%209/Lab%209_%20TCP-110107589.docx?raw=true) |
-| 10 | **Lab 10** | Domain Name System (DNS) | November 30, 2023 | [View](Assignments/Lab%2010/Lab%2010_%20DNS%20-%20Computer%20Networks%20-%20University%20of%20Windsor.pdf) | [View](Assignments/Lab%2010/DNS_Protocol_Analyzer.py) | — | — |
+<div align="center">
+
+  [![Total Labs](https://img.shields.io/badge/Total%20Labs-10-yellowgreen.svg)](Assignments/)
+  [![Language](https://img.shields.io/badge/Language-Python%2FWireshark-blueviolet.svg)](Assignments/)
+  [![Status](https://img.shields.io/badge/Status-Complete-brightgreen.svg)](Assignments/)
+
+</div>
+
+> [!TIP]
+> **Technical Analysis**: For a detailed scholarly dissection of each protocol, expand the **Program Details** dropdowns below. These sections contain links to the source code simulators, technical specifications, manuals, and downloadable Word documents for each laboratory session.
+
+| # | Lab | Topic | Date | Report |
+| :-: | :-: | :--- | :---: | :---: |
+| 1 | **Lab 01** | Introduction to Wireshark | September 19, 2023 | [View](Assignments/Lab%201/Lab%201_%20Introduction%20to%20Wireshark%20%5BAmey-110107589%5D-328776.pdf) |
+| 2 | **Lab 02** | Ethernet and Address Resolution Protocol (ARP) | October 06, 2023 | [View](Assignments/Lab%202/Lab%202_%20Ethernet%20and%20ARP%20%5BAmey-110107589%5D-381246.pdf) |
+| 3 | **Lab 03** | Wireless Fidelity (Wi-Fi) | October 20, 2023 | [View](Assignments/Lab%203/Lab%203_%20Wi-Fi%20%5BAmey-110107589%5D-405692.pdf) |
+| 4 | **Lab 04** | Dynamic Host Configuration Protocol (DHCP) | November 01, 2023 | [View](Assignments/Lab%204/Lab%204_%20DHCP-110107589-440561.pdf) |
+| 5 | **Lab 05** | Network Address Translation (NAT) | November 01, 2023 | [View](Assignments/Lab%205/Lab%205_%20NAT-110107589.pdf) |
+| 6 | **Lab 06** | Internet Protocol (IP) | November 07, 2023 | [View](Assignments/Lab%206/Lab%206_%20IP%20%5BAmey-110107589%5D-454660.pdf) |
+| 7 | **Lab 07** | Internet Control Message Protocol (ICMP) | November 10, 2023 | [View](Assignments/Lab%207/Lab%207_%20ICMP-110107589.pdf) |
+| 8 | **Lab 08** | User Datagram Protocol (UDP) | November 14, 2023 | [View](Assignments/Lab%208/Lab%208_%20UDP-110107589.pdf) |
+| 9 | **Lab 09** | Transmission Control Protocol (TCP) | November 21, 2023 | [View](Assignments/Lab%209/Lab%209_%20TCP-110107589.pdf) |
+| 10 | **Lab 10** | Domain Name System (DNS) | November 30, 2023 | — |
+
+### Program Details
+
+<details>
+<summary><b>Lab 01: Introduction to Wireshark (2 Programs)</b></summary>
+
+| Program | Category | Description | Code |
+|:---|:---|:---|:---:|
+| <kbd>HTTP_Connectivity_Analyzer.py</kbd> | Protocol Analysis | HTTP GET request simulation and header analysis | [View](Assignments/Lab%201/HTTP_Connectivity_Analyzer.py) |
+| <kbd>TECHNICAL_ANALYSIS.txt</kbd> | Scholarly Documentation | Technical Q&A and header field dissection | [View](Assignments/Lab%201/TECHNICAL_ANALYSIS.txt) |
+
+**Resources**: [Lab Manual](Assignments/Lab%201/Lab%201_%20Introduction%20to%20Wireshark%20-%20Computer%20Networks%20-%20University%20of%20Windsor.pdf) · [Word Document](Assignments/Lab%201/Lab%201_%20Introduction%20to%20Wireshark%20%5BAmey-110107589%5D.docx?raw=true)
+
+</details>
+
+<details>
+<summary><b>Lab 02: Ethernet and ARP (2 Programs)</b></summary>
+
+| Program | Category | Description | Code |
+|:---|:---|:---|:---:|
+| <kbd>Ethernet_ARP_Analyzer.py</kbd> | Network Layer | Ethernet frame structure and ARP mapping simulation | [View](Assignments/Lab%202/Ethernet_ARP_Analyzer.py) |
+| <kbd>TECHNICAL_ANALYSIS.txt</kbd> | Scholarly Documentation | MAC addressing and ARP resolution analysis | [View](Assignments/Lab%202/TECHNICAL_ANALYSIS.txt) |
+
+**Resources**: [Lab Manual](Assignments/Lab%202/Lab%202_%20Ethernet%20and%20ARP%20-%20Computer%20Networks%20-%20University%20of%20Windsor.pdf) · [Word Document](Assignments/Lab%202/Lab%202_%20Ethernet%20and%20ARP%20%5BAmey-110107589%5D.docx?raw=true)
+
+</details>
+
+<details>
+<summary><b>Lab 03: Wireless Fidelity (Wi-Fi) (2 Programs)</b></summary>
+
+| Program | Category | Description | Code |
+|:---|:---|:---|:---:|
+| <kbd>WiFi_Protocol_Analyzer.py</kbd> | Wireless Networking | IEEE 802.11 frame and beaconing analysis | [View](Assignments/Lab%203/WiFi_Protocol_Analyzer.py) |
+| <kbd>TECHNICAL_ANALYSIS.txt</kbd> | Scholarly Documentation | SSIDs, BSSIDs, and wireless transport mechanics | [View](Assignments/Lab%203/TECHNICAL_ANALYSIS.txt) |
+
+**Resources**: [Lab Manual](Assignments/Lab%203/Lab%203_%20Wi-Fi%20-%20Computer%20Networks%20-%20University%20of%20Windsor.pdf) · [Word Document](Assignments/Lab%203/Lab%203_%20Wi-Fi%20%5BAmey-110107589%5D.docx?raw=true)
+
+</details>
+
+<details>
+<summary><b>Lab 04: DHCP Protocol Analysis (2 Programs)</b></summary>
+
+| Program | Category | Description | Code |
+|:---|:---|:---|:---:|
+| <kbd>DHCP_Protocol_Analyzer.py</kbd> | App/Transport Layer | DHCP DORA process and lease management simulation | [View](Assignments/Lab%204/DHCP_Protocol_Analyzer.py) |
+| <kbd>TECHNICAL_ANALYSIS.txt</kbd> | Scholarly Documentation | Analysis of DHCP discovery and IP allocation | [View](Assignments/Lab%204/TECHNICAL_ANALYSIS.txt) |
+
+**Resources**: [Lab Manual](Assignments/Lab%204/Lab%204_%20DHCP%20-%20Computer%20Networks%20-%20University%20of%20Windsor.pdf) · [Word Document](Assignments/Lab%204/Lab%204_%20DHCP-110107589.docx?raw=true)
+
+</details>
+
+<details>
+<summary><b>Lab 05: Network Address Translation (2 Programs)</b></summary>
+
+| Program | Category | Description | Code |
+|:---|:---|:---|:---:|
+| <kbd>NAT_Flow_Analyzer.py</kbd> | Network Layer | Translation of IP datagrams and port mapping | [View](Assignments/Lab%205/NAT_Flow_Analyzer.py) |
+| <kbd>TECHNICAL_ANALYSIS.txt</kbd> | Scholarly Documentation | NAT gateway operations and checksum recalculation | [View](Assignments/Lab%205/TECHNICAL_ANALYSIS.txt) |
+
+**Resources**: [Lab Manual](Assignments/Lab%205/Lab%205_%20NAT%20-%20Computer%20Networks%20-%20University%20of%20Windsor.pdf) · [Word Document](Assignments/Lab%205/Lab%205_%20NAT-110107589.docx?raw=true)
+
+</details>
+
+<details>
+<summary><b>Lab 06: Internet Protocol (IP) (2 Programs)</b></summary>
+
+| Program | Category | Description | Code |
+|:---|:---|:---|:---:|
+| <kbd>IP_Protocol_Analyzer.py</kbd> | Network Layer | IPv4 fragmentation and TTL lifecycle simulation | [View](Assignments/Lab%206/IP_Protocol_Analyzer.py) |
+| <kbd>TECHNICAL_ANALYSIS.txt</kbd> | Scholarly Documentation | Fragmentation offsets and MTU constraint analysis | [View](Assignments/Lab%206/TECHNICAL_ANALYSIS.txt) |
+
+**Resources**: [Lab Manual](Assignments/Lab%206/Lab%206_%20IP%20-%20Computer%20Networks%20-%20University%20of%20Windsor.pdf) · [Word Document](Assignments/Lab%206/Lab%206_%20IP-Amey-110107589.docx?raw=true)
+
+</details>
+
+<details>
+<summary><b>Lab 07: Internet Control Message Protocol (2 Programs)</b></summary>
+
+| Program | Category | Description | Code |
+|:---|:---|:---|:---:|
+| <kbd>ICMP_Protocol_Analyzer.py</kbd> | Network Diagnostics | Ping (Echo) and Traceroute (TTL Exceeded) simulation | [View](Assignments/Lab%207/ICMP_Protocol_Analyzer.py) |
+| <kbd>TECHNICAL_ANALYSIS.txt</kbd> | Scholarly Documentation | Diagnostic feedback and error reporting analysis | [View](Assignments/Lab%207/TECHNICAL_ANALYSIS.txt) |
+
+**Resources**: [Lab Manual](Assignments/Lab%207/Lab%207_%20ICMP%20-%20Computer%20Networks%20-%20University%20of%20Windsor.pdf) · [Word Document](Assignments/Lab%207/Lab%207_%20ICMP-110107589.docx?raw=true)
+
+</details>
+
+<details>
+<summary><b>Lab 08: User Datagram Protocol (2 Programs)</b></summary>
+
+| Program | Category | Description | Code |
+|:---|:---|:---|:---:|
+| <kbd>UDP_Protocol_Analyzer.py</kbd> | Transport Layer | Connectionless datagram flow and header analysis | [View](Assignments/Lab%208/UDP_Protocol_Analyzer.py) |
+| <kbd>TECHNICAL_ANALYSIS.txt</kbd> | Scholarly Documentation | Port symmetry and payload length evaluation | [View](Assignments/Lab%208/TECHNICAL_ANALYSIS.txt) |
+
+**Resources**: [Word Document](Assignments/Lab%208/Lab%208_%20UDP-110107589.docx?raw=true)
+
+</details>
+
+<details>
+<summary><b>Lab 09: Transmission Control Protocol (2 Programs)</b></summary>
+
+| Program | Category | Description | Code |
+|:---|:---|:---|:---:|
+| <kbd>TCP_Protocol_Analyzer.py</kbd> | Transport Layer | Three-way handshake and congestion control simulation | [View](Assignments/Lab%209/TCP_Protocol_Analyzer.py) |
+| <kbd>TECHNICAL_ANALYSIS.txt</kbd> | Scholarly Documentation | Reliability, ACK mechanics, and flow control analysis | [View](Assignments/Lab%209/TECHNICAL_ANALYSIS.txt) |
+
+**Resources**: [Word Document](Assignments/Lab%209/Lab%209_%20TCP-110107589.docx?raw=true)
+
+</details>
+
+<details>
+<summary><b>Lab 10: Domain Name System (2 Programs)</b></summary>
+
+| Program | Category | Description | Code |
+|:---|:---|:---|:---:|
+| <kbd>DNS_Protocol_Analyzer.py</kbd> | App/Transport Layer | nslookup simulation and hierarchical resolution | [View](Assignments/Lab%2010/DNS_Protocol_Analyzer.py) |
+| <kbd>TECHNICAL_ANALYSIS.txt</kbd> | Scholarly Documentation | Resolver hierarchy and DNS transport mechanics | [View](Assignments/Lab%2010/TECHNICAL_ANALYSIS.txt) |
+
+**Resources**: [Lab Manual](Assignments/Lab%2010/Lab%2010_%20DNS%20-%20Computer%20Networks%20-%20University%20of%20Windsor.pdf)
+
+</details>
 
 ---
 
