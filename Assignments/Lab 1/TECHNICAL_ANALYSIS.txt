@@ -1,0 +1,46 @@
+# LABORATORY TECHNICAL ANALYSIS: INTRODUCTION TO WIRESHARK
+# ===============================================================
+# Author: Amey Thakur
+# GitHub: [Amey-Thakur](https://github.com/Amey-Thakur)
+# Repository: [COMPUTER-NETWORKS](https://github.com/Amey-Thakur/COMPUTER-NETWORKS)
+# Session: Fall 2023
+# Release Date: September 19, 2023
+# Lab 01: Protocol Discovery and Traffic Capture
+# --------------------------------------------------------------
+
+INTRODUCTION:
+This foundational analysis introduces the Wireshark network protocol analyzer. We explore the capture of live traffic and the dissection of key protocols (HTTP, TCP, IP) to understand the layered architecture of modern data communications.
+
+----------------------------------------------------------------
+PART 1: PROTOCOL DISCOVERY
+----------------------------------------------------------------
+
+QUESTION 1: List 3 different protocols that appear in the protocol column in the unfiltered packet-listing window.
+- Protocols: TCP, HTTP, TLSv1.2 (or DNS/ARP depending on the capture environment).
+[EXPLANATION]: These protocols represent the Transport, Application, and Security layers respectively, illustrating the diversity of traffic moving across the interface.
+
+QUESTION 2: How long did it take from when the HTTP GET message was sent until the HTTP OK reply was received?
+- Captured Time Delta: ~0.0245 seconds (Variable based on network conditions).
+[EXPLANATION]: This value represents the Round-Trip Time (RTT) between the client and the gaia.cs.umass.edu server.
+
+QUESTION 3: What is the IP address of the gaia.cs.umass.edu server?
+- IP Address: 128.119.245.12
+[EXPLANATION]: This is the destination address that the DNS resolver provided to the browser for the UMass request.
+
+QUESTION 4: Print the HTTP GET message that was sent from your computer to the gaia.cs.umass.edu server.
+- Request Line: GET /wireshark-labs/INTRO-wireshark-file1.html HTTP/1.1
+- Host: gaia.cs.umass.edu
+[EXPLANATION]: The GET request is the primary application-layer method used to retrieve resources from a web server.
+
+----------------------------------------------------------------
+PART 2: LAYERED ARCHITECTURE INSIGHTS
+----------------------------------------------------------------
+
+QUESTION 5: Identify the status code returned by the server.
+- Status: 200 OK
+[EXPLANATION]: An HTTP 200 status indicates that the server has successfully found and returned the requested document.
+
+==============================================================
+TECHNICAL CONCLUSION:
+Lab 01 establishes the utility of packet sniffing for protocol analysis. By isolating the HTTP handshake, we gain visibility into the request-response cycle and the fundamental headers that govern web connectivity.
+==============================================================

@@ -71,12 +71,34 @@ class NetworkingArchive:
             print(f"| Relative to Preamble (-2 bytes): {total_offset - 2} bytes")
         print("-" * 50)
 
+    @staticmethod
+    def display_scholarly_responses():
+        """
+        Prints the specific findings from the Lab 02 report.
+        """
+        print("\n" + "="*75)
+        print("LABORATORY RESULTS: SCHOLARLY RESPONSES")
+        print("="*75)
+        responses = {
+            "Q1: Local MAC Address": NetworkingArchive.get_local_mac(),
+            "Q3: EtherType (IPv4)": "0x0800",
+            "Q4: Offset of 'G' in GET": "54 bytes",
+            "Q14: EtherType (ARP)": "0x0806",
+            "Q15: ARP Target MAC": "00:00:00:00:00:00 (Request)"
+        }
+        for q, a in responses.items():
+            print(f"{q:<30} : {a}")
+        print("="*75)
+
 def main():
     print("="*70)
     print("SCHOLARLY ANALYSIS: ETHERNET & ADDRESS RESOLUTION PROTOCOL (ARP)")
     print("="*70)
 
     analyzer = NetworkingArchive()
+
+    # 0. Scholarly Responses
+    analyzer.display_scholarly_responses()
 
     # 1. MAC Address Discovery
     local_mac = analyzer.get_local_mac()

@@ -68,12 +68,34 @@ class WiFiManagementArchive:
         print("3. BSSID: The identification of the wireless service set.")
         print("-"*60)
 
+    @staticmethod
+    def display_scholarly_responses():
+        """
+        Prints the specific findings from the Lab 03 report.
+        """
+        print("\n" + "="*75)
+        print("LABORATORY RESULTS: SCHOLARLY RESPONSES")
+        print("="*75)
+        responses = {
+            "Q1: Primary SSID": "30 Munroe St",
+            "Q1: Primary BSSID": "00:16:b6:f7:1d:51",
+            "Q2: Beacon Interval": "102.4 ms (0.1024s)",
+            "Q3: Max Data Rate": "54 Mbps",
+            "Q7: Triple-Addressing": "Receiver, Transmitter, BSSID"
+        }
+        for q, a in responses.items():
+            print(f"{q:<30} : {a}")
+        print("="*75)
+
 def main():
     print("="*70)
     print("SCHOLARLY ANALYSIS: IEEE 802.11 WIRELESS FIDELITY (WI-FI)")
     print("="*70)
 
     analyzer = WiFiManagementArchive()
+
+    # 0. Scholarly Responses
+    analyzer.display_scholarly_responses()
 
     # 1. Simulate Beaconing for the primary AP mentioned in the report
     analyzer.simulate_beacon_broadcast("30 Munroe St")

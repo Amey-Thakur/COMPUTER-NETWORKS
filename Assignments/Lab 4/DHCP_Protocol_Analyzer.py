@@ -75,12 +75,35 @@ class DHCPSystemArchive:
         print("specific allocation handshake.")
         print("-"*60)
 
+    @staticmethod
+    def display_scholarly_responses():
+        """
+        Prints the specific findings from the Lab 04 report.
+        """
+        print("\n" + "="*75)
+        print("LABORATORY RESULTS: SCHOLARLY RESPONSES")
+        print("="*75)
+        responses = {
+            "Q1: Transport Protocol": "UDP (Ports 67, 68)",
+            "Q2: Transaction ID (XID)": "0x74292ax",
+            "Q5: DHCP Server IP": "192.168.2.1",
+            "Q6: Offered Client IP": "192.168.2.95",
+            "Q7: Lease Time": "259200s (3 Days)"
+        }
+        for q, a in responses.items():
+            print(f"{q:<30} : {a}")
+        print("="*75)
+
 def main():
     print("="*70)
     print("SCHOLARLY ANALYSIS: DYNAMIC HOST CONFIGURATION PROTOCOL (DHCP)")
     print("="*70)
 
     archive = DHCPSystemArchive()
+
+    # 0. Scholarly Responses
+    analyzer = DHCPSystemArchive()
+    analyzer.display_scholarly_responses()
 
     # 1. Execute the DORA simulation
     archive.simulate_dora_process()

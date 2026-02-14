@@ -1,0 +1,49 @@
+# LABORATORY TECHNICAL ANALYSIS: WIRELESS FIDELITY (WI-FI)
+# ===============================================================
+# Author: Amey Thakur
+# GitHub: [Amey-Thakur](https://github.com/Amey-Thakur)
+# Repository: [COMPUTER-NETWORKS](https://github.com/Amey-Thakur/COMPUTER-NETWORKS)
+# Session: Fall 2023
+# Release Date: October 20, 2023
+# Lab 03: Analyzing 802.11 Wireless Structures
+# --------------------------------------------------------------
+
+INTRODUCTION:
+This analysis explores the IEEE 802.11 Link-Layer protocol, commonly known as Wi-Fi. We focus on management frames, specifically Beacons, and the complex addressing schemes required for wireless station association and multi-hop delivery in a Basic Service Set (BSS).
+
+----------------------------------------------------------------
+PART 1: BEACON FRAME ANALYSIS
+----------------------------------------------------------------
+
+QUESTION 1: What are the SSIDs and BSSIDs of the access points that are radiating most of the beacon frames?
+- SSIDs: "30 Munroe St", "linksys12".
+- BSSIDs: 00:16:b6:f7:1d:51 (30 Munroe).
+[EXPLANATION]: SSIDs are the human-readable names, while BSSIDs are the physical MAC addresses of the Access Points (APs) acting as the base stations.
+
+QUESTION 2: What is the interval of time between the transmissions of beacon frames for '30 Munroe'?
+- Interval: 0.1024 seconds (102.4 milliseconds).
+[EXPLANATION]: This is the standard Beacon Interval defined in the 802.11 specification, allowing clients to periodically synchronize with the AP.
+
+QUESTION 3: What are the data rates that the '30 Munroe' access point can support?
+- Basic Rates: 1, 2, 5.5, 11 Mbps.
+- Extended Rates: 6, 9, 12, 18, 24, 36, 48, 54 Mbps.
+[EXPLANATION]: These fields advertise the capabilities of the AP to potential clients during the association process.
+
+----------------------------------------------------------------
+PART 2: ADDRESSING & ASSOCIATION
+----------------------------------------------------------------
+
+QUESTION 7: Identify the addresses used in the first 802.11 frame.
+- Address 1 (Receiver): 00:16:b6:f7:1d:51 (The AP).
+- Address 2 (Transmitter): 00:13:02:d1:b6:4f (The Station).
+- Address 3 (BSSID): 00:16:b6:f7:1d:51.
+[EXPLANATION]: The triple-addressing scheme ensures that frames are correctly routed through the wireless medium to the specific AP managing the BSS.
+
+QUESTION 8: Is the MAC address of the final destination server contained in the wireless frame? 
+- Answer: No.
+[EXPLANATION]: Similar to Ethernet, the wireless frame only contains local hop addresses. The IP address (Layer 3) is used to reach the final destination across segments.
+
+==============================================================
+TECHNICAL CONCLUSION:
+Lab 03 reveals the inherent complexity of wireless links compared to wired Ethernet. The reliance on period Beaconing and triple-MAC addressing provides the necessary coordination for stations to maintain connectivity in a shared, mobile, and often noisy electromagnetic medium.
+==============================================================

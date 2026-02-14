@@ -1,0 +1,51 @@
+# LABORATORY TECHNICAL ANALYSIS: ETHERNET AND ARP
+# ===============================================================
+# Author: Amey Thakur
+# GitHub: [Amey-Thakur](https://github.com/Amey-Thakur)
+# Repository: [COMPUTER-NETWORKS](https://github.com/Amey-Thakur/COMPUTER-NETWORKS)
+# Session: Fall 2023
+# Release Date: October 06, 2023
+# Lab 02: Data Link Layer Structures & Address Resolution
+# --------------------------------------------------------------
+
+INTRODUCTION:
+This analysis focuses on the Layer 2 (Data Link) communications, specifically the structure of Ethernet frames and the operation of the Address Resolution Protocol (ARP). We examine how IP addresses are mapped to 48-bit MAC addresses for delivery within a local network segment.
+
+----------------------------------------------------------------
+PART 1: ETHERNET FRAME ANALYSIS
+----------------------------------------------------------------
+
+QUESTION 1: What is the 48-bit Ethernet address of your computer?
+- MAC Address: 1c:4d:70:a6:0b:49 (Variable per device).
+[EXPLANATION]: This globally unique identifier is burned into the Network Interface Card (NIC) and is used for frame delivery within the broadcast domain.
+
+QUESTION 2: What is the 48-bit destination address in the Ethernet frame? Is this the Ethernet address of gaia.cs.umass.edu?
+- Destination MAC: Address of the local gateway (e.g., 00:d0:59:be:88:01).
+- Is it gaia? No.
+[EXPLANATION]: Ethernet addresses are only valid on a local link. To reach a remote server, the frame is sent to the local router's MAC address, while the IP address remains that of the final destination.
+
+QUESTION 3: Give the hexadecimal value for the two-byte EtherType field. What does this signify?
+- EtherType: 0x0800
+- Significance: Indicates that the frame contains an IPv4 datagram.
+
+QUESTION 4: How many bytes from its beginning of the Ethernet frame does the ASCII “G” in “GET” appear?
+- Offset: 54 bytes (14 Ethernet + 20 IP + 20 TCP).
+[EXPLANATION]: This demonstrates the precise layering of protocols: Ethernet Header (14) + IP Header (20) + TCP Header (20) precedes the application-level GET request.
+
+----------------------------------------------------------------
+PART 2: ADDRESS RESOLUTION PROTOCOL (ARP)
+----------------------------------------------------------------
+
+QUESTION 14: What is the value of the EtherType field in an ARP packet?
+- EtherType: 0x0806
+[EXPLANATION]: This informs the receiving host that the payload should be passed to the ARP software module rather than the IP module.
+
+QUESTION 15: Does the ARP request contain the IP of the target? Does it contain the MAC?
+- Target IP: Yes (Included in the ARP payload).
+- Target MAC: No (Set to 00:00:00:00:00:00).
+[EXPLANATION]: The purpose of the ARP Request is to "find" the MAC address corresponding to a known IP.
+
+==============================================================
+TECHNICAL CONCLUSION:
+Lab 02 illuminates the relationship between Layer 2 and Layer 3. The use of ARP is essential for bridging logical IP topology with physical Ethernet delivery, ensuring that packets correctly navigate the final hop to their intended network interface.
+==============================================================
