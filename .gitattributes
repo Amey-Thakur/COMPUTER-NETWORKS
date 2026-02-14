@@ -1,0 +1,31 @@
+# Computer Networks - Academic Repository
+# Professional .gitattributes for Network Engineering scholarly archiving
+
+# Set default behavior to automatically normalize line endings
+* text=auto
+
+# Ensure text files use LF on checkout
+*.md text eol=lf
+*.txt text eol=lf
+*.cff text eol=lf
+LICENSE text eol=lf
+SECURITY.md text eol=lf
+
+# Explicitly mark binary files to prevent corruption and optimize diffs
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.pdf binary
+*.ico binary
+
+# Network Engineering Specific Formats
+*.pcap binary
+*.pcapng binary
+*.pkt binary
+*.docx binary
+*.doc binary
+*.zip binary
+
+# Improve diff handling for specialized formats
+*.md text diff=markdown

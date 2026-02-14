@@ -1,0 +1,31 @@
+# Computer Networks - Academic Repository
+# Specialized .gitignore for Network Engineering scholarly archiving
+
+# OS-generated files
+[Tt]humbs.db
+[Dd]esktop.ini
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Editor and IDE configuration
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Temporary and Cache files
+*.tmp
+*.log
+.cache/
+
+# Word Processing / Document artifacts
+~$*
+*.bak
+*.sav
+*.old
+
+# Network Simulation / Wireshark temporary files
+*.pcapng.tmp
+*.pcap.tmp
