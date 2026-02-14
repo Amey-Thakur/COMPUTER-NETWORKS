@@ -44,10 +44,18 @@ This document provides comprehensive, step-by-step solutions to the **"IP and Su
 ## Question 1: Change the following IP addresses from dotted-decimal notation to binary notation.
 
 ### Detailed Step-by-Step Analysis
+
+> [!NOTE]
+> **Mathematical Principle: Positional Notation**
+> IPv4 addresses use a **base-2 (binary)** system where each position represents a power of 2. An 8-bit octet is calculated as:
+> $$ \sum_{i=0}^{7} d_i \times 2^i $$
+> Where $d_i$ is the bit value (0 or 1) at position $i$.
+
 To convert a decimal octet (0-255) to an 8-bit binary segment, we decompose the number into sums of powers of 2.
 
-| Power of 2 | 128 | 64 | 32 | 16 | 8 | 4 | 2 | 1 |
+| **Bit Position** | **7** | **6** | **5** | **4** | **3** | **2** | **1** | **0** |
 | :--- | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: |
+| **Power of 2** | **128** | **64** | **32** | **16** | **8** | **4** | **2** | **1** |
 
 #### A. 114.34.2.8
 *   **114** = 64 + 32 + 16 + 2 → `01110010`
@@ -131,12 +139,12 @@ Sum the values of the active bits (where the bit is `1`).
 ### Detailed Analysis
 The class is determined by the specific range of the first octet.
 
-| Class | Range | Leading Bits |
-| :---: | :---: | :--- |
-| **A** | 0 - 127 | `0...` |
-| **B** | 128 - 191 | `10...` |
-| **C** | 192 - 223 | `110...` |
-| **D** | 224 - 239 | `1110...` |
+| Class | Range | Leading Bits | Bit Logic |
+| :---: | :---: | :--- | :--- |
+| **A** | 0 - 127 | `0...` | `00000000` to `01111111` |
+| **B** | 128 - 191 | `10...` | `10000000` to `10111111` |
+| **C** | 192 - 223 | `110...` | `11000000` to `11011111` |
+| **D** | 224 - 239 | `1110...` | `11100000` to `11101111` |
 
 **A. 208.34.54.12** → 208 is in 192-223 → **Class C**
 **B. 238.34.2.1** → 238 is in 224-239 → **Class D** (Multicast)
@@ -153,6 +161,12 @@ The class is determined by the specific range of the first octet.
 
 ### Detailed Analysis
 Count the contiguous "1" bits.
+
+#### Quick Reference Strategy
+| Mask | /8 | /16 | /24 | /32 |
+| :--- | :---: | :---: | :---: | :---: |
+| **Decimal** | 255.0.0.0 | 255.255.0.0 | 255.255.255.0 | 255.255.255.255 |
+| **Role** | Class A | Class B | Class C | Host Route |
 
 **A. 255.255.255.0**
 `11111111.11111111.11111111.00000000` → 8+8+8 = **/24**
@@ -209,7 +223,14 @@ Formula: `Block Size = 2^(32 - Prefix)`
 3.  **Borrowing**: 2^s ≥ 32 → `s = 5` bits.
 4.  **New Prefix**: /24 + 5 = **/29**
 
-| Parameter | Calculation | Result |
+#### Binary Visualization of Borrowing
+The following table visualizes how the subnet mask extends into the host portion.
+
+| Segment | Binary Pattern | Decimal | Note |
+| :--- | :--- | :--- | :--- |
+| **Original Mask (/24)** | `11111111.11111111.11111111.00000000` | 255.255.255.0 | Default Class C |
+| **Borrowed Bits (5)** | `........................11111...` | | 5 bits borrowed |
+| **New Mask (/29)** | `11111111.11111111.11111111.11111000` | **255.255.255.248** | Target Subnet Mask |
 | :--- | :--- | :--- |
 | **New Mask** | /29 (11111000) | **255.255.255.248** |
 | **Block Size** | 2^(32-29) = 2^3 | **8** addresses |
@@ -235,6 +256,17 @@ Formula: `Block Size = 2^(32 - Prefix)`
 **Given**: `M=0`, `HLEN=5`, `Total Length=200`, `Offset=200`.
 
 ### Analysis
+
+#### Relevant IP Header Fields
+Visualizing the placement of the given values:
+
+| Field | Value (Decimal) | Function |
+| :--- | :--- | :--- |
+| **Total Length** | **200** | Entire packet size (Header + Data) |
+| **Identification** | [Unchanged] | Unique ID for reassembly |
+| **Flags (M)** | **0** | `More Fragment` bit is OFF (Last Fragment) |
+| **Fragment Offset** | **200** | Position of this fragment / 8 |
+
 1.  **Offset Calculation**:
     The offset field is in 8-byte units.
     `True Offset = 200 * 8 = 1600 bytes`
@@ -287,21 +319,18 @@ Formula: `Block Size = 2^(32 - Prefix)`
 ### Allocation Strategy (Largest First)
 We must allocate larger blocks first to avoid fragmentation.
 
-1.  **Group A (500 hosts)** → Needs **/23** (512 IPs)
-    *   **Org 1**: `80.70.56.0/23`
-    *   **Org 2**: `80.70.58.0/23`
-    *   *Next Available: 80.70.60.0*
-
-2.  **Group B (250 hosts)** → Needs **/24** (256 IPs)
-    *   **Org 3**: `80.70.60.0/24`
-    *   **Org 4**: `80.70.61.0/24`
-    *   *Next Available: 80.70.62.0*
-
-3.  **Group C (50 hosts)** → Needs **/26** (64 IPs)
-    *   **Org 5**: `80.70.62.0/26`
-    *   **Org 6**: `80.70.62.64/26`
-    *   **Org 7**: `80.70.62.128/26`
-    *   *Next Available: 80.70.62.192*
+| Group | Org | Requirement | Allocated Block | Range | Broadcast Address |
+| :---: | :---: | :--- | :--- | :--- | :--- |
+| **A** | 1 | 500 Hosts | **80.70.56.0/23** | .56.0 - .57.255 | 80.70.57.255 |
+| **A** | 2 | 500 Hosts | **80.70.58.0/23** | .58.0 - .59.255 | 80.70.59.255 |
+| | | | *Next Available* | *80.70.60.0* | |
+| **B** | 3 | 250 Hosts | **80.70.60.0/24** | .60.0 - .60.255 | 80.70.60.255 |
+| **B** | 4 | 250 Hosts | **80.70.61.0/24** | .61.0 - .61.255 | 80.70.61.255 |
+| | | | *Next Available* | *80.70.62.0* | |
+| **C** | 5 | 50 Hosts | **80.70.62.0/26** | .62.0 - .62.63 | 80.70.62.63 |
+| **C** | 6 | 50 Hosts | **80.70.62.64/26** | .62.64 - .62.127 | 80.70.62.127 |
+| **C** | 7 | 50 Hosts | **80.70.62.128/26** | .62.128 - .62.191 | 80.70.62.191 |
+| | | | *Unallocated* | *80.70.62.192* | |
 
 > [!WARNING]
 > **VLSM Rule**
@@ -321,6 +350,13 @@ We must allocate larger blocks first to avoid fragmentation.
 *   **E. TTL**: `20` (Hex) → **32 Hops**.
 *   **F. Protocol**: `06` (Hex) → **TCP**.
 
+#### Common Protocol Numbers
+| Decimal | Hex | Protocol |
+| :---: | :---: | :--- |
+| **1** | `01` | **ICMP** (Ping) |
+| **6** | `06` | **TCP** (Reliable) |
+| **17** | `11` | **UDP** (Fast) |
+
 ---
 
 ## Question 11: Route Aggregation (High-Level Supernetting)
@@ -339,21 +375,33 @@ We must allocate larger blocks first to avoid fragmentation.
 
 **Final Result**: `16.27.24.0/24`
 
+### Binary Alignment Visualization
+Aggregating routes requires finding the common high-order bits.
+
+| Route | Binary Pattern (Third Octet) |
+| :--- | :--- |
+| **.0/26** | `000110`**`00`** |
+| **.64/26** | `000110`**`00`** |
+| **.128/25** | `000110`**`00`** |
+| **Result (/24)** | **`00011000`** (Matches first 24 bits) |
+
 ---
 
 ## Question 12: Routing Table Lookup (Longest Prefix Match)
 
 **Destination**: `142.150.71.132`
 
-### Route Matching
-| Candidate | Range | Match? |
-| :--- | :--- | :---: |
-| A. `142.150.64.0/20` | .64.0 - .79.255 | **Yes** |
-| B. `142.150.71.128/28` | .71.128 - .71.143 | **Yes** |
-| C. `142.150.0.0/16` | .0.0 - .255.255 | **Yes** |
-| D. `142.150.71.128/30` | .71.128 - .71.131 | No (132 > 131) |
+### Binary Prefix Matching Proof
+**Destination**: `142.150.71.132` → `10001110.10010110.01000111.10000100`
 
-**Decision**: The longest prefix is **/28** (Candidate B).
+| Route | Prefix | Destination (Relevant Octet) | Route Prefix (Relevant Octet) | Match? | Length |
+| :--- | :--- | :--- | :--- | :---: | :---: |
+| **A** | /20 | `...0100 0111...` | `...0100 0000...` | **Yes** | 20 bits |
+| **B** | /28 | `...01000111.1000...` | `...01000111.1000...` | **Yes** | **28 bits** |
+| **C** | /16 | `...01000111...` | `... (Wildcard) ...` | **Yes** | 16 bits |
+| **D** | /30 | `...10000100` | `...100000XX` | No | - |
+
+**Decision**: The longest matching prefix is **/28** (Candidate B).
 **Next Hop**: Interface B.
 
 > [!IMPORTANT]
