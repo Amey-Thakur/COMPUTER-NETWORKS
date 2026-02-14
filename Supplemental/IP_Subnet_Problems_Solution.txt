@@ -1,0 +1,282 @@
+IP and Subnet Practice Problems - Detailed Solutions
+
+File Name: IP_Subnet_Problems_Solution.txt
+Course Repository: COMPUTER-NETWORKS (https://github.com/Amey-Thakur/COMPUTER-NETWORKS)
+Release Date: December 06, 2023
+License: Creative Commons Attribution 4.0 International (CC BY 4.0)
+
+Author: Amey Thakur (https://github.com/Amey-Thakur)
+
+Description:
+This document provides comprehensive, step-by-step solutions to the "IP and Subnet Practice Problems" supplementary material. It covers IPv4 addressing, subnetting logic, VLSM (Variable Length Subnet Masking), IP datagram analysis, fragmentation, and routing table lookups.
+
+================================================================================
+Table of Contents
+1. Binary to Dotted-Decimal Conversion
+2. Dotted-Decimal to Binary Conversion
+3. IP Class Identification
+4. CIDR Slash Notation
+5. Address Block Ranges
+6. Subnetting Design (Fixed Length)
+7. IP Datagram Analysis & Fragmentation
+8. ISP Block Distribution (Subnetting)
+9. Variable Length Subnet Masking (VLSM)
+10. Hex Dump Header Analysis
+11. Route Aggregation (Supernetting)
+12. Routing Table Lookup (Longest Prefix Match)
+13. IPv6 Address Compression
+================================================================================
+
+Question 1: Change the following IP addresses from dotted-decimal notation to binary notation.
+
+Detailed Step-by-Step Analysis
+
+[NOTE] Mathematical Principle: Positional Notation
+IPv4 addresses use a base-2 (binary) system where each position represents a power of 2. An 8-bit octet is calculated as the sum of (bit_value * 2^position).
+
+To convert a decimal octet (0-255) to an 8-bit binary segment, we decompose the number into sums of powers of 2.
+
+Bit Position: | 7   | 6  | 5  | 4  | 3 | 2 | 1 | 0 |
+Power of 2:   | 128 | 64 | 32 | 16 | 8 | 4 | 2 | 1 |
+
+A. 114.34.2.8
+   114 = 64 + 32 + 16 + 2 -> 01110010
+   34 = 32 + 2 -> 00100010
+   2 = 2 -> 00000010
+   8 = 8 -> 00001000
+   Result: 01110010.00100010.00000010.00001000
+
+B. 129.14.6.8
+   129 = 128 + 1 -> 10000001
+   14 = 8 + 4 + 2 -> 00001110
+   6 = 4 + 2 -> 00000110
+   8 = 8 -> 00001000
+   Result: 10000001.00001110.00000110.00001000
+
+C. 208.34.54.12
+   Result: 11010000.00100010.00110110.00001100
+
+D. 238.34.2.1
+   Result: 11101110.00100010.00000010.00000001
+
+[TIP] Memorization Strategy
+Memorizing the "impostor" values like 128, 192, 224, 240, 248, 252, 254, 255 is crucial for subnetting.
+
+================================================================================
+
+Question 2: Change the following IP addresses from binary notation to dotted-decimal notation.
+
+Detailed Step-by-Step Analysis
+Sum the values of the active bits (where the bit is 1).
+
+A. 01111111.11110000.01100111.01111101
+   01111111 -> 127
+   11110000 -> 240
+   01100111 -> 103
+   01111101 -> 125
+   Result: 127.240.103.125
+
+B. 10101111.11000000.11111000.00011101
+   Result: 175.192.248.29
+
+C. 11011111.10110000.00011111.01011101
+   Result: 223.176.31.93
+
+D. 11101111.11110111.11000111.00011101
+   Result: 239.247.199.29
+
+[TIP] Calculation Shortcut
+When converting high-density binary numbers, subtract the value of the '0' positions from 255.
+
+================================================================================
+
+Question 3: Find the class of the following IP addresses.
+
+Class | Range     | Leading Bits | Bit Logic
+A     | 0 - 127   | 0...         | 00000000 to 01111111
+B     | 128 - 191 | 10...        | 10000000 to 10111111
+C     | 192 - 223 | 110...       | 11000000 to 11011111
+D     | 224 - 239 | 1110...      | 11100000 to 11101111
+
+A. 208.34.54.12 -> Class C
+B. 238.34.2.1 -> Class D (Multicast)
+C. 114.34.2.8 -> Class A
+D. 129.14.6.8 -> Class B
+
+[NOTE] Legacy Context
+While Classful addressing is technically obsolete due to CIDR, understanding it is essential for legacy systems.
+
+================================================================================
+
+Question 4: Write the following masks in slash notation (/n).
+
+Quick Reference Strategy:
+Mask  | /8        | /16         | /24           | /32
+Decimal | 255.0.0.0 | 255.255.0.0 | 255.255.255.0 | 255.255.255.255
+Role  | Class A   | Class B     | Class C       | Host Route
+
+A. 255.255.255.0 -> /24
+B. 255.0.0.0 -> /8
+C. 255.255.224.0 -> /19
+D. 255.255.240.0 -> /20
+
+[IMPORTANT] Subnetting Mechanics
+Every extra bit in the CIDR prefix doubles the number of subnets and halves the hosts per subnet.
+
+================================================================================
+
+Question 5: Find the range of addresses in the following blocks.
+
+Formula: Block Size = 2^(32 - Prefix)
+
+A. 123.56.77.32/29
+   Block Size: 8
+   Range: 123.56.77.32 to 123.56.77.39
+
+B. 200.17.21.128/27
+   Block Size: 32
+   Range: 200.17.21.128 to 200.17.21.159
+
+C. 17.34.16.0/23
+   Block Size: 512
+   Range: 17.34.16.0 to 17.34.17.255
+
+D. 180.34.64.64/30
+   Block Size: 4
+   Range: 180.34.64.64 to 180.34.64.67
+
+[NOTE] Industry Standard
+The /30 subnet is famously used for Point-to-Point router links.
+
+================================================================================
+
+Question 6: An organization is granted the block 211.17.180.0/24. Create 32 subnets.
+
+Subnetting Design:
+1. Current Prefix: /24
+2. Subnets Needed: 32
+3. Borrowing: 2^s >= 32 -> s = 5 bits.
+4. New Prefix: /24 + 5 = /29
+
+Binary Visualization:
+Segment         | Binary Pattern                       | Decimal
+Original (/24)  | 11111111.11111111.11111111.00000000  | 255.255.255.0
+Borrowed (5)    | ........................11111...     |
+New Mask (/29)  | 11111111.11111111.11111111.11111000  | 255.255.255.248
+
+Calculation:
+Block Size: 2^(32-29) = 8 addresses
+Usable IPs: 6 hosts/subnet
+
+Subnet 1: 211.17.180.0 to 211.17.180.7
+...
+Subnet 32: 211.17.180.248 to 211.17.180.255
+
+[TIP] Boundary Check
+Always verify the last subnet ends at the parent block's boundary (.255).
+
+================================================================================
+
+Question 7: IPv4 Datagram Analysis
+Given: M=0, HLEN=5, Total Length=200, Offset=200.
+
+Analysis:
+1. Offset Calculation: 200 * 8 = 1600 bytes (First Byte Number)
+2. Payload Calculation: Total(200) - Header(20) = 180 bytes
+3. Last Byte Calculation: 1600 + 180 - 1 = 1779
+4. Fragment Type: Offset > 0, M=0 -> Last Fragment
+
+================================================================================
+
+Question 8: ISP Block Distribution
+
+ISP Block: 16.12.64.0/20 (4096 Addresses)
+Requirement: 8 subblocks of 256 addresses each (/24).
+
+Org 1: 16.12.64.0/24
+Org 2: 16.12.65.0/24
+...
+Org 8: 16.12.71.0/24
+
+Unallocated: 16.12.72.0 to 16.12.79.255
+
+================================================================================
+
+Question 9: Variable Length Subnet Masking (VLSM)
+Block: 80.70.56.0/21
+
+Allocation Strategy (Largest First):
+Group A (500 hosts) -> /23
+- Org 1: 80.70.56.0/23
+- Org 2: 80.70.58.0/23
+
+Group B (250 hosts) -> /24
+- Org 3: 80.70.60.0/24
+- Org 4: 80.70.61.0/24
+
+Group C (50 hosts) -> /26
+- Org 5: 80.70.62.0/26
+- Org 6: 80.70.62.64/26
+- Org 7: 80.70.62.128/26
+
+[WARNING] VLSM Rule
+The "Largest First" rule is mandatory to prevent fragmentation.
+
+================================================================================
+
+Question 10: Hex Dump Analysis
+
+Hex: 45 00 00 54 ...
+A. Header Size: 4 (IPv4), 5 (words) -> 20 bytes
+B. Options: None
+C. Data Size: 84 - 20 = 64 bytes
+D. Fragmentation: Not Fragmented
+E. TTL: 20 (Hex) -> 32 Hops
+F. Protocol: 06 (Hex) -> TCP
+
+Protocol Numbers: 1=ICMP, 6=TCP, 17=UDP
+
+================================================================================
+
+Question 11: Route Aggregation (Supernetting)
+
+Routes: .0/26, .64/26, .128/25
+Combine 1 & 2 -> .0/25
+Combine .0/25 & 3 -> .0/24
+
+Final Result: 16.27.24.0/24
+
+Binary Alignment: All routes share the binary prefix pattern `00011000` in the third octet.
+
+================================================================================
+
+Question 12: Routing Table Lookup (Longest Prefix Match)
+Destination: 142.150.71.132
+
+Route Matching:
+A (/20): Match (20 bits)
+B (/28): Match (28 bits) -> WINNER
+C (/16): Match (16 bits)
+D (/30): No Match
+
+Decision: Interface B (Longest Prefix /28)
+
+[IMPORTANT] Routing Logic
+Longest Prefix Match enables specific routes to override general default paths.
+
+================================================================================
+
+Question 13: IPv6 Compression
+
+Rules: Drop leading zeros, replace consecutive zero blocks with :: (once).
+
+A. 2340:1ABC:119A:A000::
+B. 0:AA::119A:A231
+C. 2340::119A:A001:0
+D. ::2340:0:0:0:0
+
+[CAUTION] Critical Error
+Ambiguity is fatal. :: can appear only once.
+
+================================================================================
+End of Document

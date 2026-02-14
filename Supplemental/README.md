@@ -1,7 +1,7 @@
 # IP and Subnet Practice Problems - Detailed Solutions
 
 
-> - **File Name**: `IP_Subnet_Problems_Solution.md`
+> - **File Name**: `README.md`
 > - **Course Repository**: [COMPUTER-NETWORKS](https://github.com/Amey-Thakur/COMPUTER-NETWORKS)
 > - **Release Date**: December 06, 2023
 > - **License**: [Creative Commons Attribution 4.0 International (CC BY 4.0)](https://creativecommons.org/licenses/by/4.0/)
