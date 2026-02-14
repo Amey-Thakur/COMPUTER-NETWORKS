@@ -24,7 +24,7 @@
   ---
 
   <!-- Navigation Links -->
-  [Overview](#overview) &nbsp;·&nbsp; [Contents](#repository-contents) &nbsp;·&nbsp; [Reference Books](#reference-books) &nbsp;·&nbsp; [Personal Preparation](#personal-preparation) &nbsp;·&nbsp; [Lecture Notes](#lecture-notes) &nbsp;·&nbsp; [Assignments](#assignments) &nbsp;·&nbsp; [Supplemental](#supplemental) &nbsp;·&nbsp; [Syllabus](#syllabus) &nbsp;·&nbsp; [Usage Guidelines](#usage-guidelines) &nbsp;·&nbsp; [License](#license) &nbsp;·&nbsp; [About](#about-this-repository) &nbsp;·&nbsp; [Acknowledgements](#acknowledgements)
+  [Overview](#overview) &nbsp;·&nbsp; [Contents](#repository-contents) &nbsp;·&nbsp; [Reference Books](#reference-books) &nbsp;·&nbsp; [Personal Preparation](#personal-preparation) &nbsp;·&nbsp; [Lecture Notes](#lecture-notes) &nbsp;·&nbsp; [Laboratory](#computer-network-laboratory) &nbsp;·&nbsp; [Supplemental](#supplemental) &nbsp;·&nbsp; [Syllabus](#syllabus) &nbsp;·&nbsp; [Usage Guidelines](#usage-guidelines) &nbsp;·&nbsp; [License](#license) &nbsp;·&nbsp; [About](#about-this-repository) &nbsp;·&nbsp; [Acknowledgements](#acknowledgements)
 
 </div>
 
@@ -99,6 +99,9 @@ A granular record of 10 laboratory reports documenting protocol analysis and net
   [![Status](https://img.shields.io/badge/Status-Complete-brightgreen.svg)](Assignments/)
 
 </div>
+
+> [!NOTE]
+> **Academic Structure**: The laboratory reports compiled in this section serve as the primary assignments for the Computer Networks course. Each report represents a synthetic integration of theoretical principles and practical observation, documenting the analytical journey through the networking stack.
 
 > [!TIP]
 > **Technical Analysis**: For a detailed scholarly dissection of each protocol, expand the **Program Details** dropdowns below. These sections contain links to the source code simulators, technical specifications, manuals, and downloadable Word documents for each laboratory session.
@@ -357,7 +360,7 @@ Special thanks to the **mentors** and **peers** whose encouragement, discussions
   <!-- Footer Navigation -->
   [↑ Back to Top](#computer-networks)
 
-  [Overview](#overview) &nbsp;·&nbsp; [Contents](#repository-contents) &nbsp;·&nbsp; [Reference Books](#reference-books) &nbsp;·&nbsp; [Personal Preparation](#personal-preparation) &nbsp;·&nbsp; [Lecture Notes](#lecture-notes) &nbsp;·&nbsp; [Assignments](#assignments) &nbsp;·&nbsp; [Supplemental](#supplemental) &nbsp;·&nbsp; [Syllabus](#syllabus) &nbsp;·&nbsp; [Usage Guidelines](#usage-guidelines) &nbsp;·&nbsp; [License](#license) &nbsp;·&nbsp; [About](#about-this-repository) &nbsp;·&nbsp; [Acknowledgements](#acknowledgements)
+  [Overview](#overview) &nbsp;·&nbsp; [Contents](#repository-contents) &nbsp;·&nbsp; [Reference Books](#reference-books) &nbsp;·&nbsp; [Personal Preparation](#personal-preparation) &nbsp;·&nbsp; [Lecture Notes](#lecture-notes) &nbsp;·&nbsp; [Laboratory](#computer-network-laboratory) &nbsp;·&nbsp; [Supplemental](#supplemental) &nbsp;·&nbsp; [Syllabus](#syllabus) &nbsp;·&nbsp; [Usage Guidelines](#usage-guidelines) &nbsp;·&nbsp; [License](#license) &nbsp;·&nbsp; [About](#about-this-repository) &nbsp;·&nbsp; [Acknowledgements](#acknowledgements)
 
 </div>
 
