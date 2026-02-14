@@ -385,7 +385,7 @@ We must allocate larger blocks first to avoid fragmentation.
 ---
 <div align="center">
 
-[**↑ Back to Top**](#ip-and-subnet-practice-problems---detailed-solutions) &nbsp;&nbsp;|&nbsp;&nbsp; [**← Back to COMPUTER-NETWORKS**](https://github.com/Amey-Thakur/COMPUTER-NETWORKS)
+[**↑ Back to Top**](#ip-and-subnet-practice-problems---detailed-solutions) &nbsp;&nbsp;|&nbsp;&nbsp; [**← Back to Computer Networks**](https://github.com/Amey-Thakur/COMPUTER-NETWORKS)
 
 </div>
 
