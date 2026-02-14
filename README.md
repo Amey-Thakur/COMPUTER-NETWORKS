@@ -210,7 +210,7 @@ This repository represents a comprehensive collection of study materials, refere
 ### Acknowledgements
 Grateful acknowledgment to **Dr. Ahmed Hamdi Sakr** for his exceptional instruction in Computer Networks, which played an important role in shaping my understanding of the subject. His clear and disciplined approach, along with his thorough explanation of network architectures and protocol analysis, made the subject both accessible and engaging. His dedication to academic excellence in the field of networking is gratefully acknowledged.
 
-Grateful acknowledgment to the **Graduate Assistants (GAs)**, including **Ashab Uddin**, **Md Shakil Ahamed Shohag**, **Kimia Gholizadeh**, and **Arjit Malik**, for their collaborative excellence and support throughout the semester. Their contributions in conducting labs and providing technical guidance were fundamental to achieving our academic goals.
+Grateful acknowledgment to the **Graduate Assistants (GAs)** for their collaborative excellence and support throughout the semester. Their contributions in conducting labs and providing technical guidance were fundamental to achieving our academic goals.
 
 Grateful acknowledgment to **Jason Horn**, **[Writing Support Desk](https://github.com/Amey-Thakur/WRITING-SUPPORT)**, **University of Windsor**, for his distinguished mentorship and scholarly guidance. His thoughtful feedback and methodological precision were instrumental in strengthening the analytical depth and professional quality of my academic work. His commitment to excellence and integrity is gratefully acknowledged.
 
