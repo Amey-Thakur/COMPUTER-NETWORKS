@@ -1,8 +1,12 @@
+# IP and Subnet Practice Problems - Detailed Solutions
+
 <div align="center">
 
-| **Author** | **ORCID** |
-| :---: | :---: |
-| <img src="https://avatars.githubusercontent.com/Amey-Thakur" width="110"/> | [![ORCID](https://img.shields.io/badge/ORCID-0000--0001--5644--1575-green.svg)](https://orcid.org/0000-0001-5644-1575) |
+| **Author** |
+| :---: |
+| <img src="https://avatars.githubusercontent.com/Amey-Thakur" width="110"/> |
+
+[![ORCID](https://img.shields.io/badge/ORCID-0000--0001--5644--1575-green.svg)](https://orcid.org/0000-0001-5644-1575)
 
 </div>
 
