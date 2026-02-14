@@ -92,7 +92,7 @@ Academic roadmap and administrative records for the Fall 2023 session:
 ### Assignments
 A granular record of 10 laboratory reports documenting protocol analysis and network configuration using Wireshark and other simulation tools.
 
-| # | Lab | Topic | Date | Manual | Source Code | Report | Archive |
+| # | Lab | Topic | Date | Manual | Source Code | Report | Word Report |
 | :-: | :-: | :--- | :---: | :---: | :---: | :---: | :---: |
 | 1 | **Lab 01** | Introduction to Wireshark | Sep 19, 2023 | [View](Assignments/Lab%201/Lab%201_%20Introduction%20to%20Wireshark%20-%20Computer%20Networks%20-%20University%20of%20Windsor.pdf) | [View](Assignments/Lab%201/HTTP_Connectivity_Analyzer.py) | [View](Assignments/Lab%201/Lab%201_%20Introduction%20to%20Wireshark%20%5BAmey-110107589%5D-328776.pdf) | [Download](Assignments/Lab%201/Lab%201_%20Introduction%20to%20Wireshark%20%5BAmey-110107589%5D.docx?raw=true) |
 | 2 | **Lab 02** | Ethernet and ARP | - | [View](Assignments/Lab%202/Lab%202_%20Ethernet%20and%20ARP%20-%20Computer%20Networks%20-%20University%20of%20Windsor.pdf) | - | [View](Assignments/Lab%202/Lab%202_%20Ethernet%20and%20ARP%20%5BAmey-110107589%5D-381246.pdf) | [Download](Assignments/Lab%202/Lab%202_%20Ethernet%20and%20ARP%20%5BAmey-110107589%5D.docx?raw=true) |
