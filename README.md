@@ -89,7 +89,7 @@ Academic roadmap and administrative records for the Fall 2023 session:
 
 ---
 
-### Assignments
+## Computer Network Laboratory
 A granular record of 10 laboratory reports documenting protocol analysis and network configuration using Wireshark and other simulation tools.
 
 <div align="center">
