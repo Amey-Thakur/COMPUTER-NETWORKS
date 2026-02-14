@@ -1,0 +1,63 @@
+# LABORATORY TECHNICAL ANALYSIS: INTERNET CONTROL MESSAGE PROTOCOL (ICMP)
+# ===============================================================
+# Author: Amey Thakur
+# GitHub: [Amey-Thakur](https://github.com/Amey-Thakur)
+# Repository: [COMPUTER-NETWORKS](https://github.com/Amey-Thakur/COMPUTER-NETWORKS)
+# Session: Fall 2023
+# Release Date: November 10, 2023
+# Lab 07: Analyzing ICMP Diagnostics & Traceroute Errors
+# --------------------------------------------------------------
+
+INTRODUCTION:
+This technical analysis dissects the Internet Control Message Protocol (ICMP). We investigate the mechanisms used for reachability testing (Ping) and path discovery (Traceroute), focusing on how ICMP provides critical feedback and diagnostic information across the IP network.
+
+----------------------------------------------------------------
+PART 1: ICMP AND PING ANALYSIS
+----------------------------------------------------------------
+
+QUESTION 1: What is the IP address of your host? What is the IP address of the destination host?
+- Host IP Address: 192.168.2.20
+- Destination IP Address: 142.251.41.36 (google.com)
+[EXPLANATION]: These represent the sender and target of the ICMP Echo Request/Reply cycle.
+
+QUESTION 2: Examine one of the ping request packets sent by your host. What are the ICMP type and code numbers? What other fields does this ICMP packet have?
+- ICMP Type/Code: Type 8, Code 0 (Echo Request).
+- Header Fields: Checksum, Identifier (BE/LE), and Sequence Number (BE/LE).
+- Field Sizes: Both Identifier and Sequence Number fields are 2 bytes (16-bit) in size.
+[EXPLANATION]: The Type 8 identifier signals to the destination that an automated response (Type 0) is expected.
+
+QUESTION 3: Examine the corresponding ping reply packet. What are the ICMP type and code numbers? What other fields does this ICMP packet have?
+- ICMP Type/Code: Type 0, Code 0 (Echo Reply).
+- Header Fields: Matches the request (Checksum, Identifier, Sequence Number).
+[EXPLANATION]: The server "echoes" back the Identifier and Sequence number from the request, allowing the host to match the reply to the original probe.
+
+----------------------------------------------------------------
+PART 2: ICMP AND TRACEROUTE ANALYSIS
+----------------------------------------------------------------
+
+QUESTION 4: What is the IP address of your host? What is the IP address of the target destination host?
+- Host IP Address: 192.168.2.20
+- Destination IP Address: 172.217.1.4 (google.com - alternate)
+[EXPLANATION]: This capture was performed during a separate traceroute session to observe multi-hop behavior.
+
+QUESTION 5: If ICMP sent UDP packets instead (as in Unix/Linux), would the IP protocol number still be 01 for the probe packets? If not, what would it be?
+- Correct Answer: No.
+- Protocol Number: 0x11 (decimal 17).
+[EXPLANATION]: The Protocol field in the IP header indicates the transport layer. ICMP is 1, while UDP is 17.
+
+QUESTION 6: Compare the ICMP echo packet and the ICMP ping query packet. Are they different?
+- Findings: They share the same fields (Type, Code, Checksum, Identifier, Sequence).
+[EXPLANATION]: "Ping query" and "Echo packet" are essentially different names for the same ICMP Type 8 structure.
+
+QUESTION 7: Examine the ICMP error packet in your screenshot. What is included in those fields?
+- Findings: It contains more fields than an echo packet. Specifically, it includes the IP Header and the first 8 bytes of the original datagram that caused the error.
+[EXPLANATION]: This "payload-in-error" allows the sender to identify exactly which packet failed and why.
+
+QUESTION 8: Examine the last three ICMP packets received by the source host. How are these different from the ICMP error packets?
+- Differences: These are Echo Replies (Type 0, Code 0) rather than Time Exceeded errors (Type 11, Code 0).
+- Reason: The final destination was reached before the TTL decremented to zero; thus, the destination responded with a standard reply instead of an error.
+
+==============================================================
+TECHNICAL CONCLUSION:
+Lab 07 demonstrates that ICMP is indispensable for network transparency. By standardized error reporting (Type 11) and reachability querying (Type 8/0), ICMP enables sophisticated network management and troubleshooting tools that are vital for ensuring reliable data delivery across complex topologies.
+==============================================================
