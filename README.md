@@ -177,7 +177,7 @@ A granular record of 10 laboratory reports documenting protocol analysis and net
 | <kbd>NAT_Flow_Analyzer.py</kbd> | Network Layer | Translation of IP datagrams and port mapping | [View](Assignments/Lab%205/NAT_Flow_Analyzer.py) |
 | <kbd>TECHNICAL_ANALYSIS.txt</kbd> | Scholarly Documentation | NAT gateway operations and checksum recalculation | [View](Assignments/Lab%205/TECHNICAL_ANALYSIS.txt) |
 
-**Resources**: [Lab Manual](Assignments/Lab%205/Lab%205_%20NAT%20-%20Computer%20Networks%20-%20University%20of%20Windsor.pdf) · [Word Document](Assignments/Lab%205/Lab%205_%20NAT-110107589.docx?raw=true)
+**Resources**: [Lab Manual](Assignments/Lab%205/Lab%205_%20NAT%20-%20Computer%20Networks%20-%20University%20of%20Windsor.pdf) · [Word Document](Assignments/Lab%205/Lab%205_%20NAT%20%5BAmey-110107589%5D.docx?raw=true)
 
 </details>
 
@@ -189,7 +189,7 @@ A granular record of 10 laboratory reports documenting protocol analysis and net
 | <kbd>IP_Protocol_Analyzer.py</kbd> | Network Layer | IPv4 fragmentation and TTL lifecycle simulation | [View](Assignments/Lab%206/IP_Protocol_Analyzer.py) |
 | <kbd>TECHNICAL_ANALYSIS.txt</kbd> | Scholarly Documentation | Fragmentation offsets and MTU constraint analysis | [View](Assignments/Lab%206/TECHNICAL_ANALYSIS.txt) |
 
-**Resources**: [Lab Manual](Assignments/Lab%206/Lab%206_%20IP%20-%20Computer%20Networks%20-%20University%20of%20Windsor.pdf) · [Word Document](Assignments/Lab%206/Lab%206_%20IP-Amey-110107589.docx?raw=true)
+**Resources**: [Lab Manual](Assignments/Lab%206/Lab%206_%20IP%20-%20Computer%20Networks%20-%20University%20of%20Windsor.pdf) · [Word Document](Assignments/Lab%206/Lab%206_%20IP%20%5BAmey-110107589%5D.docx?raw=true)
 
 </details>
 
@@ -201,7 +201,7 @@ A granular record of 10 laboratory reports documenting protocol analysis and net
 | <kbd>ICMP_Protocol_Analyzer.py</kbd> | Network Diagnostics | Ping (Echo) and Traceroute (TTL Exceeded) simulation | [View](Assignments/Lab%207/ICMP_Protocol_Analyzer.py) |
 | <kbd>TECHNICAL_ANALYSIS.txt</kbd> | Scholarly Documentation | Diagnostic feedback and error reporting analysis | [View](Assignments/Lab%207/TECHNICAL_ANALYSIS.txt) |
 
-**Resources**: [Lab Manual](Assignments/Lab%207/Lab%207_%20ICMP%20-%20Computer%20Networks%20-%20University%20of%20Windsor.pdf) · [Word Document](Assignments/Lab%207/Lab%207_%20ICMP-110107589.docx?raw=true)
+**Resources**: [Lab Manual](Assignments/Lab%207/Lab%207_%20ICMP%20-%20Computer%20Networks%20-%20University%20of%20Windsor.pdf) · [Word Document](Assignments/Lab%207/Lab%207_%20ICMP%20%5BAmey-110107589%5D.docx?raw=true)
 
 </details>
 
@@ -213,7 +213,7 @@ A granular record of 10 laboratory reports documenting protocol analysis and net
 | <kbd>UDP_Protocol_Analyzer.py</kbd> | Transport Layer | Connectionless datagram flow and header analysis | [View](Assignments/Lab%208/UDP_Protocol_Analyzer.py) |
 | <kbd>TECHNICAL_ANALYSIS.txt</kbd> | Scholarly Documentation | Port symmetry and payload length evaluation | [View](Assignments/Lab%208/TECHNICAL_ANALYSIS.txt) |
 
-**Resources**: [Word Document](Assignments/Lab%208/Lab%208_%20UDP-110107589.docx?raw=true)
+**Resources**: [Word Document](Assignments/Lab%208/Lab%208_%20UDP%20%5BAmey-110107589%5D.docx?raw=true)
 
 </details>
 
@@ -225,7 +225,7 @@ A granular record of 10 laboratory reports documenting protocol analysis and net
 | <kbd>TCP_Protocol_Analyzer.py</kbd> | Transport Layer | Three-way handshake and congestion control simulation | [View](Assignments/Lab%209/TCP_Protocol_Analyzer.py) |
 | <kbd>TECHNICAL_ANALYSIS.txt</kbd> | Scholarly Documentation | Reliability, ACK mechanics, and flow control analysis | [View](Assignments/Lab%209/TECHNICAL_ANALYSIS.txt) |
 
-**Resources**: [Word Document](Assignments/Lab%209/Lab%209_%20TCP-110107589.docx?raw=true)
+**Resources**: [Word Document](Assignments/Lab%209/Lab%209_%20TCP%20%5BAmey-110107589%5D.docx?raw=true)
 
 </details>
 
