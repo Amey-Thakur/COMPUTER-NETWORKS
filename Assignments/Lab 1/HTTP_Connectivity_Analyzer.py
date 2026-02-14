@@ -6,7 +6,7 @@
  * Repository: [COMPUTER-NETWORKS](https://github.com/Amey-Thakur/COMPUTER-NETWORKS)
  * Session: Fall 2023
  * Release Date: September 19, 2023
- * License: CC BY 4.0
+ * License: Creative Commons Attribution 4.0 International (CC BY 4.0)
  * 
  * Description:
  * This script serves as a technical companion to Lab 01: Introduction to Wireshark.
