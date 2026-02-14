@@ -74,7 +74,9 @@ To convert a decimal octet (0-255) to an 8-bit binary segment, we decompose the 
 
 **Result:** `11101110.00100010.00000010.00000001`
 
-> **Professional Insight**: Memorizing the "impostor" values like **128, 192, 224, 240, 248, 252, 254, 255** is crucial for subnetting. These specific sums of contiguous high-order bits appear frequently in subnet masks.
+> [!TIP]
+> **Memorization Strategy**
+> Memorizing the "impostor" values like **128, 192, 224, 240, 248, 252, 254, 255** is crucial for subnetting. These specific sums of contiguous high-order bits appear frequently in subnet masks.
 
 ---
 
@@ -111,7 +113,9 @@ Sum the values of the active bits (where the bit is `1`).
 `11101111` (239) . `11110111` (247) . `11000111` (199) . `00011101` (29)
 **Result:** `239.247.199.29`
 
-> **Professional Insight**: When converting high-density binary numbers (lots of 1s), it is often faster to subtract the value of the '0' positions from 255. For example, `11101111` has a 0 at the 16s place, so `255 - 16 = 239`.
+> [!TIP]
+> **Calculation Shortcut**
+> When converting high-density binary numbers (lots of 1s), it is often faster to subtract the value of the '0' positions from 255. For example, `11101111` has a 0 at the 16s place, so `255 - 16 = 239`.
 
 ---
 
@@ -132,7 +136,9 @@ The class is determined by the specific range of the first octet.
 **C. 114.34.2.8** → 114 is in 0-127 → **Class A**
 **D. 129.14.6.8** → 129 is in 128-191 → **Class B**
 
-> **Professional Insight**: While Classful addressing is technically obsolete due to **CIDR**, understanding it is essential for configuring legacy systems and knowing default subnet masks.
+> [!NOTE]
+> **Legacy Context**
+> While Classful addressing is technically obsolete due to **CIDR** (Classless Inter-Domain Routing), understanding it is essential for configuring legacy systems and knowing default subnet masks.
 
 ---
 
@@ -153,7 +159,9 @@ Count the contiguous "1" bits.
 **D. 255.255.240.0**
 `11111111.11111111.11110000...` → 8+8+4 = **/20**
 
-> **Professional Insight**: Every extra bit in the CIDR prefix **doubles** the number of subnets and **halves** the hosts per subnet. Moving from /19 to /20 splits the network exactly in half.
+> [!IMPORTANT]
+> **Subnetting Mechanics**
+> Every extra bit in the CIDR prefix **doubles** the number of subnets and **halves** the hosts per subnet. Moving from /19 to /20 splits the network exactly in half.
 
 ---
 
@@ -180,7 +188,9 @@ Formula: `Block Size = 2^(32 - Prefix)`
 *   **Block Size**: 2^2 = **4** addresses.
 *   **Range**: `180.34.64.64` to `180.34.64.67`
 
-> **Professional Insight**: The **/30** subnet is famously used for Point-to-Point router links because it provides exactly 2 usable IP addresses, maximizing conservation.
+> [!NOTE]
+> **Industry Standard**
+> The **/30** subnet is famously used for Point-to-Point router links because it provides exactly 2 usable IP addresses, maximizing address conservation.
 
 ---
 
@@ -207,7 +217,9 @@ Formula: `Block Size = 2^(32 - Prefix)`
 *   **Start**: `211.17.180.248`
 *   **End**: `211.17.180.255`
 
-> **Professional Insight**: Always verify the last subnet ends at the parent block's boundary. Here, both end at `.255`, confirming perfect alignment.
+> [!TIP]
+> **Boundary Check**
+> Always verify the last subnet ends at the parent block's boundary. Here, both end at `.255`, confirming perfect alignment.
 
 ---
 
@@ -284,7 +296,9 @@ We must allocate larger blocks first to avoid fragmentation.
     *   **Org 7**: `80.70.62.128/26`
     *   *Next Available: 80.70.62.192*
 
-> **Professional Insight**: The **"Largest First"** rule in VLSM is mandatory. Assigning small blocks first fractures the address space, making it impossible to fit large blocks later.
+> [!WARNING]
+> **VLSM Rule**
+> The **"Largest First"** rule in VLSM is mandatory. Assigning small blocks first fractures the address space, making it impossible to fit large blocks later.
 
 ---
 
@@ -335,7 +349,9 @@ We must allocate larger blocks first to avoid fragmentation.
 **Decision**: The longest prefix is **/28** (Candidate B).
 **Next Hop**: Interface B.
 
-> **Professional Insight**: **Longest Prefix Match** enables hierarchical routing, allowing a specific route (like /28) to override a general default path (like /16).
+> [!IMPORTANT]
+> **Routing Logic**
+> **Longest Prefix Match** enables hierarchical routing, allowing a specific route (like /28) to override a general default path (like /16).
 
 ---
 
@@ -357,7 +373,9 @@ We must allocate larger blocks first to avoid fragmentation.
 **D. 0000:0000:0000:2340:0000:0000:0000:0000**
 → `::2340:0:0:0:0` (or `0:0:0:2340::`)
 
-> **Professional Insight**: Ambiguity (`1::1::1`) is fatal. `::` can appear **only once**.
+> [!CAUTION]
+> **Critical Error**
+> Ambiguity (e.g., `1::1::1`) is fatal in IPv6. The `::` compression symbol can appear **only once** in an address.
 
 ---
 **End of Document**
