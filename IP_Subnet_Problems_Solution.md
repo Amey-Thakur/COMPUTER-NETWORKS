@@ -47,8 +47,11 @@ This document provides comprehensive, step-by-step solutions to the **"IP and Su
 
 > [!NOTE]
 > **Mathematical Principle: Positional Notation**
+>
 > IPv4 addresses use a **base-2 (binary)** system where each position represents a power of 2. An 8-bit octet is calculated as:
+>
 > $$ \sum_{i=0}^{7} d_i \times 2^i $$
+>
 > Where $d_i$ is the bit value (0 or 1) at position $i$.
 
 To convert a decimal octet (0-255) to an 8-bit binary segment, we decompose the number into sums of powers of 2.
@@ -91,6 +94,7 @@ To convert a decimal octet (0-255) to an 8-bit binary segment, we decompose the 
 
 > [!TIP]
 > **Memorization Strategy**
+>
 > Memorizing the "impostor" values like **128, 192, 224, 240, 248, 252, 254, 255** is crucial for subnetting. These specific sums of contiguous high-order bits appear frequently in subnet masks.
 
 ---
@@ -130,6 +134,7 @@ Sum the values of the active bits (where the bit is `1`).
 
 > [!TIP]
 > **Calculation Shortcut**
+>
 > When converting high-density binary numbers (lots of 1s), it is often faster to subtract the value of the '0' positions from 255. For example, `11101111` has a 0 at the 16s place, so `255 - 16 = 239`.
 
 ---
@@ -153,6 +158,7 @@ The class is determined by the specific range of the first octet.
 
 > [!NOTE]
 > **Legacy Context**
+>
 > While Classful addressing is technically obsolete due to **CIDR** (Classless Inter-Domain Routing), understanding it is essential for configuring legacy systems and knowing default subnet masks.
 
 ---
@@ -182,6 +188,7 @@ Count the contiguous "1" bits.
 
 > [!IMPORTANT]
 > **Subnetting Mechanics**
+>
 > Every extra bit in the CIDR prefix **doubles** the number of subnets and **halves** the hosts per subnet. Moving from /19 to /20 splits the network exactly in half.
 
 ---
@@ -211,6 +218,7 @@ Formula: `Block Size = 2^(32 - Prefix)`
 
 > [!NOTE]
 > **Industry Standard**
+>
 > The **/30** subnet is famously used for Point-to-Point router links because it provides exactly 2 usable IP addresses, maximizing address conservation.
 
 ---
@@ -226,11 +234,14 @@ Formula: `Block Size = 2^(32 - Prefix)`
 #### Binary Visualization of Borrowing
 The following table visualizes how the subnet mask extends into the host portion.
 
+
 | Segment | Binary Pattern | Decimal | Note |
 | :--- | :--- | :--- | :--- |
 | **Original Mask (/24)** | `11111111.11111111.11111111.00000000` | 255.255.255.0 | Default Class C |
 | **Borrowed Bits (5)** | `........................11111...` | | 5 bits borrowed |
 | **New Mask (/29)** | `11111111.11111111.11111111.11111000` | **255.255.255.248** | Target Subnet Mask |
+
+| Parameter | Calculation | Result |
 | :--- | :--- | :--- |
 | **New Mask** | /29 (11111000) | **255.255.255.248** |
 | **Block Size** | 2^(32-29) = 2^3 | **8** addresses |
@@ -247,6 +258,7 @@ The following table visualizes how the subnet mask extends into the host portion
 
 > [!TIP]
 > **Boundary Check**
+>
 > Always verify the last subnet ends at the parent block's boundary. Here, both end at `.255`, confirming perfect alignment.
 
 ---
@@ -334,6 +346,7 @@ We must allocate larger blocks first to avoid fragmentation.
 
 > [!WARNING]
 > **VLSM Rule**
+>
 > The **"Largest First"** rule in VLSM is mandatory. Assigning small blocks first fractures the address space, making it impossible to fit large blocks later.
 
 ---
@@ -406,6 +419,7 @@ Aggregating routes requires finding the common high-order bits.
 
 > [!IMPORTANT]
 > **Routing Logic**
+>
 > **Longest Prefix Match** enables hierarchical routing, allowing a specific route (like /28) to override a general default path (like /16).
 
 ---
@@ -430,6 +444,7 @@ Aggregating routes requires finding the common high-order bits.
 
 > [!CAUTION]
 > **Critical Error**
+>
 > Ambiguity (e.g., `1::1::1`) is fatal in IPv6. The `::` compression symbol can appear **only once** in an address.
 
 ---
