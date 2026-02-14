@@ -10,10 +10,10 @@
 
 </div>
 
-> **File Name**: `IP_Subnet_Problems_Solution.md`
-> **Course Repo**: [COMPUTER-NETWORKS](https://github.com/Amey-Thakur/COMPUTER-NETWORKS)
-> **Rel. Date**: December 06, 2023
-> **License**: [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)
+> - **File Name**: `IP_Subnet_Problems_Solution.md`
+> - **Course Repo**: [COMPUTER-NETWORKS](https://github.com/Amey-Thakur/COMPUTER-NETWORKS)
+> - **Rel. Date**: December 06, 2023
+> - **License**: [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)
 
 ---
 
