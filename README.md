@@ -112,10 +112,10 @@ A granular record of 10 laboratory reports documenting protocol analysis and net
      ========================================================================================= -->
 
 ## Lecture Notes
-A comprehensive archival log documenting pedagogical discourse across nine key modules, focusing on the architectural layers of computer networking.
+A comprehensive archival log documenting pedagogical discourse across nine modules, including weekly slides and technical archives for the Fall 2023 session.
 
 > [!TIP]
-> Computer networking is the backbone of the digital age. Success in this field requires mastering the **interaction between layers**, where each protocol serves as a specific solution to a communication challenge. Every module below focuses on the critical translation from **Theoretical Models** to **Functional Architectures**, enabling the design and verification of complex network systems.
+> Computer networking is not merely the connection of devices; it is the **bridge between theoretical models and functional architectures**. Every module below focuses on the critical translation from **Network Protocols to Scalable Infrastructures**, enabling the design and verification of complex communication systems.
 
 | # | Module | Topic | Lecture Slides |
 | :-: | :---: | :--- | :---: |
