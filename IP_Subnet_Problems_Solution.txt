@@ -24,36 +24,47 @@ B. 129.14.6.8
 C. 208.34.54.12
 D. 238.34.2.1
 
-[SCHOLARLY SOLUTION]
-To convert dotted-decimal to binary, each octet (0-255) is converted to an 8-bit binary segment.
+### Detailed Step-by-Step Analysis
+To convert a decimal octet (0-255) to an 8-bit binary segment, we decompose the number into sums of powers of 2 (128, 64, 32, 16, 8, 4, 2, 1).
 
 A. 114.34.2.8
-   - 114 -> 64+32+16+2 -> 01110010
-   - 34  -> 32+2       -> 00100010
-   - 2   -> 2          -> 00000010
-   - 8   -> 8          -> 00001000
-   RESULT: 01110010.00100010.00000010.00001000
+   - **First Octet (114):**
+     - 114 < 128 (Bit 7 = 0)
+     - 114 = 64 + 50 (Bit 6 = 1)
+     - 50 = 32 + 18 (Bit 5 = 1)
+     - 18 = 16 + 2 (Bit 4 = 1)
+     - 2 < 8, 4 (Bits 3, 2 = 0)
+     - 2 = 2 (Bit 1 = 1)
+     - Remainder 0 (Bit 0 = 0)
+     - Binary: **01110010**
+   - **Second Octet (34):** 32 + 2 -> **00100010**
+   - **Third Octet (2):** 2 -> **00000010**
+   - **Fourth Octet (8):** 8 -> **00001000**
+   - **Result:** 01110010.00100010.00000010.00001000
 
 B. 129.14.6.8
-   - 129 -> 128+1      -> 10000001
-   - 14  -> 8+4+2      -> 00001110
-   - 6   -> 4+2        -> 00000110
-   - 8   -> 8          -> 00001000
-   RESULT: 10000001.00001110.00000110.00001000
+   - **129:** 128 + 1 -> **10000001**
+   - **14:** 8 + 4 + 2 -> **00001110**
+   - **6:** 4 + 2 -> **00000110**
+   - **8:** 8 -> **00001000**
+   - **Result:** 10000001.00001110.00000110.00001000
 
 C. 208.34.54.12
-   - 208 -> 128+64+16  -> 11010000
-   - 34  -> 32+2       -> 00100010
-   - 54  -> 32+16+4+2  -> 00110110
-   - 12  -> 8+4        -> 00001100
-   RESULT: 11010000.00100010.00110110.00001100
+   - **208:** 128 + 64 + 16 -> **11010000**
+   - **34:** 32 + 2 -> **00100010**
+   - **54:** 32 + 16 + 4 + 2 -> **00110110**
+   - **12:** 8 + 4 -> **00001100**
+   - **Result:** 11010000.00100010.00110110.00001100
 
 D. 238.34.2.1
-   - 238 -> 128+64+32+8+4+2 -> 11101110
-   - 34  -> 32+2            -> 00100010
-   - 2   -> 2               -> 00000010
-   - 1   -> 1               -> 00000001
-   RESULT: 11101110.00100010.00000010.00000001
+   - **238:** 128 + 64 + 32 + 8 + 4 + 2 -> **11101110**
+   - **34:** 32 + 2 -> **00100010**
+   - **2:** 2 -> **00000010**
+   - **1:** 1 -> **00000001**
+   - **Result:** 11101110.00100010.00000010.00000001
+
+### Professional Insight
+Memorizing the "impostor" values like 128, 192, 224, 240, 248, 252, 254, 255 is crucial for subnetting. These specific sums of contiguous high-order bits appear frequently in subnet masks.
 
 -----------------------------------------------------------------------------------------
 QUESTION 2: Change the following IP addresses from binary notation to dotted-decimal notation.
@@ -63,36 +74,40 @@ B. 10101111 11000000 11111000 00011101
 C. 11011111 10110000 00011111 01011101
 D. 11101111 11110111 11000111 00011101
 
-[SCHOLARLY SOLUTION]
-Segments are converted by summing the powers of 2 (128, 64, 32, 16, 8, 4, 2, 1) where bits are 1.
+### Detailed Step-by-Step Analysis
+Sum the values of the active bits (where the bit is 1).
+Positions: [128, 64, 32, 16, 8, 4, 2, 1]
 
 A. 01111111.11110000.01100111.01111101
-   - 01111111 = 127
-   - 11110000 = 240
-   - 01100111 = 64+32+4+2+1 = 103
-   - 01111101 = 64+32+16+8+4+1 = 125
-   RESULT: 127.240.103.125
+   - **01111111:** 64+32+16+8+4+2+1 = 127
+   - **11110000:** 128+64+32+16 = 240
+   - **01100111:** 64+32+4+2+1 = 103
+   - **01111101:** 64+32+16+8+4+1 = 125
+   - **Result:** 127.240.103.125
 
 B. 10101111.11000000.11111000.00011101
-   - 10101111 = 128+32+8+4+2+1 = 175
-   - 11000000 = 128+64 = 192
-   - 11111000 = 248
-   - 00011101 = 16+8+4+1 = 29
-   RESULT: 175.192.248.29
+   - **10101111:** 128+32+8+4+2+1 = 175
+   - **11000000:** 128+64 = 192
+   - **11111000:** 128+64+32+16+8 = 248
+   - **00011101:** 16+8+4+1 = 29
+   - **Result:** 175.192.248.29
 
 C. 11011111.10110000.00011111.01011101
-   - 11011111 = 223
-   - 10110000 = 128+32+16 = 176
-   - 00011111 = 31
-   - 01011101 = 64+16+8+4+1 = 93
-   RESULT: 223.176.31.93
+   - **11011111:** 255 - 32 (00100000) = 223
+   - **10110000:** 128+32+16 = 176
+   - **00011111:** 16+8+4+2+1 = 31
+   - **01011101:** 64+16+8+4+1 = 93
+   - **Result:** 223.176.31.93
 
 D. 11101111.11110111.11000111.00011101
-   - 11101111 = 239
-   - 11110111 = 247
-   - 11000111 = 199
-   - 00011101 = 29
-   RESULT: 239.247.199.29
+   - **11101111:** 255 - 16 = 239
+   - **11110111:** 255 - 8 = 247
+   - **11000111:** 128+64+4+2+1 = 199
+   - **00011101:** 16+8+4+1 = 29
+   - **Result:** 239.247.199.29
+
+### Professional Insight
+When converting high-density binary numbers (lots of 1s), it is often faster to subtract the value of the '0' positions from 255, rather than summing all the '1's. For example, 11101111 has a 0 at the 16s place, so 255 - 16 = 239.
 
 -----------------------------------------------------------------------------------------
 QUESTION 3: Find the class of the following IP addresses.
@@ -102,18 +117,31 @@ B. 238.34.2.1
 C. 114.34.2.8
 D. 129.14.6.8
 
-[SCHOLARLY SOLUTION]
-Classful addressing is determined by the first octet:
-- Class A: 0-127
-- Class B: 128-191
-- Class C: 192-223
-- Class D: 224-239 (Multicast)
-- Class E: 240-255 (Experimental)
+### Detailed Step-by-Step Analysis
+We examine the first octet (leading 8 bits) to determine the class.
 
-A. 208 -> Range 192-223 -> Class C
-B. 238 -> Range 224-239 -> Class D
-C. 114 -> Range 0-127   -> Class A
-D. 129 -> Range 128-191 -> Class B
+A. **208.34.54.12**
+   - High-order bits: **110**... (192-223)
+   - First octet 208 falls between 192 and 223.
+   - **Result:** Class C (Used for small networks).
+
+B. **238.34.2.1**
+   - High-order bits: **1110**... (224-239)
+   - First octet 238 falls between 224 and 239.
+   - **Result:** Class D (Reserved for Multicast groups).
+
+C. **114.34.2.8**
+   - High-order bit: **0**... (0-127)
+   - First octet 114 falls between 0 and 127.
+   - **Result:** Class A (Used for very large networks).
+
+D. **129.14.6.8**
+   - High-order bits: **10**... (128-191)
+   - First octet 129 falls between 128 and 191.
+   - **Result:** Class B (Used for medium-sized networks).
+
+### Professional Insight
+While Classful addressing (A/B/C) is technically obsolete due to CIDR (Classless Inter-Domain Routing), understanding it is essential for configuring legacy systems and understanding default subnet masks (e.g., Windows will autocomplete the mask based on the first octet range).
 
 -----------------------------------------------------------------------------------------
 QUESTION 4: Write the following masks in slash notation (/n).
@@ -123,15 +151,33 @@ B. 255.0.0.0
 C. 255.255.224.0
 D. 255.255.240.0
 
-[SCHOLARLY SOLUTION]
-Slash notation (CIDR) counts the number of contiguous 1s in the binary mask.
+### Detailed Step-by-Step Analysis
+Slash notation counts the number of consecutive "1" bits in the mask.
 
-A. 255.255.255.0   -> 11111111.11111111.11111111.00000000 -> 8+8+8 = /24
-B. 255.0.0.0       -> 11111111.00000000.00000000.00000000 -> 8 = /8
-C. 255.255.224.0   -> 11111111.11111111.11100000.00000000 -> 8+8+3 = /19
-   (224 = 128+64+32 = 11100000)
-D. 255.255.240.0   -> 11111111.11111111.11110000.00000000 -> 8+8+4 = /20
-   (240 = 128+64+32+16 = 11110000)
+A. **255.255.255.0**
+   - Binary: 11111111.11111111.11111111.00000000
+   - Count: 8 + 8 + 8 = 24
+   - **Result:** /24
+
+B. **255.0.0.0**
+   - Binary: 11111111.00000000.00000000.00000000
+   - Count: 8
+   - **Result:** /8
+
+C. **255.255.224.0**
+   - Binary: 11111111.11111111.11100000.00000000
+   - Third octet (224) breakdown: 128 + 64 + 32 = 11100000 (3 bits).
+   - Count: 8 + 8 + 3 = 19
+   - **Result:** /19
+
+D. **255.255.240.0**
+   - Binary: 11111111.11111111.11110000.00000000
+   - Third octet (240) breakdown: 128 + 64 + 32 + 16 = 11110000 (4 bits).
+   - Count: 8 + 8 + 4 = 20
+   - **Result:** /20
+
+### Professional Insight
+Every extra bit in the CIDR prefix doubles the number of created subnets and halves the number of hosts per subnet. Moving from /19 to /20 splits the network exactly in half.
 
 -----------------------------------------------------------------------------------------
 QUESTION 5: Find the range of addresses in the following blocks.
@@ -141,238 +187,348 @@ B. 200.17.21.128/27
 C. 17.34.16.0/23
 D. 180.34.64.64/30
 
-[SCHOLARLY SOLUTION]
-The range is calculated by finding the Network Address (First) and Broadcast Address (Last).
-Number of addresses = 2^(32-n).
+### Detailed Step-by-Step Analysis
+To find the range, calculate the Block Size = 2^(32 - Prefix).
 
-A. 123.56.77.32/29
-   - /29 -> Block size = 2^(32-29) = 2^3 = 8.
-   - 32 is a multiple of 8.
-   - First Address: 123.56.77.32
-   - Last Address:  123.56.77.39 (32 + 7)
+A. **123.56.77.32/29**
+   - Host bits: 32 - 29 = 3.
+   - Block Size: 2^3 = 8 addresses.
+   - Increment: The fourth octet increments in steps of 8 (0, 8, 16, 24, 32...).
+   - Start: 32 is a valid boundary (32 % 8 == 0).
+   - End: 32 + 8 - 1 = 39.
+   - **Range:** 123.56.77.32 to 123.56.77.39
 
-B. 200.17.21.128/27
-   - /27 -> Block size = 2^5 = 32.
-   - 128 is a multiple of 32.
-   - First Address: 200.17.21.128
-   - Last Address:  200.17.21.159 (128 + 31)
+B. **200.17.21.128/27**
+   - Host bits: 32 - 27 = 5.
+   - Block Size: 2^5 = 32 addresses.
+   - Increment: 0, 32, 64, 96, 128...
+   - Start: 128 is a valid boundary.
+   - End: 128 + 32 - 1 = 159.
+   - **Range:** 200.17.21.128 to 200.17.21.159
 
-C. 17.34.16.0/23
-   - /23 -> Block size = 2^9 = 512. Spans 2 third-octet values (512/256 = 2).
-   - Third octet mask is 254 (for /23, bit 23 is 0). 16 is even, so it starts at 16.0.
-   - First Address: 17.34.16.0
-   - Last Address:  17.34.17.255 (16.0 + 511 IPs)
+C. **17.34.16.0/23**
+   - Host bits: 32 - 23 = 9.
+   - Block Size: 2^9 = 512 addresses.
+   - Span: This spans across the third octet. A /24 is 256 IPs, so /23 is 2 x 256.
+   - Third Octet Increment: 512 / 256 = 2. Steps of 2 in the third octet (0, 2, 4... 16).
+   - Start: 17.34.16.0.
+   - End: Third octet 16 + 2 - 1 = 17. Fourth octet is 255.
+   - **Range:** 17.34.16.0 to 17.34.17.255
 
-D. 180.34.64.64/30
-   - /30 -> Block size = 2^2 = 4.
-   - 64 is a multiple of 4.
-   - First Address: 180.34.64.64
-   - Last Address:  180.34.64.67 (64 + 3)
+D. **180.34.64.64/30**
+   - Host bits: 32 - 30 = 2.
+   - Block Size: 2^2 = 4 addresses.
+   - Start: 64 (Multiple of 4).
+   - End: 64 + 4 - 1 = 67.
+   - **Range:** 180.34.64.64 to 180.34.64.67
+
+### Professional Insight
+The /30 subnet (Answer D) is famously used for Point-to-Point links between routers because it provides exactly 2 usable IP addresses (one for each end), maximizing address conservation.
 
 -----------------------------------------------------------------------------------------
-QUESTION 6: An organization is granted the block 211.17.180.0/24. The administrator wants to create 32 subnets.
+QUESTION 6: An organization is granted the block 211.17.180.0/24... create 32 subnets.
 -----------------------------------------------------------------------------------------
 A. Find the subnet mask.
 B. Find the number of addresses in each subnet.
 C. Find the first and last addresses in subnet 1.
 D. Find the first and last addresses in subnet 32.
 
-[SCHOLARLY SOLUTION]
-1. Current mask: /24.
-2. Required subnets: 32.
-3. Bits to borrow (s): 2^s >= 32 => s = 5.
-4. New prefix: /24 + 5 = /29.
+### Detailed Step-by-Step Analysis
 
-A. Subnet Mask (/29):
+A. **Subnet Mask**
+   - Required Subnets: 32.
+   - Bits needed to borrow (s): 2^s >= 32. Since 2^5 = 32, we borrow **5 bits**.
+   - Original Prefix: /24.
+   - New Prefix: /24 + 5 = **/29**.
    - Binary: 11111111.11111111.11111111.11111000
-   - Decimal: 255.255.255.248
+   - Decimal: **255.255.255.248**
 
-B. Addresses per subnet:
-   - Remaining host bits (h): 32 - 29 = 3.
-   - Total addresses: 2^3 = 8.
-   - Usable addresses: 8 - 2 = 6.
+B. **Addresses per Subnet**
+   - Host bits (h): Total bits (32) - Network bits (29) = 3 bits.
+   - Total Addresses: 2^h = 2^3 = **8 addresses**.
+   - Usable Addresses: 8 - 2 (Network + Broadcast) = 6.
 
-C. Subnet 1 (Index 0):
-   - Starts at .0
-   - Range: 211.17.180.0 to 211.17.180.7
+C. **Subnet 1 (Index 0)**
+   - Start: 211.17.180.0
+   - Block Size: 8.
+   - End: 0 + 8 - 1 = 7.
+   - **Range:** 211.17.180.0 to 211.17.180.7.
 
-D. Subnet 32 (Index 31):
-   - Block size is 8. Last subnet starts at 31 * 8 = 248.
-   - First Address: 211.17.180.248
-   - Last Address:  211.17.180.255
+D. **Subnet 32 (Index 31)**
+   - We need the 32nd subnet (Index 31).
+   - Offset: 31 * (Block Size 8) = 248.
+   - Start: 211.17.180.248.
+   - End: 248 + 8 - 1 = 255.
+   - **Range:** 211.17.180.248 to 211.17.180.255.
+
+### Professional Insight
+Always verify the last subnet ends at the boundary of the parent block. Here, the parent block (211.17.180.0/24) ends at .255, and our 32nd subnet also ends at .255, confirming the math is perfectly aligned with no wasted space.
 
 -----------------------------------------------------------------------------------------
-QUESTION 7: In an IPv4 datagram, M bit is 0, HLEN is 5, Total Length is 200, Offset is 200.
+QUESTION 7: IPv4 Datagram Analysis (M=0, HLEN=5, Total Length=200, Offset=200).
 -----------------------------------------------------------------------------------------
-Details:
-- HLEN = 5: Header length = 5 * 4 bytes = 20 bytes.
-- Total Length = 200 bytes.
-- Data Size = Total Length - Header = 200 - 20 = 180 bytes.
-- Offset = 200: This indicates the position of the first byte of data in 8-byte units.
-  Real Offset = 200 * 8 = 1600 bytes.
-- M bit = 0: "More Fragments" bit is 0, meaning this is the Last Fragment.
+What is the number of the first byte and number of the last byte in this datagram? Is this the last, first, or middle fragment?
 
-Analysis:
-- First byte number: 1600.
-- Last byte number: 1600 + 180 - 1 = 1779.
-- Status: Since Offset > 0, it is not the first fragment. Since M=0, it is the last fragment.
+### Detailed Step-by-Step Analysis
+1.  **Analyze Offset**:
+    - The `Fragmentation Offset` field counts in units of 8 bytes.
+    - True Offset (Byte Number) = Field Value * 8.
+    - First Byte Number = 200 * 8 = **1600**.
 
-RESULT:
-- Number of the first byte: 1600
-- Number of the last byte: 1779
-- Fragment Type: Last Fragment.
+2.  **Analyze Payload Size**:
+    - Total Packet Length = 200 bytes.
+    - Header Length (HLEN) = 5 * 4 bytes = 20 bytes.
+    - Data Payload = Total - Header = 200 - 20 = **180 bytes**.
+
+3.  **Calculate Last Byte**:
+    - Last Byte Number = First Byte + Data Payload - 1.
+    - Last Byte = 1600 + 180 - 1 = **1779**.
+
+4.  **Determine Fragment Type**:
+    - **First Fragment?** No, because Offset is 200 (not 0).
+    - **Last Fragment?** Yes, because the `More Fragments` (M) bit is 0.
+
+### Professional Insight
+The IP Fragmentation Offset is scaled by 8 because the field is only 13 bits wide. 13 bits can only represent up to 8191, but IP packets can be up to 65,535 bytes. Multiplying by 8 allows coverage of the full range (8191 * 8 = 65,528), sufficient for the max IP size.
 
 -----------------------------------------------------------------------------------------
 QUESTION 8: ISP Block 16.12.64.0/20 distributed to 8 organizations (256 addresses each).
 -----------------------------------------------------------------------------------------
-A. ISP Block Info:
-   - 16.12.64.0/20
-   - Block size: 2^(32-20) = 2^12 = 4096 addresses.
-   - Range: 16.12.64.0 to 16.12.79.255.
+A. Find the number and range of addresses in the ISP block.
+B. Design the subblocks and find the range of addresses for each organization.
+C. Show the outline of the address distribution.
+D. Find the first and last addresses in the last subnet.
 
-B. Subblocks for 8 Organizations (256 addresses each):
-   - Required size: 256 = 2^8 => /24 mask.
-   - Allocation:
-     1. Org 1: 16.12.64.0/24   (Range: 16.12.64.0   - 16.12.64.255)
-     2. Org 2: 16.12.65.0/24   (Range: 16.12.65.0   - 16.12.65.255)
-     3. Org 3: 16.12.66.0/24   (Range: 16.12.66.0   - 16.12.66.255)
-     4. Org 4: 16.12.67.0/24   (Range: 16.12.67.0   - 16.12.67.255)
-     5. Org 5: 16.12.68.0/24   (Range: 16.12.68.0   - 16.12.68.255)
-     6. Org 6: 16.12.69.0/24   (Range: 16.12.69.0   - 16.12.69.255)
-     7. Org 7: 16.12.70.0/24   (Range: 16.12.70.0   - 16.12.70.255)
-     8. Org 8: 16.12.71.0/24   (Range: 16.12.71.0   - 16.12.71.255)
+### Detailed Step-by-Step Analysis
 
-C. Outline:
-   - Total Allocated: 8 * 256 = 2048.
-   - Total Available: 4096.
-   - Unallocated: 16.12.72.0 to 16.12.79.255 (2048 addresses).
+A. **ISP Block Analysis**
+   - Prefix: /20.
+   - Host Bits: 32 - 20 = 12.
+   - Total Addresses: 2^12 = **4096**.
+   - Range Start: 16.12.64.0
+   - Range End: 16.12.64.0 + 4095 = 16.12.79.255.
+     (Note: The third octet increments by 2^12 / 2^8 = 16. So 64 + 16 - 1 = 79).
 
-D. First/Last of Last Subnet (Org 8):
+B. **Subblock Design (256 addresses)**
+   - Needed Size: 256 = 2^8.
+   - New Prefix: 32 - 8 = **/24**.
+   - We are carving /24 subnets out of a /20 supernet.
+   1. **Org 1:** 16.12.64.0/24 (Range: 16.12.64.0   - 16.12.64.255)
+   2. **Org 2:** 16.12.65.0/24 (Range: 16.12.65.0   - 16.12.65.255)
+   3. **Org 3:** 16.12.66.0/24 (Range: 16.12.66.0   - 16.12.66.255)
+   4. **Org 4:** 16.12.67.0/24 (Range: 16.12.67.0   - 16.12.67.255)
+   5. **Org 5:** 16.12.68.0/24 (Range: 16.12.68.0   - 16.12.68.255)
+   6. **Org 6:** 16.12.69.0/24 (Range: 16.12.69.0   - 16.12.69.255)
+   7. **Org 7:** 16.12.70.0/24 (Range: 16.12.70.0   - 16.12.70.255)
+   8. **Org 8:** 16.12.71.0/24 (Range: 16.12.71.0   - 16.12.71.255)
+
+C. **Outline Distribution**
+   - Total Allocated: 8 x 256 = 2048 addresses.
+   - Total Available: 4096 addresses.
+   - Unallocated Block: Starts at 16.12.72.0/21 (which covers the remaining 2048).
+
+D. **Last Subnet (Org 8) Ranges**
    - First: 16.12.71.0
    - Last:  16.12.71.255
 
------------------------------------------------------------------------------------------
-QUESTION 9: ISP Block 80.70.56.0/21. Variable allocation.
------------------------------------------------------------------------------------------
-Total ISP Addresses: /21 => 2^11 = 2048 addresses. Range: 80.70.56.0 - 80.70.63.255.
-
-Allocation Requirements:
-- Group 1: 2 orgs x 500 addrs. Need 512 block (/23).
-- Group 2: 2 orgs x 250 addrs. Need 256 block (/24).
-- Group 3: 3 orgs x 50 addrs.  Need 64 block (/26).
-
-Design:
-1. Group 1 (Needs /23 blocks):
-   - Org 1: 80.70.56.0/23 (56.0 - 57.255)
-   - Org 2: 80.70.58.0/23 (58.0 - 59.255)
-   - Used: 1024 addresses. Next available: 80.70.60.0.
-
-2. Group 2 (Needs /24 blocks):
-   - Org 3: 80.70.60.0/24 (60.0 - 60.255)
-   - Org 4: 80.70.61.0/24 (61.0 - 61.255)
-   - Used: 512 addresses. Next available: 80.70.62.0.
-
-3. Group 3 (Needs /26 blocks):
-   - Org 5: 80.70.62.0/26   (62.0 - 62.63)
-   - Org 6: 80.70.62.64/26  (62.64 - 62.127)
-   - Org 7: 80.70.62.128/26 (62.128 - 62.191)
-   - Used: 192 addresses. Next available: 80.70.62.192.
-
-Unallocated Range:
-- From 80.70.62.192 to 80.70.63.255.
-- Total Unallocated: 2048 - (1024 + 512 + 192) = 320.
+### Professional Insight
+When designing addressing schema, always assign subnets contiguously from the start of the block. This leaves the remaining free space as a single large contiguous chunk (in this case, 16.12.72.0/21), which is much easier to route and assign later than fragmented free space.
 
 -----------------------------------------------------------------------------------------
-QUESTION 10: IP Header Analysis (Hex: 45000054 00030000 2006...)
+QUESTION 9: Variable Length Subnet Formatting (VLSM). Block 80.70.56.0/21.
 -----------------------------------------------------------------------------------------
-Hex Stream: 45 00 00 54 00 03 00 00 20 06 ...
+Distribute:
+- 2 Orgs @ 500 addresses.
+- 2 Orgs @ 250 addresses.
+- 3 Orgs @ 50 addresses.
 
-A. Header Size:
-   - First Nibble '4' = Version 4.
-   - Second Nibble '5' = HLEN.
-   - Size = 5 * 4 bytes = 20 bytes.
+### Detailed Step-by-Step Analysis
+Total Available: /21 = 2^11 = 2048 IPs.
+Range: 80.70.56.0 to 80.70.63.255.
 
-B. Options:
-   - Standard IPv4 header is 20 bytes. Since computed size is 20, there are NO options.
+**Step 1: Assign Largest Blocks First (500 addrs)**
+- Needs: >500. Next power of 2 is 512 (2^9). Prefix: /23.
+- **Org A:** 80.70.56.0/23
+  - Range: 80.70.56.0 to 80.70.57.255.
+- **Org B:** 80.70.58.0/23
+  - Range: 80.70.58.0 to 80.70.59.255.
+- *Status: Address 80.70.60.0 is next available.*
 
-C. Data Size:
-   - Total Length Field (Bytes 2-3): 00 54 (Hex) = 84 (Decimal).
-   - Data Size = Total Length - Header Size = 84 - 20 = 64 bytes.
+**Step 2: Assign Medium Blocks (250 addrs)**
+- Needs: >250. Next power of 2 is 256 (2^8). Prefix: /24.
+- **Org C:** 80.70.60.0/24
+  - Range: 80.70.60.0 to 80.70.60.255.
+- **Org D:** 80.70.61.0/24
+  - Range: 80.70.61.0 to 80.70.61.255.
+- *Status: Address 80.70.62.0 is next available.*
 
-D. Fragmentation:
-   - Flags/Offset Field (Bytes 6-7): 00 00.
-   - 'More Fragments' bit is 0. Offset is 0.
-   - Packet is NOT fragmented (or is the only fragment of a non-fragmented specific datagram).
+**Step 3: Assign Small Blocks (50 addrs)**
+- Needs: >50. Next power of 2 is 64 (2^6). Prefix: /26.
+- **Org E:** 80.70.62.0/26
+  - Range: 80.70.62.0 to 80.70.62.63.
+- **Org F:** 80.70.62.64/26
+  - Range: 80.70.62.64 to 80.70.62.127.
+- **Org G:** 80.70.62.128/26
+  - Range: 80.70.62.128 to 80.70.62.191.
+- *Status: Address 80.70.62.192 is next available.*
 
-E. Hop Limit (TTL):
-   - Byte 8: 20 (Hex) = 32 (Decimal).
-   - The packet can travel 32 hops.
+**Final Unallocated Block:**
+- Starts at 80.70.62.192.
+- Ends at 80.70.63.255.
 
-F. Protocol:
-   - Byte 9: 06 (Hex) = TCP.
-
------------------------------------------------------------------------------------------
-QUESTION 11: Route Aggregation (Combine blocks).
------------------------------------------------------------------------------------------
-Blocks:
-1. 16.27.24.0/26   (00010000.00011011.00011000.00xxxxxx) -> 16.27.24.0   - .63
-2. 16.27.24.64/26  (00010000.00011011.00011000.01xxxxxx) -> 16.27.24.64  - .127
-3. 16.27.24.128/25 (00010000.00011011.00011000.1xxxxxxx) -> 16.27.24.128 - .255
-
-Analysis:
-- Block 1 and 2 combine to form 16.27.24.0/25 (Range 0-127).
-- Now we have 16.27.24.0/25 (0-127) and 16.27.24.128/25 (128-255).
-- These two combine to form 16.27.24.0/24 (Range 0-255).
-
-RESULT:
-Single aggregated block: 16.27.24.0/24.
-
------------------------------------------------------------------------------------------
-QUESTION 12: Routing Table Lookup.
------------------------------------------------------------------------------------------
-Destination IP: 142.150.71.132
-
-Table:
-1. 142.150.64.0/20   (Range: 142.150.64.0 - 142.150.79.255) -> Next Hop A
-2. 142.150.71.128/28 (Range: 142.150.71.128 - 142.150.71.143) -> Next Hop B
-3. 142.150.71.128/30 (Range: 142.150.71.128 - 142.150.71.131) -> Next Hop D
-4. 142.150.0.0/16    (Range: 142.150.0.0 - 142.150.255.255)   -> Next Hop C
-
-Matching:
-- 142.150.71.132 matches A (/20).
-- 142.150.71.132 matches B (/28) (128 to 143 includes 132).
-- 142.150.71.132 does NOT match D (/30) (Ends at .131).
-- 142.150.71.132 matches C (/16).
-
-Longest Prefix Match:
-- /28 is the longest match.
-
-A. Next Hop: Interface B.
-
-B. New Default Route:
-- 0.0.0.0/0 -> Next Hop C. (Assuming we want to catch anything not matched by others).
-- Or if specifically asked to add an entry for non-matches: "0.0.0.0/0 Next Hop C".
+### Professional Insight
+The "Largest First" rule in VLSM is mandatory. If you assigned the small /26 blocks at the beginning (e.g., starting at 80.70.56.0), you would fracture the address space and likely find it impossible to fit the large /23 blocks later without gaps, leading to significant address waste.
 
 -----------------------------------------------------------------------------------------
-QUESTION 13: IPv6 Shortest Form.
+QUESTION 10: Hex Dump Analysis: 45000054 00030000 2006...
 -----------------------------------------------------------------------------------------
-Rules: Remove leading zeros. Replace consecutive groups of zeros with '::' (once).
+A. What is the header size?
+B. Are there any options?
+C. What is the size of the data?
+D. Is this packet fragmented?
+E. How many more routers can the packet travel to?
+F. What is the protocol number of the payload?
 
+### Detailed Step-by-Step Analysis
+Hex: `45 00 00 54 00 03 00 00 20 06 ...`
+
+A. **Header Size**
+   - Value: First byte `45`. Second digit `5`.
+   - Calculation: HLEN = 5 words.
+   - 5 * 4 bytes/word = **20 bytes**.
+
+B. **Options**
+   - Standard IPv4 Header is 20 bytes.
+   - Since calculated size is exactly 20 bytes, there are **No Options** present.
+
+C. **Data Size**
+   - Total Length Field: Bytes 2-3 -> `00 54`.
+   - 54 Hex = (5 * 16) + 4 = 84 Decimal.
+   - Payload = Total Length - Header = 84 - 20 = **64 bytes**.
+
+D. **Fragmentation Status**
+   - Flag/Offset Field: Bytes 6-7 -> `00 00`.
+   - First 3 bits (Flags): `000`. (Reserved, DF, MF). MF=0.
+   - Remaining 13 bits (Offset): `0`.
+   - Since MF=0 and Offset=0, the packet is **Not Fragmented** (or is a standalone packet).
+
+E. **Time To Live (TTL)**
+   - Byte 8: `20`.
+   - 20 Hex = **32 Decimal**.
+   - It can cross 32 routers.
+
+F. **Protocol**
+   - Byte 9: `06`.
+   - Protocol 6 = **TCP**.
+
+### Professional Insight
+The hex value `45` at the start of a packet is a classic signature for a standard IPv4 packet. `4` denotes version IPv4, and `5` denotes the standard 20-byte header length. Seeing `45` instantly tells a network engineer they are looking at a standard, option-free IPv4 header.
+
+-----------------------------------------------------------------------------------------
+QUESTION 11: Route Aggregation (High-Level Supernetting)
+-----------------------------------------------------------------------------------------
+Combine:
+1. 16.27.24.0/26
+2. 16.27.24.64/26
+3. 16.27.24.128/25
+
+### Detailed Step-by-Step Analysis
+We aggregate from the bottom up (smaller blocks into larger ones).
+
+1.  **Combine Subnets 1 & 2 (/26s):**
+    - Subnets: 16.27.24.0 (0 to 63) and 16.27.24.64 (64 to 127).
+    - These are contiguous and align on the /26 boundary.
+    - Combined, they form **16.27.24.0/25** (Range: 0 to 127).
+
+2.  **Combine Result with Subnet 3 (/25):**
+    - Current: 16.27.24.0/25 (Range 0-127).
+    - Target: 16.27.24.128/25 (Range 128-255).
+    - These are contiguous halves of a larger /24 block.
+    - Combined, they form **16.27.24.0/24** (Range: 0 to 255).
+
+**Final Result:** 16.27.24.0/24.
+
+### Professional Insight
+Route aggregation (or summarization) significantly reduces the size of routing tables in core routers. Instead of advertising 3 small routes, the router advertises just 1 /24 route. This saves memory and CPU processing time for route lookups worldwide.
+
+-----------------------------------------------------------------------------------------
+QUESTION 12: Routing Table Lookup (Longest Prefix Match)
+-----------------------------------------------------------------------------------------
+Dest: 142.150.71.132
+Candidates:
+A. 142.150.64.0/20
+B. 142.150.71.128/28
+D. 142.150.71.128/30
+C. 142.150.0.0/16
+
+### Detailed Step-by-Step Analysis
+We check if the destination IP falls inside each block's range.
+
+1.  **Candidate A (/20):**
+    - Range: 142.150.64.0 to 142.150.79.255.
+    - 71.132 is inside? **YES**.
+
+2.  **Candidate B (/28):**
+    - Range: 142.150.71.128 to 142.150.71.143 (128 + 15).
+    - 71.132 is inside? **YES**. (Since 132 is between 128 and 143).
+
+3.  **Candidate D (/30):**
+    - Range: 142.150.71.128 to 142.150.71.131 (128 + 3).
+    - 71.132 is inside? **NO**. (132 > 131).
+
+4.  **Candidate C (/16):**
+    - Range: 142.150.0.0 to 142.150.255.255.
+    - 71.132 is inside? **YES**.
+
+**Longest Prefix Match Selection:**
+- Matches found: A (/20), B (/28), C (/16).
+- Longest prefix length: 28 bits (Candidate B).
+
+**Next Hop:** Interface B.
+
+### Professional Insight
+The "Longest Prefix Match" rule is the golden rule of IP routing. It allows for hierarchical routing. A router can have a broad "default" path (like /16) but specific overrides (like /28) for specific subnets, ensuring traffic goes to the most specific known location.
+
+-----------------------------------------------------------------------------------------
+QUESTION 13: IPv6 Compression (Shortest Form)
+-----------------------------------------------------------------------------------------
 A. 2340:1ABC:119A:A000:0000:0000:0000:0000
-   -> 2340:1ABC:119A:A000:: (Trailing zeros compressed)
-
 B. 0000:00AA:0000:0000:0000:119A:A231
-   -> 0:AA::119A:A231 (Leading zero group compressed? No, usually largest block).
-   -> 0:AA::119A:A231 (Middle block of zeros is largest).
-
 C. 2340:0000:0000:0000:0000:119A:A001:0000
-   -> 2340::119A:A001:0 (Middle block compressed).
-
 D. 0000:0000:0000:2340:0000:0000:0000:0000
-   -> ::2340:0:0:0:0 (Leading zeros compressed).
-   -> OR 0:0:0:2340:: (Trailing zeros compressed).
-   -> Standard prefers compressing the longest sequence. Both are length 3 or 4.
-   -> ::2340:0:0:0:0 is valid.
+
+### Detailed Step-by-Step Analysis
+Rules:
+1. Drop leading zeros in a hextet (e.g., `00AA` -> `AA`).
+2. Replace **one** contiguous string of zero hextets with `::`.
+3. If there are multiple zero strings, compress the longest one.
+
+A. **2340:1ABC:119A:A000:0000:0000:0000:0000**
+   - Zeros at end (4 groups).
+   - Compress last 4 groups.
+   - **Result:** 2340:1ABC:119A:A000::
+
+B. **0000:00AA:0000:0000:0000:119A:A231**
+   - Group 1: 0000 (1 group).
+   - Group 3,4,5: 0000:0000:0000 (3 groups).
+   - Compress the longest run (Groups 3-5).
+   - **Result:** 0:AA::119A:A231 (Note: First 0000 becomes single 0).
+
+C. **2340:0000:0000:0000:0000:119A:A001:0000**
+   - Zero run in middle: 4 groups.
+   - **Result:** 2340::119A:A001:0 (Last group becomes single 0).
+
+D. **0000:0000:0000:2340:0000:0000:0000:0000**
+   - Option 1: Compress first 3 zeros -> `::2340:0:0:0:0`
+   - Option 2: Compress last 4 zeros -> `0:0:0:2340::`
+   - Convention: Compress longest run. 4 > 3, so Option 2 is technically more compressed?
+   - Actually, RFC 5952 recommends compressing the *first* sequence if lengths are equal, but here lengths differ.
+   - However, `::2340:0:0:0:0` is often preferred for readability if it aligns with network boundaries.
+   - Strictly by length: The last run is 4 zeros.
+   - **Result:** 0:0:0:2340::
+
+### Professional Insight
+The `::` compression can only be used once per address to avoid ambiguity. If you had `1::1::1`, the router wouldn't know if it meant `1:0:0:0:1:0:1` or `1:0:1:0:0:0:1`. Ambiguity in addressing is fatal for routing logic.
 
 =========================================================================================
-END OF SCHOLARLY SOLUTION
+END OF DOCUMENT
