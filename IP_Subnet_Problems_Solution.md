@@ -1,12 +1,12 @@
 # IP and Subnet Practice Problems - Detailed Solutions
 
-<!-- =========================================================================================
-FILE NAME: IP_Subnet_Problems_Solution.md
-AUTHOR: [Amey Thakur](https://github.com/Amey-Thakur)
-COURSE REPO: https://github.com/Amey-Thakur/COMPUTER-NETWORKS
-RELEASE DATE: December 06, 2023
-LICENSE: Creative Commons Attribution 4.0 International (CC BY 4.0)
-========================================================================================= -->
+> **File Name**: `IP_Subnet_Problems_Solution.md`
+> **Author**: [Amey Thakur](https://github.com/Amey-Thakur)
+> **Course Repo**: [COMPUTER-NETWORKS](https://github.com/Amey-Thakur/COMPUTER-NETWORKS)
+> **Release Date**: December 06, 2023
+> **License**: Creative Commons Attribution 4.0 International (CC BY 4.0)
+
+---
 
 ## Description
 This document provides comprehensive, step-by-step solutions to the **"IP and Subnet Practice Problems"** supplementary material. It covers IPv4 addressing, subnetting logic, VLSM (Variable Length Subnet Masking), IP datagram analysis, fragmentation, and routing table lookups.
