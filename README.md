@@ -89,6 +89,24 @@ Academic roadmap and administrative records for the Fall 2023 session:
 
 ---
 
+### Assignments
+A granular record of 10 laboratory reports documenting protocol analysis and network configuration using Wireshark and other simulation tools.
+
+| # | Lab | Topic | Documentation |
+| :-: | :--- | :--- | :---: |
+| 1 | **Lab 01** | Introduction to Wireshark | [View Report](Assignments/Lab%201/Lab%201_%20Introduction%20to%20Wireshark%20%5BAmey-110107589%5D-328776.pdf) |
+| 2 | **Lab 02** | Ethernet and ARP | [View Report](Assignments/Lab%202/Lab%202_%20Ethernet%20and%20ARP%20%5BAmey-110107589%5D-381246.pdf) |
+| 3 | **Lab 03** | Wi-Fi | [View Report](Assignments/Lab%203/Lab%203_%20Wi-Fi%20%5BAmey-110107589%5D-405692.pdf) |
+| 4 | **Lab 04** | DHCP | [View Report](Assignments/Lab%204/Lab%204_%20DHCP-110107589-440561.pdf) |
+| 5 | **Lab 05** | NAT | [View Report](Assignments/Lab%205/Lab%205_%20NAT-110107589.pdf) |
+| 6 | **Lab 06** | IP | [View Report](Assignments/Lab%206/Lab%206_%20IP%20%5BAmey-110107589%5D-454660.pdf) |
+| 7 | **Lab 07** | ICMP | [View Report](Assignments/Lab%207/Lab%207_%20ICMP-110107589.pdf) |
+| 8 | **Lab 08** | UDP | [View Report](Assignments/Lab%208/Lab%208_%20UDP-110107589.pdf) |
+| 9 | **Lab 09** | TCP | [View Report](Assignments/Lab%209/Lab%209_%20TCP-110107589.pdf) |
+| 10 | **Lab 10** | DNS | [View Report](Assignments/Lab%2010/Lab%2010_%20DNS%20-%20Computer%20Networks%20-%20University%20of%20Windsor.pdf) |
+
+---
+
 <!-- =========================================================================================
                                      LECTURE NOTES SECTION
      ========================================================================================= -->
@@ -113,27 +131,6 @@ A comprehensive archival log documenting pedagogical discourse across nine key m
 
 ---
 
-<!-- =========================================================================================
-                                     ASSIGNMENTS SECTION
-     ========================================================================================= -->
-
-## Assignments
-A granular record of 10 laboratory reports documenting protocol analysis and network configuration using Wireshark and other simulation tools.
-
-| # | Lab | Topic | Documentation |
-| :-: | :--- | :--- | :---: |
-| 1 | **Lab 01** | Introduction to Wireshark | [View Report](Assignments/Lab%201/Lab%201_%20Introduction%20to%20Wireshark%20%5BAmey-110107589%5D-328776.pdf) |
-| 2 | **Lab 02** | Ethernet and ARP | [View Report](Assignments/Lab%202/Lab%202_%20Ethernet%20and%20ARP%20%5BAmey-110107589%5D-381246.pdf) |
-| 3 | **Lab 03** | Wi-Fi | [View Report](Assignments/Lab%203/Lab%203_%20Wi-Fi%20%5BAmey-110107589%5D-405692.pdf) |
-| 4 | **Lab 04** | DHCP | [View Report](Assignments/Lab%204/Lab%204_%20DHCP-110107589-440561.pdf) |
-| 5 | **Lab 05** | NAT | [View Report](Assignments/Lab%205/Lab%205_%20NAT-110107589.pdf) |
-| 6 | **Lab 06** | IP | [View Report](Assignments/Lab%206/Lab%206_%20IP%20%5BAmey-110107589%5D-454660.pdf) |
-| 7 | **Lab 07** | ICMP | [View Report](Assignments/Lab%207/Lab%207_%20ICMP-110107589.pdf) |
-| 8 | **Lab 08** | UDP | [View Report](Assignments/Lab%208/Lab%208_%20UDP-110107589.pdf) |
-| 9 | **Lab 09** | TCP | [View Report](Assignments/Lab%209/Lab%209_%20TCP-110107589.pdf) |
-| 10 | **Lab 10** | DNS | [View Report](Assignments/Lab%2010/Lab%2010_%20DNS%20-%20Computer%20Networks%20-%20University%20of%20Windsor.pdf) |
-
----
 
 <!-- =========================================================================================
                                      SUPPLEMENTAL SECTION
