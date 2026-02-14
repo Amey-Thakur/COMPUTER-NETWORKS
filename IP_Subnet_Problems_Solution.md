@@ -455,4 +455,12 @@ Aggregating routes requires finding the common high-order bits.
 </div>
 
 ---
-**End of Document**
+<div align="center">
+
+  ### 🎓 [MEng Computer Engineering Repository](https://github.com/Amey-Thakur/MENG-COMPUTER-ENGINEERING)
+
+  **Computer Engineering (M.Eng) - University of Windsor**
+
+  *An archival record of **graduate-level research** and **advanced engineering coursework**.*
+
+</div>
