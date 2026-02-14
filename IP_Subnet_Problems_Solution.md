@@ -8,16 +8,16 @@ RELEASE DATE: December 06, 2023
 LICENSE: Creative Commons Attribution 4.0 International (CC BY 4.0)
 ========================================================================================= -->
 
-## 📋 Description
+## Description
 This document provides comprehensive, step-by-step scholarly solutions to the **"IP and Subnet Practice Problems"** supplementary material. It covers IPv4 addressing, subnetting logic, VLSM (Variable Length Subnet Masking), IP datagram analysis, fragmentation, and routing table lookups.
 
-### 🛠️ Technology Stack
+### Technology Stack
 - **Domain**: Network Engineering (IPv4/IPv6 Addressing)
 - **Tools**: Binary Arithmetic, Subnet Logic
 
 ---
 
-## 📑 Table of Contents
+## Table of Contents
 1.  [Binary to Dotted-Decimal Conversion](#question-1-change-the-following-ip-addresses-from-dotted-decimal-notation-to-binary-notation)
 2.  [Dotted-Decimal to Binary Conversion](#question-2-change-the-following-ip-addresses-from-binary-notation-to-dotted-decimal-notation)
 3.  [IP Class Identification](#question-3-find-the-class-of-the-following-ip-addresses)
@@ -36,7 +36,7 @@ This document provides comprehensive, step-by-step scholarly solutions to the **
 
 ## Question 1: Change the following IP addresses from dotted-decimal notation to binary notation.
 
-### 🔢 Detailed Step-by-Step Analysis
+### Detailed Step-by-Step Analysis
 To convert a decimal octet (0-255) to an 8-bit binary segment, we decompose the number into sums of powers of 2.
 
 | Power of 2 | 128 | 64 | 32 | 16 | 8 | 4 | 2 | 1 |
@@ -74,13 +74,13 @@ To convert a decimal octet (0-255) to an 8-bit binary segment, we decompose the 
 
 **Result:** `11101110.00100010.00000010.00000001`
 
-> **🎓 Professional Insight**: Memorizing the "impostor" values like **128, 192, 224, 240, 248, 252, 254, 255** is crucial for subnetting. These specific sums of contiguous high-order bits appear frequently in subnet masks.
+> **Professional Insight**: Memorizing the "impostor" values like **128, 192, 224, 240, 248, 252, 254, 255** is crucial for subnetting. These specific sums of contiguous high-order bits appear frequently in subnet masks.
 
 ---
 
 ## Question 2: Change the following IP addresses from binary notation to dotted-decimal notation.
 
-### 🔢 Detailed Step-by-Step Analysis
+### Detailed Step-by-Step Analysis
 Sum the values of the active bits (where the bit is `1`).
 
 #### A. `01111111.11110000.01100111.01111101`
@@ -111,13 +111,13 @@ Sum the values of the active bits (where the bit is `1`).
 `11101111` (239) . `11110111` (247) . `11000111` (199) . `00011101` (29)
 **Result:** `239.247.199.29`
 
-> **🎓 Professional Insight**: When converting high-density binary numbers (lots of 1s), it is often faster to subtract the value of the '0' positions from 255. For example, `11101111` has a 0 at the 16s place, so `255 - 16 = 239`.
+> **Professional Insight**: When converting high-density binary numbers (lots of 1s), it is often faster to subtract the value of the '0' positions from 255. For example, `11101111` has a 0 at the 16s place, so `255 - 16 = 239`.
 
 ---
 
 ## Question 3: Find the class of the following IP addresses.
 
-### 📂 Detailed Analysis
+### Detailed Analysis
 The class is determined by the specific range of the first octet.
 
 | Class | Range | Leading Bits |
@@ -132,13 +132,13 @@ The class is determined by the specific range of the first octet.
 **C. 114.34.2.8** → 114 is in 0-127 → **Class A**
 **D. 129.14.6.8** → 129 is in 128-191 → **Class B**
 
-> **🎓 Professional Insight**: While Classful addressing is technically obsolete due to **CIDR**, understanding it is essential for configuring legacy systems and knowing default subnet masks.
+> **Professional Insight**: While Classful addressing is technically obsolete due to **CIDR**, understanding it is essential for configuring legacy systems and knowing default subnet masks.
 
 ---
 
 ## Question 4: Write the following masks in slash notation (/n).
 
-### 🔢 Detailed Analysis
+### Detailed Analysis
 Count the contiguous "1" bits.
 
 **A. 255.255.255.0**
@@ -153,13 +153,13 @@ Count the contiguous "1" bits.
 **D. 255.255.240.0**
 `11111111.11111111.11110000...` → 8+8+4 = **/20**
 
-> **🎓 Professional Insight**: Every extra bit in the CIDR prefix **doubles** the number of subnets and **halves** the hosts per subnet. Moving from /19 to /20 splits the network exactly in half.
+> **Professional Insight**: Every extra bit in the CIDR prefix **doubles** the number of subnets and **halves** the hosts per subnet. Moving from /19 to /20 splits the network exactly in half.
 
 ---
 
 ## Question 5: Find the range of addresses in the following blocks.
 
-### 📐 Detailed Calculation
+### Detailed Calculation
 Formula: `Block Size = 2^(32 - Prefix)`
 
 #### A. 123.56.77.32/29
@@ -180,13 +180,13 @@ Formula: `Block Size = 2^(32 - Prefix)`
 *   **Block Size**: 2^2 = **4** addresses.
 *   **Range**: `180.34.64.64` to `180.34.64.67`
 
-> **🎓 Professional Insight**: The **/30** subnet is famously used for Point-to-Point router links because it provides exactly 2 usable IP addresses, maximizing conservation.
+> **Professional Insight**: The **/30** subnet is famously used for Point-to-Point router links because it provides exactly 2 usable IP addresses, maximizing conservation.
 
 ---
 
 ## Question 6: An organization is granted the block 211.17.180.0/24. Create 32 subnets.
 
-### 🛠️ Subnetting Design
+### Subnetting Design
 1.  **Current Prefix**: /24
 2.  **Required Subnets**: 32
 3.  **Borrowing**: 2^s ≥ 32 → `s = 5` bits.
@@ -207,7 +207,7 @@ Formula: `Block Size = 2^(32 - Prefix)`
 *   **Start**: `211.17.180.248`
 *   **End**: `211.17.180.255`
 
-> **🎓 Professional Insight**: Always verify the last subnet ends at the parent block's boundary. Here, both end at `.255`, confirming perfect alignment.
+> **Professional Insight**: Always verify the last subnet ends at the parent block's boundary. Here, both end at `.255`, confirming perfect alignment.
 
 ---
 
@@ -215,7 +215,7 @@ Formula: `Block Size = 2^(32 - Prefix)`
 
 **Given**: `M=0`, `HLEN=5`, `Total Length=200`, `Offset=200`.
 
-### 🔍 Analysis
+### Analysis
 1.  **Offset Calculation**:
     The offset field is in 8-byte units.
     `True Offset = 200 * 8 = 1600 bytes`
@@ -240,7 +240,7 @@ Formula: `Block Size = 2^(32 - Prefix)`
 
 ## Question 8: ISP Block 16.12.64.0/20 distributed to 8 organizations.
 
-### 🏗️ Network Design
+### Network Design
 **ISP Block**: `16.12.64.0/20` (4096 Addresses)
 **Requirement**: 8 subblocks of 256 addresses each.
 
@@ -265,7 +265,7 @@ Formula: `Block Size = 2^(32 - Prefix)`
 
 **Block**: `80.70.56.0/21` (2048 IPs)
 
-### 📉 Allocation Strategy (Largest First)
+### Allocation Strategy (Largest First)
 We must allocate larger blocks first to avoid fragmentation.
 
 1.  **Group A (500 hosts)** → Needs **/23** (512 IPs)
@@ -284,13 +284,13 @@ We must allocate larger blocks first to avoid fragmentation.
     *   **Org 7**: `80.70.62.128/26`
     *   *Next Available: 80.70.62.192*
 
-> **🎓 Professional Insight**: The **"Largest First"** rule in VLSM is mandatory. Assigning small blocks first fractures the address space, making it impossible to fit large blocks later.
+> **Professional Insight**: The **"Largest First"** rule in VLSM is mandatory. Assigning small blocks first fractures the address space, making it impossible to fit large blocks later.
 
 ---
 
 ## Question 10: Hex Dump Analysis: 45000054 00030000 2006...
 
-### 🕵️ Hex Interpretation
+### Hex Interpretation
 `45 00 00 54 00 03 00 00 20 06 ...`
 
 *   **A. Header Size**: `4` (IPv4), `5` (5 words) → **20 bytes**.
@@ -309,7 +309,7 @@ We must allocate larger blocks first to avoid fragmentation.
 2.  `16.27.24.64/26`
 3.  `16.27.24.128/25`
 
-### 🔗 Aggregation Logic
+### Aggregation Logic
 1.  Combine **1 & 2**: `16.27.24.0` (0-63) + `16.27.24.64` (64-127)
     → **16.27.24.0/25** (0-127)
 
@@ -324,24 +324,24 @@ We must allocate larger blocks first to avoid fragmentation.
 
 **Destination**: `142.150.71.132`
 
-### 🚦 Route Matching
+### Route Matching
 | Candidate | Range | Match? |
 | :--- | :--- | :---: |
-| A. `142.150.64.0/20` | .64.0 - .79.255 | ✅ **Yes** |
-| B. `142.150.71.128/28` | .71.128 - .71.143 | ✅ **Yes** |
-| C. `142.150.0.0/16` | .0.0 - .255.255 | ✅ **Yes** |
-| D. `142.150.71.128/30` | .71.128 - .71.131 | ❌ No (132 > 131) |
+| A. `142.150.64.0/20` | .64.0 - .79.255 | **Yes** |
+| B. `142.150.71.128/28` | .71.128 - .71.143 | **Yes** |
+| C. `142.150.0.0/16` | .0.0 - .255.255 | **Yes** |
+| D. `142.150.71.128/30` | .71.128 - .71.131 | No (132 > 131) |
 
 **Decision**: The longest prefix is **/28** (Candidate B).
 **Next Hop**: Interface B.
 
-> **🎓 Professional Insight**: **Longest Prefix Match** enables hierarchical routing, allowing a specific route (like /28) to override a general default path (like /16).
+> **Professional Insight**: **Longest Prefix Match** enables hierarchical routing, allowing a specific route (like /28) to override a general default path (like /16).
 
 ---
 
 ## Question 13: IPv6 Compression (Shortest Form)
 
-### 📉 Compression Rules
+### Compression Rules
 1.  Drop leading zeros.
 2.  Replace one consecutive string of zero blocks with `::`.
 
@@ -357,7 +357,7 @@ We must allocate larger blocks first to avoid fragmentation.
 **D. 0000:0000:0000:2340:0000:0000:0000:0000**
 → `::2340:0:0:0:0` (or `0:0:0:2340::`)
 
-> **🎓 Professional Insight**: Ambiguity (`1::1::1`) is fatal. `::` can appear **only once**.
+> **Professional Insight**: Ambiguity (`1::1::1`) is fatal. `::` can appear **only once**.
 
 ---
 **End of Document**
