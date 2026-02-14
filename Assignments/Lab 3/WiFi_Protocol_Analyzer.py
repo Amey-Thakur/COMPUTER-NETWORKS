@@ -8,10 +8,10 @@
  * License: Creative Commons Attribution 4.0 International (CC BY 4.0)
  * 
  * Description:
- * This script serves as a technical companion to Lab 03: Wireless Fidelity (Wi-Fi).
- * It explores the characteristics of 802.11 wireless frames, specifically 
- * Beacon Frames used for network advertisement and the management of 
- * Service Set Identifiers (SSIDs).
+ * Evaluates IEEE 802.11 wireless frame structures, specifically focusing 
+ * on management frames and network discovery mechanisms. Includes 
+ * simulations for beaconing intervals, data rate advertisements, and
+ * the unique triple-addressing scheme used in 802.11 environments.
  */
 
 import time
@@ -22,7 +22,7 @@ class WiFiManagementArchive:
     """
 
     def __init__(self):
-        # Data derived from the Lab 3 trace analysis
+        # Radio environment configuration for analyzed access points
         self.access_points = {
             "30 Munroe St": {
                 "mac": "00:16:b6:f7:1d:51",
@@ -38,8 +38,7 @@ class WiFiManagementArchive:
 
     def simulate_beacon_broadcast(self, ssid):
         """
-        Simulates the periodic broadcast of a Beacon frame.
-        Reflects Question 2 and 6 of the lab report.
+        Generates a simulation of the periodic BSSID advertisement cycle.
         """
         if ssid in self.access_points:
             ap = self.access_points[ssid]
@@ -56,8 +55,7 @@ class WiFiManagementArchive:
     @staticmethod
     def explain_80211_addressing():
         """
-        Explains the triple-addressing scheme used in 802.11 frames.
-        As explored in Question 7 and 8 of the report.
+        Technical breakdown of the address fields within 802.11 MAC headers.
         """
         print("\n" + "-"*60)
         print("TECHNICAL INSIGHT: 802.11 TRIPLE-ADDRESSING")
@@ -71,7 +69,7 @@ class WiFiManagementArchive:
     @staticmethod
     def display_scholarly_responses():
         """
-        Prints the specific findings from the Lab 03 report.
+        Displays analyzed wireless networking parameters and BSSID data.
         """
         print("\n" + "="*75)
         print("LABORATORY RESULTS: SCHOLARLY RESPONSES")

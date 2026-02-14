@@ -8,10 +8,10 @@
  * License: Creative Commons Attribution 4.0 International (CC BY 4.0)
  * 
  * Description:
- * This script serves as a technical companion to Lab 02: Ethernet and ARP. 
- * It explores the structure of Ethernet frames at the Data Link Layer (Layer 2) 
- * and the mechanism of the Address Resolution Protocol (ARP) for mapping 
- * IP addresses to physical MAC addresses.
+ * Analyzes Ethernet frame structures and Address Resolution Protocol (ARP) 
+ * mechanics. This module provides tools for MAC address discovery, 
+ * EtherType identification, and multi-layer header offset calculations
+ * to determine application payload positioning within Layer 2 envelopes.
  */
 
 import uuid
@@ -25,8 +25,7 @@ class NetworkingArchive:
     @staticmethod
     def get_local_mac():
         """
-        Retrieves the 48-bit Ethernet address (MAC) of the local machine.
-        This corresponds to Question 1 of the lab report.
+        Retrieves the 48-bit physical address of the primary network interface.
         """
         mac_int = uuid.getnode()
         mac_hex = ':'.join(['{:02x}'.format((mac_int >> i) & 0xff) for i in range(0, 48, 8)][::-1])
@@ -35,8 +34,7 @@ class NetworkingArchive:
     @staticmethod
     def analyze_frame_header(frame_type_hex):
         """
-        Identifies the upper-layer protocol based on the 2-byte EtherType field.
-        As seen in Questions 3 and 14 of the report.
+        Maps the 16-bit EtherType field to its corresponding network layer protocol.
         """
         protocols = {
             "0x0800": "Internet Protocol version 4 (IPv4)",
@@ -48,8 +46,7 @@ class NetworkingArchive:
     @staticmethod
     def calculate_payload_offset(include_preamble=True):
         """
-        Illustrates the byte-offset analysis for application data within a frame.
-        Mirroring the calculation in Question 4/8 of the report.
+        Calculates the byte-aligned position of data relative to the start of the frame.
         """
         ethernet_header = 14  # Destination (6) + Source (6) + Type (2)
         ip_header = 20        # Standard IPv4 header
@@ -74,7 +71,7 @@ class NetworkingArchive:
     @staticmethod
     def display_scholarly_responses():
         """
-        Prints the specific findings from the Lab 02 report.
+        Outputs analyzed address data and protocol identification results.
         """
         print("\n" + "="*75)
         print("LABORATORY RESULTS: SCHOLARLY RESPONSES")

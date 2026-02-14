@@ -9,13 +9,10 @@
  * License: Creative Commons Attribution 4.0 International (CC BY 4.0)
  * 
  * Description:
- * This script serves as a technical companion to Lab 01: Introduction to Wireshark.
- * It programmatically replicates the HTTP GET request performed during the lab 
- * session to illustrate the interaction between a client (this script) and the 
- * UMass 'gaia' server. By extracting and displaying HTTP headers, it provides 
- * a scholarly look at the metadata exchanged in a standard web communication 
- * cycle, bridging the gap between graphical analysis (Wireshark) and 
- * implementation-level protocol handling.
+ * Implementation of an HTTP GET request protocol analyzer. This script
+ * demonstrates the automated retrieval of web resources and the 
+ * programmatic inspection of HTTP response headers to evaluate 
+ * server-side configurations and network transmission characteristics.
  */
 """
 
@@ -30,7 +27,7 @@ class HTTPProtocolArchive:
     @staticmethod
     def display_scholarly_responses():
         """
-        Prints the specific findings from the Lab 01 report.
+        Displays analyzed protocol metrics and server identification data.
         """
         print("\n" + "="*75)
         print("LABORATORY RESULTS: SCHOLARLY RESPONSES")
@@ -47,8 +44,7 @@ class HTTPProtocolArchive:
 
 def analyze_http_request(url):
     """
-    Performs a scholarly analysis of an HTTP GET request.
-    This function mimics the browser behavior observed in the Wireshark capture.
+    Executes a standard HTTP GET request and performs header analysis.
     """
     print("="*70)
     print(f"Scholarly Analysis of HTTP Protocol Interaction")
@@ -56,24 +52,20 @@ def analyze_http_request(url):
     print("="*70)
     
     try:
-        # Recording the start time to calculate network latency.
-        # This mirrors the time-delta analysis performed in the lab report (Question 2).
+        # Capture the initiation timestamp for RTT calculation.
         start_time = time.time()
         
-        # Initializing the HTTP GET request.
-        # In a Wireshark trace, this corresponds to the 'Hypertext Transfer Protocol' layer.
+        # Initialize the network connection and request the remote resource.
         with urllib.request.urlopen(url) as response:
             end_time = time.time()
             latency = end_time - start_time
             
-            # Retrieval of the HTTP Status Code.
-            # Code 200 signifies a successful 'OK' response from the gaia server.
+            # Evaluate the HTTP response status.
             status_code = response.getcode()
             print(f"[+] Protocol Status: {status_code} OK")
             print(f"[+] Total Round-Trip Time (Latency): {latency:.4f} seconds")
             
-            # Detailed Inspection of HTTP Headers.
-            # These headers represent the 'Packet Details' observed in the Wireshark GUI.
+            # Parse and display relevant header metadata.
             print("\n--- Significant HTTP Header Metadata (Server Response) ---")
             headers = response.info()
             
@@ -89,8 +81,7 @@ def analyze_http_request(url):
             # The 'Content-Type' defines the media format (HTML in this instance).
             print(f"| Media Format: {headers.get('Content-Type', 'Not Provided')}")
             
-            # Final Payload Retrieval.
-            # This is the actual data displayed in the web browser during Step 3 of the lab.
+            # Read and decode the response body.
             content = response.read().decode('utf-8').strip()
             print("\n--- Retrieved Application Payload ---")
             print(f"> {content}")

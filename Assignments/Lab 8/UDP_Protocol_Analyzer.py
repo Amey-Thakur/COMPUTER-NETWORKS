@@ -8,10 +8,10 @@
  * License: Creative Commons Attribution 4.0 International (CC BY 4.0)
  * 
  * Description:
- * This script serves as a technical companion to Lab 08: User Datagram 
- * Protocol (UDP). It explores the structure of the 8-byte UDP header, 
- * the calculation of payload lengths, and the symmetry of port 
- * assignments in a connectionless transport environment.
+ * Evaluates the User Datagram Protocol (UDP) at the Transport Layer.
+ * This module analyzes the 8-byte UDP header structure, payload 
+ * length determination, and the symmetrical port assignment observed 
+ * in connectionless request/reply interactions.
  */
 
 class UDPSegmentArchive:
@@ -20,7 +20,7 @@ class UDPSegmentArchive:
     """
 
     def __init__(self):
-        # Data derived from the Lab 08 report analysis
+        # Transport layer parameters for UDP session analysis
         self.host_ip = "192.168.2.20"
         self.target_ip = "142.251.41.36"
         self.protocol_num_decimal = 17
@@ -29,23 +29,23 @@ class UDPSegmentArchive:
 
     def simulate_udp_interaction(self):
         """
-        Simulates the port swapping observed in request/reply datagrams.
-        Reflects Question 7 of the lab report.
+        Demonstrates port mapping symmetry in connectionless datagram flows.
         """
-        request_src_port = 60124
-        request_dst_port = 53 # DNS Query
+        request_src_port = 9431
+        request_dst_port = 9431
         
         print("\n" + "="*75)
-        print(f"SIMULATING UDP REQUEST/REPLY SYMMETRY")
+        print(f"SIMULATING UDP REQUEST/REPLY SYMMETRY (SPECIFIC CAPTURE)")
         print("="*75)
         
         # 1. REQUEST (Outgoing)
-        print(f"[PACKET: REQUEST] Host -> DNS Server")
+        print(f"[PACKET: REQUEST] Host -> Peer")
         print(f"    - Source Port: {request_src_port} | Destination Port: {request_dst_port}")
         print(f"    - UDP Length: 62 bytes (Payload) + 8 bytes (Header) = 70 bytes")
+        print(f"    - Checksum: 0x7111 (As captured in the report)")
 
         # 2. REPLY (Incoming)
-        print(f"\n[PACKET: REPLY] DNS Server -> Host")
+        print(f"\n[PACKET: REPLY] Peer -> Host")
         print(f"    - Source Port: {request_dst_port} | Destination Port: {request_src_port}")
         print(f"    - Status: Port values are symmetrically swapped for the return path.")
         print("="*75)
@@ -53,7 +53,7 @@ class UDPSegmentArchive:
     @staticmethod
     def display_scholarly_responses():
         """
-        Prints the specific findings from the Lab 08 report.
+        Summarizes UDP header field analysis and protocol characteristics.
         """
         print("\n" + "="*75)
         print("LABORATORY RESULTS: SCHOLARLY RESPONSES")

@@ -8,11 +8,10 @@
  * License: Creative Commons Attribution 4.0 International (CC BY 4.0)
  * 
  * Description:
- * This script serves as a technical companion to Lab 06: Internet Protocol (IP).
- * It simulates the structure of an IPv4 datagram and demonstrates two critical
- * networking concepts analyzed in the lab:
- * 1. TTL (Time-to-Live) decrement during Traceroute operations.
- * 2. IP Fragmentation of large UDP segments (e.g., 3000 bytes).
+ * Analyzes IPv4 datagram structures and lifecycle management. Focuses 
+ * on Time-to-Live (TTL) decrement logic for hop-count limiting and 
+ * the IP fragmentation process required when payloads exceed the 
+ * Maximum Transmission Unit (MTU) of a network segment.
  */
 
 class IPv4PacketArchive:
@@ -22,15 +21,14 @@ class IPv4PacketArchive:
 
     def __init__(self, source_ip="192.168.2.95", destination_ip="128.119.245.12"):
         self.version = 4
-        self.header_length = 20 # Standard 20 bytes (Question 4)
+        self.header_length = 20 # Standard IPv4 fixed header size
         self.source_ip = source_ip
         self.destination_ip = destination_ip
         self.protocol = "ICMP (1)" # Or UDP (17) depending on context
 
     def simulate_traceroute_ttl(self, max_hops=3):
         """
-        Simulates the incrementing TTL behavior of Traceroute.
-        Reflects Questions 2 and 7 of the lab report.
+        Demonstrates the hop-by-hop TTL decrement mechanism.
         """
         print("\n" + "-"*75)
         print("SIMULATION: TRACEROUTE TTL MECHANISM")
@@ -42,14 +40,13 @@ class IPv4PacketArchive:
 
     def simulate_fragmentation(self, udp_payload_size=3000, mtu=1500):
         """
-        Simulates the fragmentation of a large segment into multiple datagrams.
-        Reflects Questions 13 to 19 of the lab report.
+        Simulates packet segmentation for payloads exceeding the MTU.
         """
         print("\n" + "="*75)
         print("SIMULATION: IP FRAGMENTATION (3000-byte UDP Segment)")
         print("="*75)
         
-        # Calculation logic derived from lab analysis
+        # Fragmentation parameters for a 1500-byte MTU
         # Total Length = 1500 (MTU)
         # Header = 20
         # Payload per fragment = 1480 (must be multiple of 8)
@@ -94,7 +91,7 @@ class IPv4PacketArchive:
     @staticmethod
     def display_scholarly_responses():
         """
-        Prints the specific findings from the Lab 06 report.
+        Outputs analyzed datagram fields and fragmentation state metadata.
         """
         print("\n" + "="*75)
         print("LABORATORY RESULTS: SCHOLARLY RESPONSES")

@@ -8,10 +8,10 @@
  * License: Creative Commons Attribution 4.0 International (CC BY 4.0)
  * 
  * Description:
- * This script serves as a technical companion to Lab 07: Internet Control 
- * Message Protocol (ICMP). It explores the mechanics of ICMP "Echo" 
- * (Ping) and the "Time Exceeded" error messages utilized by the 
- * Traceroute mechanism.
+ * Explores the Internet Control Message Protocol (ICMP) for network 
+ * diagnostics. Implements simulation logic for ICMP Echo Request/Reply 
+ * (Ping) cycles and the "Time Exceeded" error feedback mechanisms 
+ * utilized for path discovery in traceroute operations.
  */
 
 import random
@@ -22,7 +22,7 @@ class ICMPProtocolArchive:
     """
 
     def __init__(self):
-        # High-fidelity data derived from the Lab 07 report
+        # Default parameters for ICMP analysis
         self.host_ip = "192.168.2.20"
         self.ping_target_ip = "142.251.41.36"      # google.com
         self.traceroute_target_ip = "172.217.1.4"  # google.com (alternate resolved IP)
@@ -30,8 +30,7 @@ class ICMPProtocolArchive:
 
     def simulate_ping_handshake(self):
         """
-        Simulates the ICMP Echo Request/Reply cycle.
-        Reflects Question 2 and 3 of the lab report.
+        Generates a simulation of the Echo Request/Reply handshake.
         """
         identifier = random.randint(0x0100, 0x0200)
         sequence_num = 1
@@ -55,8 +54,7 @@ class ICMPProtocolArchive:
 
     def simulate_traceroute_error(self, hop_num):
         """
-        Simulates the 'Time Exceeded' message returned by a router.
-        Reflects Question 7 and 8 of the lab report.
+        Replicates ICMP Type 11 error generation for path discovery.
         """
         router_ip = f"10.216.228.{hop_num}"
         print(f"\n[TRACEROUTE HOP {hop_num}] Sending Probe with TTL={hop_num}...")
@@ -66,7 +64,7 @@ class ICMPProtocolArchive:
     @staticmethod
     def display_scholarly_responses():
         """
-        Prints the specific findings from the Lab 07 report.
+        Displays analyzed ICMP type/code mappings and diagnostic findings.
         """
         print("\n" + "="*75)
         print("LABORATORY RESULTS: SCHOLARLY RESPONSES")

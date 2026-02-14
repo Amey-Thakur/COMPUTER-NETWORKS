@@ -8,10 +8,10 @@
  * License: Creative Commons Attribution 4.0 International (CC BY 4.0)
  * 
  * Description:
- * This script serves as a technical companion to Lab 04: Dynamic Host Configuration Protocol (DHCP).
- * It explores the four-step "DORA" process (Discover, Offer, Request, Acknowledge) used for 
- * dynamic IP address allocation. It also demonstrates the use of Transaction IDs and 
- * UDP-based transport.
+ * Implements an analysis of the Dynamic Host Configuration Protocol (DHCP)
+ * allocation sequence. This module explores the DORA handshake (Discover, 
+ * Offer, Request, ACK), UDP-based transport layers, and the function
+ * of the 32-bit transaction identifier (XID) during IP address assignment.
  */
 
 import random
@@ -22,7 +22,7 @@ class DHCPSystemArchive:
     """
 
     def __init__(self):
-        # Data derived from the Lab 4 trace analysis
+        # Infrastructure configuration for DHCP simulation
         self.server_ip = "192.168.2.1"
         self.client_mac = "1c:4d:70:a6:0b:49"
         self.lease_time = 259200  # 3 days in seconds
@@ -30,8 +30,7 @@ class DHCPSystemArchive:
 
     def simulate_dora_process(self):
         """
-        Simulates the Discover, Offer, Request, and ACK sequence.
-        Reflects Question 2, 5, and 6 of the lab report.
+        Replicates the state transitions in a DHCP allocation handshake.
         """
         transaction_id = "0x74292a0" # Constant for a single transaction set
         
@@ -63,7 +62,7 @@ class DHCPSystemArchive:
     @staticmethod
     def explain_transaction_id():
         """
-        Explains the purpose of the Transaction-ID as explored in Question 5.
+        Technical analysis of the 32-bit Transaction Identifier (XID).
         """
         print("\n" + "-"*60)
         print("TECHNICAL INSIGHT: THE TRANSACTION ID (XID)")
@@ -78,7 +77,7 @@ class DHCPSystemArchive:
     @staticmethod
     def display_scholarly_responses():
         """
-        Prints the specific findings from the Lab 04 report.
+        Summarizes protocol identification results and allocation parameters.
         """
         print("\n" + "="*75)
         print("LABORATORY RESULTS: SCHOLARLY RESPONSES")

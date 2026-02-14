@@ -1,0 +1,71 @@
+# LABORATORY TECHNICAL ANALYSIS: TRANSMISSION CONTROL PROTOCOL (TCP)
+# ===============================================================
+# Author: Amey Thakur
+# GitHub: [Amey-Thakur](https://github.com/Amey-Thakur)
+# Repository: [COMPUTER-NETWORKS](https://github.com/Amey-Thakur/COMPUTER-NETWORKS)
+# Session: Fall 2023
+# Release Date: November 21, 2023
+# Lab 09: Analyzing TCP Connection Management & Congestion Control
+# --------------------------------------------------------------
+
+INTRODUCTION:
+This technical analysis explores the Transmission Control Protocol (TCP), the reliable, connection-oriented transport protocol. We examine the three-way handshake, sequence number synchronization, flow control (window sizing), and the dynamic phases of congestion control (Slow Start and Congestion Avoidance).
+
+----------------------------------------------------------------
+PART 1: CONNECTION ESTABLISHMENT (THREE-WAY HANDSHAKE)
+----------------------------------------------------------------
+
+QUESTION 1: What is the IP address and TCP port number used by the client computer (source) that is transferring the file to gaia.cs.umass.edu?
+- Client IP Address: 192.168.2.95
+- Client Port Number: 50533
+[EXPLANATION]: This ephemeral port was assigned by the OS to the HTTP session.
+
+QUESTION 2: What is the IP address of gaia.cs.umass.edu? On what port number is it sending and receiving TCP segments for this connection?
+- Server IP Address: 128.119.245.12
+- Server Port Number: 80 (HTTP)
+[EXPLANATION]: Port 80 is the well-known port for unencrypted web traffic.
+
+QUESTION 3: What is the sequence number of the TCP SYN segment that is used to initiate the TCP connection between the client computer and gaia.cs.umass.edu?
+- Initial Sequence Number (ISN): 954047503
+[EXPLANATION]: The ISN is randomly generated to protect against blind injection attacks and sequence number overlap.
+
+QUESTION 4: Look at the Flags section. Is the SYN flag set to 1? Can the TCP receiver in this session use Selective Acknowledgments (SACK)?
+- SYN Flag: Set to 1.
+- SACK Status: Supported/Permitted.
+[EXPLANATION]: SACK allows a receiver to inform the sender about all segments that have been received successfully, enabling more efficient retransmission of missing fragments.
+
+QUESTION 5: What is the sequence number of the SYNACK segment sent by gaia.cs.umass.edu to the client computer? What is the value of the Acknowledgement field?
+- SYNACK Sequence Number: 1958276926
+- Acknowledgement Number: 954047504
+[EXPLANATION]: The server acknowledges the SYN (Ack = Client ISN + 1) and provides its own ISN.
+
+----------------------------------------------------------------
+PART 2: DATA TRANSFER & FLOW CONTROL
+----------------------------------------------------------------
+
+QUESTION 6: What is the sequence number of the TCP segment containing the header of the HTTP POST command?
+- Sequence Number: 954047504
+[EXPLANATION]: This follows the successful 3-way handshake (the ISN + 1).
+
+QUESTION 8: What is the length of the first data-carrying packet? What is the length of the subsequent packets?
+- First Packet Length: 684 Bytes (including headers).
+- Subsequent Packet Lengths: 1492 Bytes (Maximum Segment Size compliance).
+[EXPLANATION]: Bulk data transfer leverages the path's Maximum Segment Size (MSS) to minimize header overhead (40 bytes of header for 1452 bytes of data).
+
+QUESTION 9: What is the minimum amount of available buffer space advertised at the receiver for the first four data-carrying segments?
+- Minimum Window Size: 29200 Bytes.
+[EXPLANATION]: The "Window" field indicates how many bytes the receiver is willing to accept without further acknowledgement.
+
+----------------------------------------------------------------
+PART 3: CONGESTION CONTROL PHASES
+----------------------------------------------------------------
+
+QUESTION 13: Identify the start and end of the Slow Start phase and the transition to Congestion Avoidance.
+- Slow Start Phase: Starts at approx. 2.6 seconds; ends at approx. 2.8 seconds.
+- Congestion Avoidance Phase: Transitions at approx. 3.2 seconds.
+[EXPLANATION]: Slow start exponentially increases the congestion window (CWND) until a threshold or packet loss is met, at which point the protocol enters a linear growth phase (Congestion Avoidance).
+
+==============================================================
+TECHNICAL CONCLUSION:
+Lab 09 demonstrates the robustness of TCP. By managing state via the three-way handshake and dynamically adjusting transmission rates through congestion control algorithms, TCP provides the reliability required for protocols like HTTP while ensuring network-wide stability.
+==============================================================

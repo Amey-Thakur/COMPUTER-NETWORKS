@@ -8,10 +8,10 @@
  * License: Creative Commons Attribution 4.0 International (CC BY 4.0)
  * 
  * Description:
- * This script serves as a technical companion to Lab 05: Network Address Translation (NAT).
- * It demonstrates the mechanics of a NAT router as it modifies IP datagrams 
- * transitioning between a private LAN and the public Internet. The simulation 
- * focuses on Source IP translation and header checksum recalculation.
+ * Simulates Network Address Translation (NAT) router operations. This module
+ * demonstrates the automated translation of IP datagrams between private 
+ * LAN subnets and public WAN interfaces, including header modification 
+ * and checksum recalculation required for protocol transparency.
  */
 
 class NATRouterSimulation:
@@ -20,26 +20,24 @@ class NATRouterSimulation:
     """
 
     def __init__(self):
-        # Configuration derived from Lab 5 Trace Analysis
+        # Configuration for NAT gateway simulation
         self.lan_subnet = "192.168.10.0/24"
         self.wan_public_ip = "10.0.1.254"
         self.translation_table = {} # Port-based mapping
 
     def translate_outgoing_packet(self, src_ip, src_port, dst_ip, dst_port):
         """
-        Translates a packet from the internal network to the external network.
-        Reflects Questions 1, 4, and 5 of the lab report.
+        Executes Source IP translation for outbound traffic.
         """
         print("\n" + "-"*70)
         print("OUTGOING FLOW: INTERNAL -> EXTERNAL")
         print("-"*70)
         print(f"[*] Original (Inside): {src_ip}:{src_port} -> {dst_ip}:{dst_port}")
         
-        # Performance the NAT translation
-        # In the lab, the port remained 53924, but the IP changed.
+        # Update the source identifier to the public interface.
         translated_src_ip = self.wan_public_ip
         
-        # Simulate Checksum change (Question 8)
+        # Recalculate the IP header checksum to reflect address modifications.
         old_checksum = "0x64dc"
         new_checksum = "0x2d82"
 
@@ -67,7 +65,7 @@ class NATRouterSimulation:
     @staticmethod
     def display_scholarly_responses():
         """
-        Prints the specific findings from the Lab 05 report.
+        Summarizes NAT translation table entries and session parameters.
         """
         print("\n" + "="*75)
         print("LABORATORY RESULTS: SCHOLARLY RESPONSES")
