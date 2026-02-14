@@ -24,53 +24,63 @@ import time
 
 def analyze_http_request(url):
     """
-    Performs a pedagogical analysis of an HTTP GET request.
+    Performs a scholarly analysis of an HTTP GET request.
     This function mimics the browser behavior observed in the Wireshark capture.
     """
     print("="*70)
-    print(f"Pedagogical Analysis of HTTP Protocol Interaction")
+    print(f"Scholarly Analysis of HTTP Protocol Interaction")
     print(f"Target URL: {url}")
     print("="*70)
     
     try:
-        # Recording the start time to calculate network latency
-        # This mirrors the time-delta analysis performed in the lab report (Question 2)
+        # Recording the start time to calculate network latency.
+        # This mirrors the time-delta analysis performed in the lab report (Question 2).
         start_time = time.time()
         
-        # Initializing the HTTP GET request
-        # In a Wireshark trace, this corresponds to the 'Hypertext Transfer Protocol' layer
+        # Initializing the HTTP GET request.
+        # In a Wireshark trace, this corresponds to the 'Hypertext Transfer Protocol' layer.
         with urllib.request.urlopen(url) as response:
             end_time = time.time()
             latency = end_time - start_time
             
-            # Retrieval of the HTTP Status Code
-            # Code 200 signifies a successful 'OK' response from the gaia server
+            # Retrieval of the HTTP Status Code.
+            # Code 200 signifies a successful 'OK' response from the gaia server.
             status_code = response.getcode()
             print(f"[+] Protocol Status: {status_code} OK")
             print(f"[+] Total Round-Trip Time (Latency): {latency:.4f} seconds")
             
-            # Scholarly Inspection of HTTP Headers
-            # These headers represent the 'Packet Details' observed in the Wireshark GUI
+            # Detailed Inspection of HTTP Headers.
+            # These headers represent the 'Packet Details' observed in the Wireshark GUI.
             print("\n--- Significant HTTP Header Metadata (Server Response) ---")
             headers = response.info()
             
-            # The 'Date' header indicates when the server generated the response
+            # The 'Date' header indicates when the server generated the response.
             print(f"| Timestamp: {headers.get('Date', 'Not Provided')}")
             
-            # The 'Server' header identifies the backend architecture
+            # The 'Server' header identifies the backend architecture.
             print(f"| Server Software: {headers.get('Server', 'Not Provided')}")
             
-            # The 'Content-Length' specifies the size of the payload in bytes
+            # The 'Content-Length' specifies the size of the payload in bytes.
             print(f"| Payload Size: {headers.get('Content-Length', 'Not Provided')} bytes")
             
-            # The 'Content-Type' defines the media format (HTML in this instance)
+            # The 'Content-Type' defines the media format (HTML in this instance).
             print(f"| Media Format: {headers.get('Content-Type', 'Not Provided')}")
             
-            # Final Payload Retrieval
-            # This is the actual data displayed in the web browser during Step 3 of the lab
+            # Final Payload Retrieval.
+            # This is the actual data displayed in the web browser during Step 3 of the lab.
             content = response.read().decode('utf-8').strip()
             print("\n--- Retrieved Application Payload ---")
             print(f"> {content}")
+
+            print("\n" + "="*70)
+            print("SCHOLARLY INSIGHT & NETWORKING TIP")
+            print("="*70)
+            print("Note how the latency includes both the propagation delay and the")
+            print("processing time at the server. In high-performance networking,")
+            print("minimizing header overhead is as critical as raw bandwidth for")
+            print("reducing this round-trip time. This script mirrors the visibility")
+            print("that Wireshark provides, turning abstract packets into readable data.")
+            print("="*70)
             
     except Exception as error:
         print(f"[!] Error during protocol execution: {error}")
