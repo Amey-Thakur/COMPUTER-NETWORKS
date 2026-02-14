@@ -450,7 +450,9 @@ Aggregating routes requires finding the common high-order bits.
 ---
 <div align="center">
 
-[**↑ Back to Top**](#ip-and-subnet-practice-problems---detailed-solutions) &nbsp;&nbsp;|&nbsp;&nbsp; [**← Back to Computer Networks**](https://github.com/Amey-Thakur/COMPUTER-NETWORKS)
+[**↑ Back to Top**](#ip-and-subnet-practice-problems---detailed-solutions)
+
+[**← Back to Computer Networks**](https://github.com/Amey-Thakur/COMPUTER-NETWORKS)
 
 </div>
 
