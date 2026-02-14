@@ -86,7 +86,6 @@ Academic roadmap and administrative records for the Fall 2023 session:
 |:-:|:---|:---|
 | 1 | [Course Syllabus](Course%20Syllabus%20-%20Computer%20Networks.pdf) | Official course outcomes and assessment specifications |
 | 2 | [MEng Class Schedule](View%20My%20Classes%20-%20Fall%202023.pdf) | Enrollment record and pedagogical timeline |
-| 3 | [Security Policy](SECURITY.md) | Security guidelines for the repository content |
 
 ---
 
