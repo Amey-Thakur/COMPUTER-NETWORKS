@@ -5,6 +5,8 @@
 > - **Course Repository**: [COMPUTER-NETWORKS](https://github.com/Amey-Thakur/COMPUTER-NETWORKS)
 > - **Release Date**: December 06, 2023
 > - **License**: [Creative Commons Attribution 4.0 International (CC BY 4.0)](https://creativecommons.org/licenses/by/4.0/)
+> - **Question File**: [IP and Subnet Practice Problems.pdf](IP%20and%20Subnet%20Practice%20Problems%20-%20Computer%20Networks.pdf)
+> - **TXT Solution**: [IP_Subnet_Problems_Solution.txt](IP_Subnet_Problems_Solution.txt)
 
 <div align="center">
 
