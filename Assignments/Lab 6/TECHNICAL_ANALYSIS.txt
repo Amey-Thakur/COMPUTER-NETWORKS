@@ -4,6 +4,7 @@
 # GitHub: [Amey-Thakur](https://github.com/Amey-Thakur)
 # Repository: [COMPUTER-NETWORKS](https://github.com/Amey-Thakur/COMPUTER-NETWORKS)
 # Session: Fall 2023
+# Release Date: November 07, 2023
 # Lab 06: Analyzing IPv4 Header Structures & Fragmentation
 # --------------------------------------------------------------
 

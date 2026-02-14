@@ -4,6 +4,7 @@
 # GitHub: [Amey-Thakur](https://github.com/Amey-Thakur)
 # Repository: [COMPUTER-NETWORKS](https://github.com/Amey-Thakur/COMPUTER-NETWORKS)
 # Session: Fall 2023
+# Release Date: November 01, 2023
 # Lab 05: Analyzing NAT Router Behavior
 # --------------------------------------------------------------
 
