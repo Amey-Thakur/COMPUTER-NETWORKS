@@ -73,8 +73,8 @@ This collection includes **comprehensive reference materials** and pedagogical g
 
 | # | Resource | Focus Area |
 |:-:|:---|:---|
-| 1 | [Data Communications and Networking - B. A. Forouzan](Resources/B.%20A.%20Forouzan%20-%20Data%20Communications%20and%20Networking.pdf) | Core textbook for layered internet protocol stack and network security. |
-| 2 | [Computer Networking: A Top-Down Approach - Kurose & Ross](Resources/Kurose%20and%20Ross%20-%20Computer%20Networking.pdf) | Recommended guide for application-to-physical layer protocol analysis. |
+| 1 | [Data Communications and Networking - B. A. Forouzan](Reference%20Books/Data-Communications-and-Networking-5th-edition%20-%20B.%20A.%20Forouzan.pdf) | Core textbook for layered internet protocol stack and network security. |
+| 2 | [Computer Networking: A Top-Down Approach - Kurose & Ross](Reference%20Books/Computer-Networking-A-Top-Down-Approach-6th-edition%20-%20Kurose%20%26%20Ross.pdf) | Recommended guide for application-to-physical layer protocol analysis. |
 | 3 | [Internet Engineering Task Force (IETF) RFCs](https://www.ietf.org/standards/rfcs) | Official technical specifications for internet standards and protocols. |
 
 ---
