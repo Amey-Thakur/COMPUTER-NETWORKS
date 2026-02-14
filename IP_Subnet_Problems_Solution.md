@@ -1,4 +1,4 @@
-# IP and Subnet Practice Problems - Scholarly Solutions
+# IP and Subnet Practice Problems - Detailed Solutions
 
 <!-- =========================================================================================
 FILE NAME: IP_Subnet_Problems_Solution.md
@@ -9,7 +9,7 @@ LICENSE: Creative Commons Attribution 4.0 International (CC BY 4.0)
 ========================================================================================= -->
 
 ## Description
-This document provides comprehensive, step-by-step scholarly solutions to the **"IP and Subnet Practice Problems"** supplementary material. It covers IPv4 addressing, subnetting logic, VLSM (Variable Length Subnet Masking), IP datagram analysis, fragmentation, and routing table lookups.
+This document provides comprehensive, step-by-step solutions to the **"IP and Subnet Practice Problems"** supplementary material. It covers IPv4 addressing, subnetting logic, VLSM (Variable Length Subnet Masking), IP datagram analysis, fragmentation, and routing table lookups.
 
 ### Technology Stack
 - **Domain**: Network Engineering (IPv4/IPv6 Addressing)
