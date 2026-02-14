@@ -1,28 +1,76 @@
-TECHNICAL ANALYSIS: LAB 05 - NETWORK ADDRESS TRANSLATION (NAT)
-=========================================================
-Author: Amey Thakur
-Session: Fall 2023
-Source Trace: nat-inside-wireshark-trace1-1.pcapng / nat-outside-wireshark-trace1-1.pcapng
+# LABORATORY TECHNICAL ANALYSIS: NETWORK ADDRESS TRANSLATION (NAT)
+# ===============================================================
+# Author: Amey Thakur
+# GitHub: [Amey-Thakur](https://github.com/Amey-Thakur)
+# Repository: [COMPUTER-NETWORKS](https://github.com/Amey-Thakur/COMPUTER-NETWORKS)
+# Session: Fall 2023
+# Lab 05: Analyzing NAT Router Behavior
+# --------------------------------------------------------------
 
-INSIDE NETWORK FLOW (LAN)
--------------------------
-1. Client IP Address: 192.168.10.11
-   Source TCP Port: 53924
-   Destination IP Address: 138.76.29.8
-   Destination TCP Port: 80
-2. Time of HTTP OK Message: 0.030672101 seconds (from start of trace)
-3. HTTP OK Payload Source: 138.76.29.8 / 80
-   HTTP OK Payload Destination: 192.168.10.11 / 53924
+INTRODUCTION:
+In this scholarly analysis, we investigate the behavior of a Network Address Translation (NAT) router. By comparing Packet Captures (Pcap) from both the "Inside" (LAN) and "Outside" (Internet-facing) interfaces, we can observe precisely how a NAT device modifies IP datagrams to facilitate communication between a private network and the public Internet.
 
-OUTSIDE NETWORK FLOW (WAN/INTERNET)
------------------------------------
-4. Time of Appearance (HTTP GET): 0.027356291 seconds
-5. Translated Source IP: 10.0.1.254
-   Translated Source Port: 53924
-   Destination IP/Port: 138.76.29.8 / 80
-6. Field Modification: The Source IP Address is translated from 192.168.10.11 to 10.0.1.254.
-7. Additional Modifications: Source and Destination MAC addresses are modified within the Ethernet datagram.
-8. Header Integrity: IP Version, Header Length, and Flags remain constant. The Header Checksum is recalculated (0x64dc -> 0x2d82).
-9. Time of Appearance (HTTP OK): 0.030625966 seconds
-10. Outside Destination IP/Port: 10.0.1.254 / 53924
-11. Inside Destination IP/Port: 192.168.10.11 / 53924 (Forwarded by NAT)
+----------------------------------------------------------------
+PART 1: INSIDE NETWORK ANALYSIS (LAN-SIDE)
+----------------------------------------------------------------
+
+QUESTION 1: Identify the addressing details of the initial HTTP GET request captured on the LAN side (nat-inside-wireshark-trace1-1.pcapng).
+- Source IP Address: 192.168.10.11 (Private/Internal IP)
+- Source Port (TCP): 53924
+- Destination IP Address: 138.76.29.8 (External Web Server)
+- Destination Port (TCP): 80 (HTTP)
+[EXPLANATION]: These values represent the original state of the packet before it undergoes any translation by the NAT router. The client operates within a private 192.168.10.0/24 subnet.
+
+QUESTION 2: At what time is the corresponding HTTP 200 OK message from the webserver forwarded by the NAT router to the client on the router’s LAN side?
+- Captured Time: ~0.030672101 seconds
+[EXPLANATION]: This timestamp indicates the moment the NAT router successfully translated the incoming public packet back to the internal private IP and forwarded it to the final destination (192.168.10.11).
+
+QUESTION 3: What are the source and destination IP addresses and TCP ports on the IP datagram carrying this HTTP 200 OK message?
+- Source IP/Port: 138.76.29.8 / 80
+- Destination IP/Port: 192.168.10.11 / 53924
+[EXPLANATION]: At this stage, the packet has been "de-NATted." The router has replaced its own public IP with the internal private IP of the requesting client using its internal translation table.
+
+----------------------------------------------------------------
+PART 2: OUTSIDE NETWORK ANALYSIS (WAN-SIDE)
+----------------------------------------------------------------
+
+QUESTION 4: At what time does this HTTP GET message appear in the 'nat-outside-wireshark-trace1-1.pcapng' trace file?
+- Captured Time: ~0.027356291 seconds
+[EXPLANATION]: Note the timing difference; the packet is captured on the outside interface immediately after the router processes the outgoing translation.
+
+QUESTION 5: What are the source and destination IP addresses and TCP ports for the translated HTTP GET message?
+- Translated Source IP: 10.0.1.254 (Router's Public WAN IP)
+- Source Port: 53924 (Remains constant in this specific instance)
+- Destination IP/Port: 138.76.29.8 / 80
+[EXPLANATION]: This is the core "NAT Action." The router replaces the private sender IP (192.168.10.11) with its own public-facing IP (10.0.1.254) so that the response from the server can find its way back to the router's interface.
+
+QUESTION 6: Which fields in the IP datagram are different than in the original LAN-side capture?
+- Field Change: The Source IP Address.
+[EXPLANATION]: The identification of the sender is hidden behind the router's IP, which is the primary architectural purpose of NAT.
+
+QUESTION 7: Beyond the IP layer, are any other fields modified?
+- MAC Address Modification: Yes. The Source MAC address is changed to the router's WAN interface MAC, and the Destination MAC is updated to the next hop's MAC (the ISP gateway).
+[EXPLANATION]: This demonstrates that while NAT is a Layer 3 (Network) process, it necessitates Layer 2 (Data Link) re-encapsulation for the packet to traverse the local link to the ISP.
+
+QUESTION 8: Analyze the IP Header fields: Version, Header Length, Flags, and Checksum.
+- Constant Fields: Version (4), Header Length (20 bytes), and Flags (0x0).
+- Modified Field: Header Checksum (changed from 0x64dc to 0x2d82).
+[EXPLANATION]: The Checksum MUST be recalculated because it covers the IP header; since the Source IP field within the header was modified by the NAT process, the old checksum is no longer valid.
+
+QUESTION 9: Time of Appearance for the HTTP OK message on the Outside trace?
+- Captured Time: ~0.030625966 seconds.
+[EXPLANATION]: This is the moment the response arrives at the router's public interface from the remote server.
+
+QUESTION 10: Identify the source and destination in the Outside capture for the HTTP OK message.
+- Source IP/Port: 138.76.29.8 / 80
+- Destination IP/Port: 10.0.1.254 / 53924
+[EXPLANATION]: The server "thinks" it is talking to the device at 10.0.1.254. It has no visibility into the actual private client.
+
+QUESTION 11: How is this packet handled as it is forwarded to the destination host on the LAN?
+- Final Destination: 192.168.10.11 / 53924
+[EXPLANATION]: The NAT router looks up 'Port 53924' in its translation table, finds that it belongs to '192.168.10.11', modifies the destination IP, recalculates the checksum once more, and puts the packet on the internal wire.
+
+==============================================================
+TECHNICAL CONCLUSION:
+This analysis confirms that NAT acts as a transparent proxy. It meticulously manages IP headers and checksums to bridge the gap between private and public address spaces, ensuring seamless end-to-end connectivity while conserving public IPv4 resources.
+==============================================================
