@@ -383,4 +383,11 @@ We must allocate larger blocks first to avoid fragmentation.
 > Ambiguity (e.g., `1::1::1`) is fatal in IPv6. The `::` compression symbol can appear **only once** in an address.
 
 ---
+<div align="center">
+
+[**↑ Back to Top**](#ip-and-subnet-practice-problems---detailed-solutions) &nbsp;&nbsp;|&nbsp;&nbsp; [**← Back to COMPUTER-NETWORKS**](https://github.com/Amey-Thakur/COMPUTER-NETWORKS)
+
+</div>
+
+---
 **End of Document**
