@@ -1,0 +1,56 @@
+# LABORATORY TECHNICAL ANALYSIS: USER DATAGRAM PROTOCOL (UDP)
+# ===============================================================
+# Author: Amey Thakur
+# GitHub: [Amey-Thakur](https://github.com/Amey-Thakur)
+# Repository: [COMPUTER-NETWORKS](https://github.com/Amey-Thakur/COMPUTER-NETWORKS)
+# Session: Fall 2023
+# Release Date: November 14, 2023
+# Lab 08: Analyzing UDP Header Structures & Payload Dynamics
+# --------------------------------------------------------------
+
+INTRODUCTION:
+This technical analysis dissects the User Datagram Protocol (UDP), the connectionless transport layer protocol of the Internet Protocol suite. We focus on the minimal 8-byte header structure and the relationship between header overhead and application-layer payload.
+
+----------------------------------------------------------------
+PART 1: UDP HEADER STRUCTURE
+----------------------------------------------------------------
+
+QUESTION 1: Identify the four fields in the UDP header.
+- Header Fields: Source Port, Destination Port, Length, and Checksum.
+[EXPLANATION]: These minimal fields provide the basic mux/demux functionality required to route data to the correct application process on a host.
+
+QUESTION 2: What is the total length of the UDP header in bytes?
+- Header Size: 8 bytes.
+[EXPLANATION]: Each of the four header fields occupies exactly 2 bytes (16 bits).
+
+QUESTION 3: Using the 'Length' field in a UDP segment, if the total length is 70 bytes, how many bytes of application data (payload) are present?
+- UDP Length field: 70 bytes.
+- Header Overhead: 8 bytes.
+- Application Payload: 62 bytes (70 - 8).
+[EXPLANATION]: The UDP Length field represents the sum of the header and the data.
+
+QUESTION 4: What is the maximum number of bytes that can be included in a UDP payload?
+- Calculation: (2^16 - 1) total bytes - 8 header bytes.
+- Result: 65,527 bytes.
+[EXPLANATION]: The 16-bit Length field limits the total segment size to 65,535 bytes.
+
+----------------------------------------------------------------
+PART 2: PROTOCOL METADATA & SYMMETRY
+----------------------------------------------------------------
+
+QUESTION 5: What is the largest possible source port number?
+- Max Port Number: 65,535.
+[EXPLANATION]: Like the Length field, the Port fields are 16-bit, providing a range from 0 to 65,535.
+
+QUESTION 6: Verify the IP protocol number for UDP.
+- IP Protocol Number: 17 (Decimal) / 0x11 (Hexadecimal).
+[EXPLANATION]: This identifies that the payload of the IP datagram should be handled by the UDP module.
+
+QUESTION 7: Analyze the relationship between the ports in an outgoing request and an incoming reply.
+- Behavior: The source port in the outgoing request becomes the destination port in the received reply. Conversely, the destination port in the request is the source port in the reply.
+[EXPLANATION]: This symmetry is fundamental for the receiver to correctly route the response back to the client application that initiated the request.
+
+==============================================================
+TECHNICAL CONCLUSION:
+Lab 08 confirms the "lean" design of UDP. By providing only the essential metadata for process identification and basic integrity (checksum), it offers high efficiency for applications that prioritize speed and low latency over reliable delivery.
+==============================================================
