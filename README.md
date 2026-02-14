@@ -103,7 +103,7 @@ A granular record of 10 laboratory reports documenting protocol analysis and net
 | 7 | **Lab 07** | Internet Control Message Protocol (ICMP) | November 10, 2023 | [View](Assignments/Lab%207/Lab%207_%20ICMP%20-%20Computer%20Networks%20-%20University%20of%20Windsor.pdf) | [View](Assignments/Lab%207/ICMP_Protocol_Analyzer.py) | [View](Assignments/Lab%207/Lab%207_%20ICMP-110107589.pdf) | [Download](Assignments/Lab%207/Lab%207_%20ICMP-110107589.docx?raw=true) |
 | 8 | **Lab 08** | User Datagram Protocol (UDP) | November 14, 2023 | — | [View](Assignments/Lab%208/UDP_Protocol_Analyzer.py) | [View](Assignments/Lab%208/Lab%208_%20UDP-110107589.pdf) | [Download](Assignments/Lab%208/Lab%208_%20UDP-110107589.docx?raw=true) |
 | 9 | **Lab 09** | Transmission Control Protocol (TCP) | November 21, 2023 | — | [View](Assignments/Lab%209/TCP_Protocol_Analyzer.py) | [View](Assignments/Lab%209/Lab%209_%20TCP-110107589.pdf) | [Download](Assignments/Lab%209/Lab%209_%20TCP-110107589.docx?raw=true) |
-| 10 | **Lab 10** | Domain Name System (DNS) | - | [View](Assignments/Lab%2010/Lab%2010_%20DNS%20-%20Computer%20Networks%20-%20University%20of%20Windsor.pdf) | - | - | - |
+| 10 | **Lab 10** | Domain Name System (DNS) | November 30, 2023 | — | [View](Assignments/Lab%2010/DNS_Protocol_Analyzer.py) | — | — |
 
 ---
 

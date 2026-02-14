@@ -1,0 +1,65 @@
+# LABORATORY TECHNICAL ANALYSIS: DOMAIN NAME SYSTEM (DNS)
+# ========================================================
+# Author: Amey Thakur
+# GitHub: [Amey-Thakur](https://github.com/Amey-Thakur)
+# Repository: [COMPUTER-NETWORKS](https://github.com/Amey-Thakur/COMPUTER-NETWORKS)
+# Session: Fall 2023
+# Release Date: November 30, 2023
+# Lab 10: Analyzing DNS Query/Response Cycles & Hierarchy
+# -------------------------------------------------------
+
+INTRODUCTION:
+The Domain Name System (DNS) serves as the directory service for the Internet, mapping human-readable hostnames to IP addresses. This analysis examines the client-side DNS interaction, specifically utilizing standard tools like `nslookup` and `ipconfig` to inspect cache behavior, server hierarchy, and protocol transport.
+
+---------------------------------------------------------
+PART 1: THE NSLOOKUP PROGRAM (QUERIES & HIERARCHY)
+---------------------------------------------------------
+
+SCENARIO 1: Standard A-Record Query
+- Command: `nslookup www.mit.edu`
+- Local DNS Server: dns-prime.poly.edu (128.238.29.22)
+- Resolved IP Address: 18.7.22.83
+[EXPLANATION]: The local DNS server resolved the hostname 'www.mit.edu' to its corresponding IPv4 address. Note that the response may be non-authoritative if retrieved from a recursive resolver's cache.
+
+SCENARIO 2: Name Server (NS) Query
+- Command: `nslookup -type=NS mit.edu`
+- Authoritative Name Servers: 
+  - bitsy.mit.edu (18.72.0.3)
+  - straub.mit.edu (18.71.0.151)
+  - w20ns.mit.edu (18.70.0.160)
+[EXPLANATION]: Type-NS queries identify the authoritative DNS servers responsible for a specific domain zone.
+
+SCENARIO 3: Targeted Server Query
+- Command: `nslookup www.aiit.or.kr bitsy.mit.edu`
+- Query Path: Client -> bitsy.mit.edu -> Client
+- Resolved IP (Asia Web Server): 218.36.94.200
+[EXPLANATION]: By specifying an external DNS server (bitsy.mit.edu), the client bypasses its default local resolver to query a specific point in the DNS hierarchy directly.
+
+---------------------------------------------------------
+PART 2: IPCONFIG & LOCAL DNS STATE
+---------------------------------------------------------
+
+SYSTEM CONFIGURATION (`ipconfig /all`):
+- Local Subnet: poly.edu (128.238.38.160)
+- Configured DNS Resolvers: 
+  1. 128.238.29.25 (Primary)
+  2. 128.238.29.22 (Secondary)
+  3. 128.238.29.23 (Tertiary)
+[EXPLANATION]: Redundant DNS servers ensure high availability for resolution services within the local campus network.
+
+---------------------------------------------------------
+PART 3: DNS TRANSPORT & WIRESHARK ANALYSIS
+---------------------------------------------------------
+
+PROTOCOL CHARACTERISTICS:
+- Transport Layer: UDP (User Datagram Protocol)
+- Standard Port: 53 (Destination for Queries, Source for Responses)
+- Query Message Structure: Identification field (XID) + Flags + Questions.
+- Response Message Structure: Identification field (matches Query) + Answers (TTL, Data).
+
+[EXPLANATION]: DNS primarily utilizes UDP to minimize the overhead associated with establishing and tearing down TCP connections for small, single-packet queries. However, TCP (Port 53) is fallback for large responses (exceeding 512 bytes) or zone transfers.
+
+=========================================================
+TECHNICAL CONCLUSION:
+Lab 10 underscores the critical dependency on DNS for modern networking. Through the use of caching, distribution (hierarchy), and lightweight transport (UDP), DNS provides a scalable and efficient resolution service that bridges the application layer with network layer routing.
+=========================================================
