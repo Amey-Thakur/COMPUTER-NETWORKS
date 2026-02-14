@@ -119,15 +119,15 @@ A comprehensive archival log documenting pedagogical discourse across nine modul
 
 | # | Module | Topic | Lecture Slides |
 | :-: | :---: | :--- | :---: |
-| 1 | **Module 01** | **Introduction** | [Slides](Lecture%20Notes/01-intro.pdf) |
+| 1 | **Module 01** | **Introduction to Computer Networking** | [Slides](Lecture%20Notes/01-intro.pdf) |
 | 2 | **Module 02** | **Physical Layer** | [Slides](Lecture%20Notes/02-physical.pdf) |
 | 3 | **Module 03** | **Data Link Layer** | [Slides](Lecture%20Notes/03-data_link.pdf) |
-| 4 | **Module 04** | **LANs** | [Slides](Lecture%20Notes/04-lans.pdf) |
-| 5 | **Module 05** | **WANs** | [Slides](Lecture%20Notes/05-wans.pdf) |
-| 6 | **Module 06** | **Connecting Devices** | [Slides](Lecture%20Notes/06-devices.pdf) |
-| 7 | **Module 07** | **Network Data Plane** | [Slides](Lecture%20Notes/07-network_data.pdf) |
-| 8 | **Module 08** | **Network Control Plane** | [Slides](Lecture%20Notes/08-network_control.pdf) |
-| 9 | **Module 09** | **Transport Layer** | [Slides](Lecture%20Notes/09-transport.pdf) |
+| 4 | **Module 04** | **Local Area Networks (LANs)** | [Slides](Lecture%20Notes/04-lans.pdf) |
+| 5 | **Module 05** | **Wide Area Networks (WANs)** | [Slides](Lecture%20Notes/05-wans.pdf) |
+| 6 | **Module 06** | **Network Interconnection and Devices** | [Slides](Lecture%20Notes/06-devices.pdf) |
+| 7 | **Module 07** | **The Network Layer: Data Plane** | [Slides](Lecture%20Notes/07-network_data.pdf) |
+| 8 | **Module 08** | **The Network Layer: Control Plane** | [Slides](Lecture%20Notes/08-network_control.pdf) |
+| 9 | **Module 09** | **The Transport Layer** | [Slides](Lecture%20Notes/09-transport.pdf) |
 
 ---
 
