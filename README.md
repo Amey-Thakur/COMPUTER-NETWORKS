@@ -46,7 +46,7 @@ The curriculum encompasses several key networking domains:
 - **Network Infrastructure**: Exploring the design and operation of LANs, WANs, and wireless networking standards (Wi-Fi).
 
 ### Repository Purpose
-This repository represents a curated collection of study materials, reference books, course assessments, and personal preparation notes compiled during my academic journey. The primary motivation for creating and maintaining this archive is simple yet profound: **to preserve knowledge for continuous learning and future reference**.
+This repository represents a curated collection of study materials, reference books, supplemental resources, and computer network laboratory reports. The primary motivation for creating and maintaining this archive is simple yet profound: **to preserve knowledge for continuous learning and future reference**.
 
 As networking technologies evolve, the fundamental principles remain the bedrock of communications engineering. This repository serves as my intellectual reference point: a resource I can return to for reviewing methodologies, refreshing theoretical concepts, and strengthening technical understanding.
 
@@ -295,7 +295,7 @@ A comprehensive archival log documenting pedagogical discourse across nine modul
 
 <!-- =========================================================================================
                                      USAGE GUIDELINES
-                                     ========================================================= -->
+     ========================================================================================= -->
 
 ## Usage Guidelines
 This repository is openly shared to support learning and knowledge exchange across the academic community.
@@ -333,14 +333,14 @@ This repository and all linked academic content are made available under the **C
 **Institution**: [University of Windsor](https://www.uwindsor.ca), Windsor, Ontario  
 **Faculty**: [Faculty of Engineering](https://www.uwindsor.ca/engineering/)
 
-This repository represents a comprehensive collection of study materials, reference books, weekly lecture archives, and personal preparation notes curated during my academic journey. All content has been carefully organized and documented to serve as a valuable resource for students pursuing Computer Networks.
+This repository represents a comprehensive collection of study materials, reference books, supplemental resources, weekly lecture archives, and laboratory reports curated during my academic journey. All content has been carefully organized and documented to serve as a valuable resource for students pursuing Computer Networks.
 
 **Connect**: [GitHub](https://github.com/Amey-Thakur) &nbsp;·&nbsp; [LinkedIn](https://www.linkedin.com/in/amey-thakur) &nbsp;·&nbsp; [ORCID](https://orcid.org/0000-0001-5644-1575)
 
 ### Acknowledgments
 Grateful acknowledgment to **Dr. Ahmed Hamdi Sakr** for his exceptional instruction in Computer Networks, which played an important role in shaping my understanding of the subject. His clear and disciplined approach, along with his thorough explanation of network architectures and protocol analysis, made the subject both accessible and engaging. His dedication to academic excellence in the field of networking is gratefully acknowledged.
 
-Grateful acknowledgment to **Jason Horn**, **[Writing Support Desk](https://github.com/Amey-Thakur/WRITING-SUPPORT)**, **University of Windsor**, for his distinguished mentorship and scholarly guidance. His thoughtful feedback and methodological precision were instrumental in strengthening the analytical depth and professional quality of my academic work. His commitment to excellence and integrity is gratefully acknowledged. Special thanks to the **mentors** and **peers** whose encouragement, discussions, and support contributed meaningfully to this learning experience.
+Special thanks to the **mentors** and **peers** whose encouragement, discussions, and support contributed meaningfully to this learning experience.
 
 ---
 
