@@ -69,7 +69,7 @@ As networking technologies evolve, the fundamental principles remain the bedrock
 ## Repository Contents
 
 ### Reference Books
-This collection includes **comprehensive reference materials** and pedagogical guides:
+This collection includes **comprehensive reference materials** covering all major topics:
 
 | # | Resource | Focus Area |
 |:-:|:---|:---|
