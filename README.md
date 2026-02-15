@@ -35,7 +35,7 @@
      ========================================================================================= -->
 
 ## Overview
-Computer Networks (ELEC 8560) is a critical core course in the Master of Engineering (MEng) program at the University of Windsor. This course provides a deep dive into the fundamental principles of data communication, network layering, and the suite of protocols that power the modern internet, with a strong emphasis on practical analysis and implementation.
+Computer Networks (ELEC 8560) is a core graduate course in the Master of Engineering (MEng) program at the University of Windsor. This course provides a deep dive into the fundamental principles of data communication, network layering, and the suite of protocols that power the modern internet, with a strong emphasis on practical analysis and implementation.
 
 ### Course Objectives
 The curriculum encompasses several key networking domains:
