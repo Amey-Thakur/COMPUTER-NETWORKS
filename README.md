@@ -24,7 +24,7 @@
   ---
 
   <!-- Navigation Links -->
-  [Overview](#overview) &nbsp;·&nbsp; [Contents](#repository-contents) &nbsp;·&nbsp; [Reference Books](#reference-books) &nbsp;·&nbsp; [Personal Preparation](#personal-preparation) &nbsp;·&nbsp; [Lecture Notes](#lecture-notes) &nbsp;·&nbsp; [Laboratory](#computer-network-laboratory) &nbsp;·&nbsp; [Supplemental](#supplemental) &nbsp;·&nbsp; [Syllabus](#syllabus) &nbsp;·&nbsp; [Usage Guidelines](#usage-guidelines) &nbsp;·&nbsp; [License](#license) &nbsp;·&nbsp; [About](#about-this-repository) &nbsp;·&nbsp; [Acknowledgments](#acknowledgments)
+  [Overview](#overview) &nbsp;·&nbsp; [Contents](#repository-contents) &nbsp;·&nbsp; [Reference Books](#reference-books) &nbsp;·&nbsp; [Personal Preparation](#personal-preparation) &nbsp;·&nbsp; [Lecture Notes](#lecture-notes) &nbsp;·&nbsp; [Supplemental](#supplemental) &nbsp;·&nbsp; [Laboratory](#computer-network-laboratory) &nbsp;·&nbsp; [Syllabus](#syllabus) &nbsp;·&nbsp; [Usage Guidelines](#usage-guidelines) &nbsp;·&nbsp; [License](#license) &nbsp;·&nbsp; [About](#about-this-repository) &nbsp;·&nbsp; [Acknowledgments](#acknowledgments)
 
 </div>
 
@@ -86,6 +86,18 @@ Academic roadmap and administrative records for the Fall 2023 session:
 |:-:|:---|:---|
 | 1 | [Course Syllabus](Course%20Syllabus%20-%20Computer%20Networks.pdf) | Official course outcomes and assessment specifications |
 | 2 | [MEng Class Schedule](View%20My%20Classes%20-%20Fall%202023.pdf) | Enrollment record and pedagogical timeline |
+
+---
+
+### Supplemental
+Additional resources focusing on the mathematical and practical aspects of IP subnetting and numbering systems.
+
+| # | Resource | Description |
+| :-: | :--- | :--- |
+| 1 | [IP and Subnet Practice Problems](Supplemental/IP%20and%20Subnet%20Practice%20Problems%20-%20Computer%20Networks.pdf) | A collection of problems for mastering IP addressing. |
+| 2 | [IP Subnet Solutions (MD)](Supplemental/README.md) | Detailed Markdown solutions for practicing IP subnetting. |
+| 3 | [IP Subnet Solutions (TXT)](Supplemental/IP_Subnet_Problems_Solution.txt) | Plain text version of the subnet solutions. |
+| 4 | [Positional Numbering System](Supplemental/Positional%20Numbering%20System.pdf) | Reference guide for binary, decimal, and hexadecimal conversions. |
 
 ---
 
@@ -267,23 +279,6 @@ A comprehensive archival log documenting pedagogical discourse across nine modul
 
 ---
 
-
-<!-- =========================================================================================
-                                     SUPPLEMENTAL SECTION
-     ========================================================================================= -->
-
-## Supplemental
-Additional resources focusing on the mathematical and practical aspects of IP subnetting and numbering systems.
-
-| # | Resource | Description |
-| :-: | :--- | :--- |
-| 1 | [IP and Subnet Practice Problems](Supplemental/IP%20and%20Subnet%20Practice%20Problems%20-%20Computer%20Networks.pdf) | A collection of problems for mastering IP addressing. |
-| 2 | [IP Subnet Solutions (MD)](Supplemental/README.md) | Detailed Markdown solutions for practicing IP subnetting. |
-| 3 | [IP Subnet Solutions (TXT)](Supplemental/IP_Subnet_Problems_Solution.txt) | Plain text version of the subnet solutions. |
-| 4 | [Positional Numbering System](Supplemental/Positional%20Numbering%20System.pdf) | Reference guide for binary, decimal, and hexadecimal conversions. |
-
----
-
 <!-- =========================================================================================
                                      SYLLABUS SECTION
      ========================================================================================= -->
@@ -299,7 +294,7 @@ Additional resources focusing on the mathematical and practical aspects of IP su
 
 <!-- =========================================================================================
                                      USAGE GUIDELINES
-     ========================================================================================= -->
+                                     ========================================================= -->
 
 ## Usage Guidelines
 This repository is openly shared to support learning and knowledge exchange across the academic community.
@@ -360,7 +355,7 @@ Special thanks to the **mentors** and **peers** whose encouragement, discussions
   <!-- Footer Navigation -->
   [↑ Back to Top](#computer-networks)
 
-  [Overview](#overview) &nbsp;·&nbsp; [Contents](#repository-contents) &nbsp;·&nbsp; [Reference Books](#reference-books) &nbsp;·&nbsp; [Personal Preparation](#personal-preparation) &nbsp;·&nbsp; [Lecture Notes](#lecture-notes) &nbsp;·&nbsp; [Laboratory](#computer-network-laboratory) &nbsp;·&nbsp; [Supplemental](#supplemental) &nbsp;·&nbsp; [Syllabus](#syllabus) &nbsp;·&nbsp; [Usage Guidelines](#usage-guidelines) &nbsp;·&nbsp; [License](#license) &nbsp;·&nbsp; [About](#about-this-repository) &nbsp;·&nbsp; [Acknowledgments](#acknowledgments)
+  [Overview](#overview) &nbsp;·&nbsp; [Contents](#repository-contents) &nbsp;·&nbsp; [Reference Books](#reference-books) &nbsp;·&nbsp; [Personal Preparation](#personal-preparation) &nbsp;·&nbsp; [Lecture Notes](#lecture-notes) &nbsp;·&nbsp; [Supplemental](#supplemental) &nbsp;·&nbsp; [Laboratory](#computer-network-laboratory) &nbsp;·&nbsp; [Syllabus](#syllabus) &nbsp;·&nbsp; [Usage Guidelines](#usage-guidelines) &nbsp;·&nbsp; [License](#license) &nbsp;·&nbsp; [About](#about-this-repository) &nbsp;·&nbsp; [Acknowledgments](#acknowledgments)
 
 </div>
 
