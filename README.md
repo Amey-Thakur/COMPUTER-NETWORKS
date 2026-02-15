@@ -58,7 +58,7 @@ As networking technologies evolve, the fundamental principles remain the bedrock
 - **Community Contribution**: To share these resources with students and learners who may benefit from them
 
 > [!NOTE]
-> All materials were curated, compiled, and organized by me during the Fall 2023 semester as part of my MEng degree requirements.
+> All materials were created, compiled, and organized by me during the Fall 2023 semester as part of my MEng degree requirements.
 
 ---
 
