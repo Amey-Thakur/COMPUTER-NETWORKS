@@ -118,18 +118,18 @@ A granular record of 10 laboratory reports documenting protocol analysis and net
 > [!TIP]
 > **Technical Analysis**: For a detailed scholarly dissection of each protocol, expand the **Program Details** dropdowns below. These sections contain links to the source code simulators, technical specifications, manuals, and downloadable Word documents for each laboratory session.
 
-| Lab | Topic | Date | Report |
-| :-: | :--- | :---: | :---: |
-| 1 | **Introduction to Wireshark** | September 19, 2023 | [View](Assignments/Lab%201/Lab%201_%20Introduction%20to%20Wireshark%20%5BAmey-110107589%5D-328776.pdf) |
-| 2 | **Ethernet and Address Resolution Protocol (ARP)** | October 06, 2023 | [View](Assignments/Lab%202/Lab%202_%20Ethernet%20and%20ARP%20%5BAmey-110107589%5D-381246.pdf) |
-| 3 | **Wireless Fidelity (Wi-Fi)** | October 20, 2023 | [View](Assignments/Lab%203/Lab%203_%20Wi-Fi%20%5BAmey-110107589%5D-405692.pdf) |
-| 4 | **Dynamic Host Configuration Protocol (DHCP)** | November 01, 2023 | [View](Assignments/Lab%204/Lab%204_%20DHCP-110107589-440561.pdf) |
-| 5 | **Network Address Translation (NAT)** | November 01, 2023 | [View](Assignments/Lab%205/Lab%205_%20NAT-110107589.pdf) |
-| 6 | **Internet Protocol (IP)** | November 07, 2023 | [View](Assignments/Lab%206/Lab%206_%20IP%20%5BAmey-110107589%5D-454660.pdf) |
-| 7 | **Internet Control Message Protocol (ICMP)** | November 10, 2023 | [View](Assignments/Lab%207/Lab%207_%20ICMP-110107589.pdf) |
-| 8 | **User Datagram Protocol (UDP)** | November 14, 2023 | [View](Assignments/Lab%208/Lab%208_%20UDP-110107589.pdf) |
-| 9 | **Transmission Control Protocol (TCP)** | November 21, 2023 | [View](Assignments/Lab%209/Lab%209_%20TCP-110107589.pdf) |
-| 10 | **Domain Name System (DNS)** | November 30, 2023 | — |
+| Lab | Topic | Date | Report | Download |
+| :-: | :--- | :---: | :---: | :---: |
+| 1 | **Introduction to Wireshark** | September 19, 2023 | [View](Assignments/Lab%201/Lab%201_%20Introduction%20to%20Wireshark%20%5BAmey-110107589%5D-328776.pdf) | [Download](Assignments/Lab%201/Lab%201_%20Introduction%20to%20Wireshark%20%5BAmey-110107589%5D-328776.pdf?raw=true) |
+| 2 | **Ethernet and Address Resolution Protocol (ARP)** | October 06, 2023 | [View](Assignments/Lab%202/Lab%202_%20Ethernet%20and%20ARP%20%5BAmey-110107589%5D-381246.pdf) | [Download](Assignments/Lab%202/Lab%202_%20Ethernet%20and%20ARP%20%5BAmey-110107589%5D-381246.pdf?raw=true) |
+| 3 | **Wireless Fidelity (Wi-Fi)** | October 20, 2023 | [View](Assignments/Lab%203/Lab%203_%20Wi-Fi%20%5BAmey-110107589%5D-405692.pdf) | [Download](Assignments/Lab%203/Lab%203_%20Wi-Fi%20%5BAmey-110107589%5D-405692.pdf?raw=true) |
+| 4 | **Dynamic Host Configuration Protocol (DHCP)** | November 01, 2023 | [View](Assignments/Lab%204/Lab%204_%20DHCP-110107589-440561.pdf) | [Download](Assignments/Lab%204/Lab%204_%20DHCP-110107589-440561.pdf?raw=true) |
+| 5 | **Network Address Translation (NAT)** | November 01, 2023 | [View](Assignments/Lab%205/Lab%205_%20NAT-110107589.pdf) | [Download](Assignments/Lab%205/Lab%205_%20NAT-110107589.pdf?raw=true) |
+| 6 | **Internet Protocol (IP)** | November 07, 2023 | [View](Assignments/Lab%206/Lab%206_%20IP%20%5BAmey-110107589%5D-454660.pdf) | [Download](Assignments/Lab%206/Lab%206_%20IP%20%5BAmey-110107589%5D-454660.pdf?raw=true) |
+| 7 | **Internet Control Message Protocol (ICMP)** | November 10, 2023 | [View](Assignments/Lab%207/Lab%207_%20ICMP-110107589.pdf) | [Download](Assignments/Lab%207/Lab%207_%20ICMP-110107589.pdf?raw=true) |
+| 8 | **User Datagram Protocol (UDP)** | November 14, 2023 | [View](Assignments/Lab%208/Lab%208_%20UDP-110107589.pdf) | [Download](Assignments/Lab%208/Lab%208_%20UDP-110107589.pdf?raw=true) |
+| 9 | **Transmission Control Protocol (TCP)** | November 21, 2023 | [View](Assignments/Lab%209/Lab%209_%20TCP-110107589.pdf) | [Download](Assignments/Lab%209/Lab%209_%20TCP-110107589.pdf?raw=true) |
+| 10 | **Domain Name System (DNS)** | November 30, 2023 | — | — |
 
 ### Program Details
 
@@ -265,17 +265,18 @@ A comprehensive archival log documenting pedagogical discourse across nine modul
 > [!TIP]
 > Computer networking is not merely the connection of devices; it is the **bridge between theoretical models and functional architectures**. Every module below focuses on the critical translation from **Network Protocols to Scalable Infrastructures**, enabling the design and verification of complex communication systems.
 
-| # | Module | Topic | Lecture Slides |
-| :-: | :---: | :--- | :---: |
-| 1 | **Module 01** | **Introduction to Computer Networking** | [View](Lecture%20Notes/01-intro.pdf) |
-| 2 | **Module 02** | **Physical Layer** | [View](Lecture%20Notes/02-physical.pdf) |
-| 3 | **Module 03** | **Data Link Layer** | [View](Lecture%20Notes/03-data_link.pdf) |
-| 4 | **Module 04** | **Local Area Networks** | [View](Lecture%20Notes/04-lans.pdf) |
-| 5 | **Module 05** | **Wide Area Networks** | [View](Lecture%20Notes/05-wans.pdf) |
-| 6 | **Module 06** | **Network Interconnection and Devices** | [View](Lecture%20Notes/06-devices.pdf) |
-| 7 | **Module 07** | **The Network Layer: Data Plane** | [View](Lecture%20Notes/07-network_data.pdf) |
-| 8 | **Module 08** | **The Network Layer: Control Plane** | [View](Lecture%20Notes/08-network_control.pdf) |
-| 9 | **Module 09** | **The Transport Layer** | [View](Lecture%20Notes/09-transport.pdf) |
+| # | Week | Module | Topic | Date | Lecture Slides |
+| :-: | :---: | :---: | :--- | :---: | :---: |
+| 1 | **Week 01** | **Module 01** | **Introduction to Computer Networking** | Sept 11 & 13 | [View](Lecture%20Notes/01-intro.pdf) |
+| 2 | **Week 02** | **Module 02** | **Physical Layer** | Sept 18 & 20 | [View](Lecture%20Notes/02-physical.pdf) |
+| 3 | **Week 03** | **Module 03** | **Data Link Layer** | Sept 25 & 27 | [View](Lecture%20Notes/03-data_link.pdf) |
+| 4 | **Week 04** | **Module 04** | **Local Area Networks** | Oct 02 & 04 | [View](Lecture%20Notes/04-lans.pdf) |
+| • | **Break** | — | **Reading Week (Autumn Break - No Lectures)** | **Oct 09 — Oct 13** | — |
+| 5 | **Week 05** | **Module 05** | **Wide Area Networks** | Oct 16 & 18 | [View](Lecture%20Notes/05-wans.pdf) |
+| 6 | **Week 06** | **Module 06** | **Network Interconnection and Devices** | Oct 23 & 25 | [View](Lecture%20Notes/06-devices.pdf) |
+| 7 | **Week 07** | **Module 07** | **The Network Layer: Data Plane** | Oct 30 & Nov 01 | [View](Lecture%20Notes/07-network_data.pdf) |
+| 8 | **Week 08** | **Module 08** | **The Network Layer: Control Plane** | Nov 06 & 08 | [View](Lecture%20Notes/08-network_control.pdf) |
+| 9 | **Week 09** | **Module 09** | **The Transport Layer** | Nov 13 & 15 | [View](Lecture%20Notes/09-transport.pdf) |
 
 ---
 
