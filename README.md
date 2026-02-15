@@ -267,16 +267,16 @@ A comprehensive archival log documenting pedagogical discourse across nine modul
 
 | # | Week | Module | Topic | Date | Lecture Slides |
 | :-: | :---: | :---: | :--- | :---: | :---: |
-| 1 | **Week 01** | **Module 01** | **Introduction to Computer Networking** | Sept 11 & 13 | [View](Lecture%20Notes/01-intro.pdf) |
-| 2 | **Week 02** | **Module 02** | **Physical Layer** | Sept 18 & 20 | [View](Lecture%20Notes/02-physical.pdf) |
-| 3 | **Week 03** | **Module 03** | **Data Link Layer** | Sept 25 & 27 | [View](Lecture%20Notes/03-data_link.pdf) |
-| 4 | **Week 04** | **Module 04** | **Local Area Networks** | Oct 02 & 04 | [View](Lecture%20Notes/04-lans.pdf) |
-| • | **Break** | — | **Reading Week (Autumn Break - No Lectures)** | **Oct 09 — Oct 13** | — |
-| 5 | **Week 05** | **Module 05** | **Wide Area Networks** | Oct 16 & 18 | [View](Lecture%20Notes/05-wans.pdf) |
-| 6 | **Week 06** | **Module 06** | **Network Interconnection and Devices** | Oct 23 & 25 | [View](Lecture%20Notes/06-devices.pdf) |
-| 7 | **Week 07** | **Module 07** | **The Network Layer: Data Plane** | Oct 30 & Nov 01 | [View](Lecture%20Notes/07-network_data.pdf) |
-| 8 | **Week 08** | **Module 08** | **The Network Layer: Control Plane** | Nov 06 & 08 | [View](Lecture%20Notes/08-network_control.pdf) |
-| 9 | **Week 09** | **Module 09** | **The Transport Layer** | Nov 13 & 15 | [View](Lecture%20Notes/09-transport.pdf) |
+| 1 | **Week 01** | **Module 01** | **Introduction to Computer Networking** | September 11 & 13, 2023 | [View](Lecture%20Notes/01-intro.pdf) |
+| 2 | **Week 02** | **Module 02** | **Physical Layer** | September 18 & 20, 2023 | [View](Lecture%20Notes/02-physical.pdf) |
+| 3 | **Week 03** | **Module 03** | **Data Link Layer** | September 25 & 27, 2023 | [View](Lecture%20Notes/03-data_link.pdf) |
+| 4 | **Week 04** | **Module 04** | **Local Area Networks** | October 02 & 04, 2023 | [View](Lecture%20Notes/04-lans.pdf) |
+| 5 | **Break** | — | **Reading Week (Autumn Break - No Lectures)** | **October 09 — October 13, 2023** | — |
+| 6 | **Week 05** | **Module 05** | **Wide Area Networks** | October 16 & 18, 2023 | [View](Lecture%20Notes/05-wans.pdf) |
+| 7 | **Week 06** | **Module 06** | **Network Interconnection and Devices** | October 23 & 25, 2023 | [View](Lecture%20Notes/06-devices.pdf) |
+| 8 | **Week 07** | **Module 07** | **The Network Layer: Data Plane** | October 30 & November 01, 2023 | [View](Lecture%20Notes/07-network_data.pdf) |
+| 9 | **Week 08** | **Module 08** | **The Network Layer: Control Plane** | November 06 & 08, 2023 | [View](Lecture%20Notes/08-network_control.pdf) |
+| 10 | **Week 09** | **Module 09** | **The Transport Layer** | November 13 & 15, 2023 | [View](Lecture%20Notes/09-transport.pdf) |
 
 ---
 
