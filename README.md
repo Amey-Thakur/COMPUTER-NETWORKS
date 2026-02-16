@@ -89,7 +89,7 @@ Academic roadmap and administrative records for the Fall 2023 session:
 
 ---
 
-## Supplemental
+### Supplemental
 Additional resources focusing on the mathematical and practical aspects of IP subnetting and numbering systems.
 
 | # | Resource | Description |
