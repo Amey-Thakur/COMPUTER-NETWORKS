@@ -338,7 +338,7 @@ This repository represents a comprehensive collection of study materials, refere
 **Connect**: [GitHub](https://github.com/Amey-Thakur) &nbsp;·&nbsp; [LinkedIn](https://www.linkedin.com/in/amey-thakur) &nbsp;·&nbsp; [ORCID](https://orcid.org/0000-0001-5644-1575)
 
 ### Acknowledgments
-Grateful acknowledgment to **Dr. Ahmed Hamdi Sakr** for his exceptional instruction in Computer Networks, which played an important role in shaping my understanding of the subject. His clear and disciplined approach, along with his thorough explanation of network architectures and protocol analysis, made the subject both accessible and engaging. His dedication to academic excellence in the field of networking is gratefully acknowledged.
+Grateful acknowledgment to **Dr. Ahmed Hamdi Sakr** for his exceptional instruction in Computer Networks, which played an important role in shaping my understanding of the subject. His clear and disciplined approach, along with his thorough explanation of network architectures and protocol analysis, made the subject both accessible and engaging. His distinguished expertise and commitment to academic excellence in **Computer Networks** are sincerely appreciated.
 
 Special thanks to the **mentors** and **peers** whose encouragement, discussions, and support contributed meaningfully to this learning experience.
 
