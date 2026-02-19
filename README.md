@@ -58,7 +58,7 @@ As networking technologies evolve, the fundamental principles remain the bedrock
 - **Community Contribution**: To share these resources with students and learners who may benefit from them
 
 > [!NOTE]
-> All materials were created, compiled, and organized by me during the Fall 2023 semester as part of my MEng degree requirements.
+> All materials were created, compiled, and organized by me during the **Fall 2023** semester as part of my MEng degree requirements.
 
 ---
 
@@ -80,7 +80,7 @@ This collection includes **comprehensive reference materials** covering all majo
 ---
 
 ### Personal Preparation
-Academic roadmap and administrative records for the Fall 2023 session:
+Academic roadmap and administrative records for the **Fall 2023** session:
 
 | # | Resource | Description |
 |:-:|:---|:---|
@@ -260,7 +260,7 @@ A granular record of 10 laboratory reports documenting protocol analysis and net
      ========================================================================================= -->
 
 ## Lecture Notes
-A comprehensive archival log documenting pedagogical discourse across nine modules, including weekly slides and technical archives for the Fall 2023 session.
+A comprehensive archival log documenting pedagogical discourse across nine modules, including weekly slides and technical archives for the **Fall 2023** session.
 
 > [!TIP]
 > Computer networking is not merely the connection of devices; it is the **bridge between theoretical models and functional architectures**. Every module below focuses on the critical translation from **Network Protocols to Scalable Infrastructures**, enabling the design and verification of complex communication systems.
