@@ -52,10 +52,10 @@ As networking technologies evolve, the fundamental principles remain the bedrock
 
 **Why this repository exists:**
 
-- **Knowledge Preservation**: To maintain organized access to comprehensive study materials beyond the classroom
-- **Continuous Learning**: To support lifelong learning by enabling easy revisitation of fundamental networking principles
-- **Academic Documentation**: To authentically document my learning journey through Computer Networks
-- **Community Contribution**: To share these resources with students and learners who may benefit from them
+- **Knowledge Preservation**: To maintain organized access to comprehensive study materials beyond the classroom.
+- **Continuous Learning**: To support lifelong learning by enabling easy revisitation of fundamental networking principles.
+- **Academic Documentation**: To authentically document my learning journey through Computer Networks.
+- **Community Contribution**: To share these resources with students and learners who may benefit from them.
 
 > [!NOTE]
 > All materials were created, compiled, and organized by me during the **Fall 2023** semester as part of my MEng degree requirements.
@@ -362,8 +362,8 @@ Special thanks to the **mentors** and **peers** whose encouragement, discussions
 
   ### 🎓 [MEng Computer Engineering Repository](https://github.com/Amey-Thakur/MENG-COMPUTER-ENGINEERING)
 
-  **Computer Engineering (M.Eng) - University of Windsor**
+  **Computer Engineering (M.Eng.) - University of Windsor**
 
-  *An archival record of **graduate-level research** and **advanced engineering coursework**.*
+  *Semester-wise curriculum, laboratories, projects, and academic notes.*
 
 </div>
